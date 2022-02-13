@@ -4,10 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="testpic, Hexo">
-    <meta name="description" content="Here I want test some pics.
-
-">
+    <meta name="keywords" content="Hexo文章属性, Hexo">
+    <meta name="description" content="对于Hexo新文章头部标签的解释说明">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -19,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>testpic | Hexo</title>
+    <title>Hexo文章属性 | Hexo</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -313,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">testpic</h1>
+                    <h1 class="description center-align post-title">Hexo文章属性</h1>
                 </div>
             </div>
         </div>
@@ -434,14 +432,31 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/test/">
-                                <span class="chip bg-color">test</span>
+                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                <span class="chip bg-color">转载</span>
+                            </a>
+                        
+                            <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">教程</span>
+                            </a>
+                        
+                            <a href="/tags/Hexo/">
+                                <span class="chip bg-color">Hexo</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Hexo/" class="post-category">
+                                Hexo
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -450,21 +465,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-12
+                    2022-02-13
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-12
+                    2022-02-13
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    6
+                    371
                 </div>
                 
 
@@ -494,8 +509,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>Here I want test some pics.</p>
-<p><img src="/2022/02/12/testpic/test.png" alt="pic"></p>
+                <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><pre class="line-numbers language-none"><code class="language-none">本文为转载，一切著作权归原作者所有！<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>来源：</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://tbfungeek.github.io/2016/02/27/Hexo-%E6%96%87%E7%AB%A0%E5%B1%9E%E6%80%A7/">Hexo文章属性</a></p>
+</blockquote>
+<hr>
+<p>之前介绍使用hexo new 的时候可以带一个参数layout，那么这个layout指的是什么呢？<br>它其实是在scaffolds文件夹下的*.md<em>，默认情况下有</em>draft.md* <em>page.md</em> <em>post.md</em><br>如果没有指定的话它会默认使用<em>post.md</em> ，这个属性可以在根目录下的_config 文件中进行配置：</p>
+<blockquote>
+<p>default_layout: post 配置默认的layout</p>
+</blockquote>
+<p>同时我们也可以看到当你hexo new 的时候产生的md文件中会默认产生一些内容，这个内容就是上述介绍的<em>draft.md</em> <em>page.md</em> <em>post.md</em> 所指定的，比如下面是我自己定制的<em>post.md</em>布局：</p>
+<pre class="line-numbers language-none"><code class="language-none">title: {{ title }}
+date: {{ date }}
+tags:
+categories:
+description:
+---<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<p>这些比较常见，介绍如下：</p>
+<pre class="line-numbers language-none"><code class="language-none">title: postName           文章标题
+date: 2013-12-02 15:30:16 文章编写的时间，这里可以随意修改
+categories:               文章分类目录，可以为空
+tags:                     文章标签，可空，多标签请用格式[tag1,tag2,tag3]
+description:              对本页的描述，相当于是一个简介，如果这个定义了，就会在首页中出现这里的内容而不会出现整个文章详细内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>​    这里需要注意的是每个属性冒号后面都应该有个空格，然后再加属性值。并且一定要注意最后的三个下划线，否则文章的内容就不会被显示出来。</p>
 
                 
             </div>
@@ -522,7 +564,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/12/testpic/">https://zhanlutuzi.github.io/2022/02/12/testpic/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/">https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,8 +602,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/test/">
-                                    <span class="chip bg-color">test</span>
+                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                                    <span class="chip bg-color">转载</span>
+                                </a>
+                            
+                                <a href="/tags/%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">教程</span>
+                                </a>
+                            
+                                <a href="/tags/Hexo/">
+                                    <span class="chip bg-color">Hexo</span>
                                 </a>
                             
                         </div>
@@ -740,29 +790,33 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/02/12/testpic/">
+                <a href="/2022/02/13/hexo-wen-zhang-shu-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="testpic">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hexo文章属性">
                         
-                        <span class="card-title">testpic</span>
+                        <span class="card-title">Hexo文章属性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            对于Hexo新文章头部标签的解释说明
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhanlutuzi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -771,8 +825,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                        <span class="chip bg-color">转载</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -786,29 +848,33 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/12/test/">
+                <a href="/2022/02/13/hexo-bo-ke-da-jian/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="test">
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
                         
-                        <span class="card-title">test</span>
+                        <span class="card-title">Hexo博客搭建</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
+                            手把手教你搭建Hexo博客
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-12
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            Zhanlutuzi
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Hexo/" class="post-category">
+                                    Hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -816,8 +882,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/test/">
-                        <span class="chip bg-color">test</span>
+                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                        <span class="chip bg-color">转载</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/Hexo/">
+                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
@@ -1021,7 +1095,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">115</span>
+                        class="white-color">9.1k</span>
             
             
             
