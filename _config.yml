@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 湛泸兔子的博客
+subtitle: '站在巨人的肩膀上'
+description: 'Stand on the shoulder of giants'
 keywords:
 author: Zhanlutuzi
 language: zh-CN
@@ -64,7 +64,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: true
+post_asset_folder: false #新建文章时是否同时创建同名资源文件夹
 marked:
   prependRoot: true
   postAsset: true
