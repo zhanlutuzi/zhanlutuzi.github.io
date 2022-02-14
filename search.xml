@@ -4,6 +4,37 @@
   
     
     <entry>
+      <title>使用PicGo+Github部署免费图床</title>
+      <link href="/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/"/>
+      <url>/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote><p>为什么需要图床？</p></blockquote><p>​    因为足够简单、方便。在编写 Markdown 文档时引用图片可以直接部署URL , 不必专门去纠结相对路径、绝对路径，不必专门找个文件夹放图片。</p><h1 id="需要提前准备的东西"><a href="#需要提前准备的东西" class="headerlink" title="需要提前准备的东西"></a>需要提前准备的东西</h1><ul><li><p>安装<a href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></p><blockquote><p>PicGo 是一款开源的图床工具，Typora 也对它进行了支持</p></blockquote></li><li><p>拥有一个<a href="https://github.com/">Github</a>账号</p></li></ul><h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="1-新建-Github-仓库"><a href="#1-新建-Github-仓库" class="headerlink" title="1.新建 Github 仓库"></a>1.新建 Github 仓库</h2><p>点击github 主页右上角的 <code>+</code> 创建<code>New repository</code></p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214200934506.png" alt="新建仓库"></p><p>​    填写仓库信息，仓库得设置为 <code>Public</code> 因为后面通过客户端访问算是外部访问，因此无法访问<code>Private</code>，这样的话图片传上来之后只能存储不能显示。所以要设置为<code>Public</code>，填写好后直接点击 <code>Create repository</code> 就行了。</p><p>​    这也是Github做图床的一个劣势，隐私性低，不过一般人也不会随便把重要的图片上传到图床里，真正传入的都是博客里公开的照片，因此不用担心。</p><h2 id="2-获得-Token"><a href="#2-获得-Token" class="headerlink" title="2.获得 Token"></a>2.获得 Token</h2><h3 id="什么是-Token"><a href="#什么是-Token" class="headerlink" title="什么是 Token"></a>什么是 Token</h3><blockquote><p>token的意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</p><p>当用户第一次登录后，服务器生成一个token并将此token返回给客户端，以后客户端只需带上这个token前来请求数据即可，无需再次带上用户名和密码。</p><p>简单token的组成；uid(用户唯一的身份标识)、time(当前时间的时间戳)、sign（签名，token的前几位以哈希算法压缩成的一定长度的十六进制字符串。为防止token泄露）。</p></blockquote><p>​    简单来说，Token 就是一串暗号，告诉 Github 使用这个暗号的人有资格访问你的仓库，并具备一定的权限。</p><h3 id="配置-Token"><a href="#配置-Token" class="headerlink" title="配置 Token"></a>配置 Token</h3><p>如图点击 Settings</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214203401076.png"></p><p>找到<code>Developer settings</code>，并进入 <code>Personal access tokens</code> 然后点击<code>Generate new token</code>，创建token；</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212120387.png"></p><p>把repo的勾打上即可。然后翻到页面最底部，点击<code>Generate token</code>的绿色按钮生成token。</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212233490.png"></p><p>然后复制生成一串字符token，这个token 只出现一次，所以要保存一下。</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212315516.png"></p><h2 id="3-配置-PicGo"><a href="#3-配置-PicGo" class="headerlink" title="3.配置 PicGo"></a>3.配置 PicGo</h2><p>在 PicGo 图床设置中找到 Github 图床，按下图进行设置。</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204301080.png" alt="配置PicGo"></p><p><code>jsdelivr</code>的配置格式如下</p><p><code>https://cdn.jsdelivr.net/gh/Github用户名/仓库名</code></p><h2 id="4-配置-Typora"><a href="#4-配置-Typora" class="headerlink" title="4.配置 Typora"></a>4.配置 Typora</h2><p>打开偏好设置</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204555951.png"></p><p>按下图所示配置相关设定</p><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204645430.png" alt="配置Typora"></p><p>注意：PicGo 路径就是你安装 PicGo 的位置，选中 PicGo.exe 即可</p><p>配置完毕后点击<code>验证图片上传选项</code><br><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/Typora_fKNbT3XizG.png" alt="配置成功"></p><h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    做完以上的步骤，你就会获得一个免费的Github图床，并且由于有<code>jsdelivr</code>的帮助，我们的图片从国内访问也会加载的非常快！</p><p>你可能会需要：</p><p><a href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E9%98%BF%E9%87%8C%E4%BA%91oss">PicGo官方文档</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 教程 </tag>
+            
+            <tag> Typora </tag>
+            
+            <tag> Github </tag>
+            
+            <tag> 图床 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案</title>
       <link href="/2022/02/13/envi-shan-tui/"/>
       <url>/2022/02/13/envi-shan-tui/</url>
