@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案, 湛泸兔子">
-    <meta name="description" content="ENVI 5.3 闪退的一种方法">
+    <meta name="keywords" content="你真的了解字体吗？| 衬线与非衬线, 湛泸兔子">
+    <meta name="description" content="详解几种字体之间的区别">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案 | 湛泸兔子</title>
+    <title>你真的了解字体吗？| 衬线与非衬线 | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://pic.imgdb.cn/item/6208ec412ab3f51d91ada4d6.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案</h1>
+                    <h1 class="description center-align post-title">你真的了解字体吗？| 衬线与非衬线</h1>
                 </div>
             </div>
         </div>
@@ -432,22 +432,35 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/ENVI/">
-                                <span class="chip bg-color">ENVI</span>
+                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                <span class="chip bg-color">前端</span>
                             </a>
                         
-                            <a href="/tags/GIS/">
-                                <span class="chip bg-color">GIS</span>
+                            <a href="/tags/%E8%AE%BE%E8%AE%A1/">
+                                <span class="chip bg-color">设计</span>
                             </a>
                         
-                            <a href="/tags/%E9%81%A5%E6%84%9F/">
-                                <span class="chip bg-color">遥感</span>
+                            <a href="/tags/%E5%AD%97%E4%BD%93/">
+                                <span class="chip bg-color">字体</span>
+                            </a>
+                        
+                            <a href="/tags/%E7%A7%91%E6%99%AE/">
+                                <span class="chip bg-color">科普</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E7%A7%91%E6%99%AE/" class="post-category">
+                                科普
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -456,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-02-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-02-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    916
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -500,54 +513,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="问题详情"><a href="#问题详情" class="headerlink" title="问题详情"></a>问题详情</h1><p><img src="https://img-blog.csdnimg.cn/8923466f65964d9fbc1f2e77bd62ada6.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_14,color_FFFFFF,t_70,g_se,x_16" alt="辐射校正窗口"><br> 上图为辐射校正窗口，此时点击<code>OK</code>会出现下图<br> <img src="https://img-blog.csdnimg.cn/6e59027ee6bf4199a0209e95c208d344.png" alt="请添加图片描述"><br>此时ENVI报错，告诉我们</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    在修改 Chrome 浏览器的字体时，我发现了有以下几个选项👇</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222220431141.png" alt="Chrome 字体设置"></p>
+<p>​    这其中就有<code>Sans Serif </code> 和<code>Serif</code>这两类字体，还有一个<code>宽度固定</code>，于是我想了解它们之间的具体区别和使用场景，这也就催生了这篇文章的产生，希望你阅读后会有收获😜</p>
+<h1 id="字体划分"><a href="#字体划分" class="headerlink" title="字体划分"></a>字体划分</h1><p>​    在西方国家罗马字母阵营中，字体分为两大种类：<code>Sans Serif</code>和<code>Serif</code>，打字机体虽然也属于 Sans Serif，但由于是等宽字体，所以另外独立出<code>Monospace</code>这一种类，例如在Web中，表示代码时常常要使用等宽字体。 </p>
+<p>​                             <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222221505267.png"><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222221723241.png"></p>
+<p>​    具体的结构归属可以参照上图👆</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
+<p>衬线(Serif):在字的笔划开始及结束的地方有额外的装饰，而且笔划的粗细会因直横的不同而有不同</p>
+</blockquote>
 <blockquote>
-<p>无法在数据目录中找到正确的元数据</p>
+<p>非衬线：没有额外的装饰，笔划粗细大致差不多</p>
 </blockquote>
-<h1 id="问题发现的过程"><a href="#问题发现的过程" class="headerlink" title="问题发现的过程"></a>问题发现的过程</h1><p>很多人会认为这是因为数据源有问题，但是我尝试了多组Landsat数据，发现都会出现这种错误，但是我换了台电脑这种问题就没有出现了，用的同一组数据源，说明<strong>数据源并不存在这个问题！</strong></p>
-<p>于是我以<br><code>IDL_IDLBRIDGE Error: OBJ_NEW: IDLnaMetadata Error: Failed to find metadata in data catalog.</code>为关键词在网上搜寻，得到了以下几个思路。</p>
-<p>下面是本人单纯记录一下自己蠢蠢找问题的过程，想看解决方案的朋友可直接跳转到教程部分。</p>
-<h2 id="几个思路"><a href="#几个思路" class="headerlink" title="几个思路"></a>几个思路</h2><h3 id="1、数据源属于LandsatL2数据，ENVI暂不支持"><a href="#1、数据源属于LandsatL2数据，ENVI暂不支持" class="headerlink" title="1、数据源属于LandsatL2数据，ENVI暂不支持"></a>1、数据源属于LandsatL2数据，ENVI暂不支持</h3><blockquote>
-<p>Landsat Collection2是USGS在陆地观测卫星图像上进行的第二次重要更新工作，推进了若干数据产品改进，这些改进利用了数据处理、算法开发以及数据访问和分发能力方面的最新进展。</p>
-</blockquote>
-<p>检查了一下发现我的属于L1数据，此项排除，如果有读者碰到这个问题，可以使用L2转换工具，可以参考这个连接:<br><code>http://blog.sina.com.cn/s/blog_764b1e9d010302tw.html</code></p>
-<h3 id="2、某些数据对64位的支持较差"><a href="#2、某些数据对64位的支持较差" class="headerlink" title="2、某些数据对64位的支持较差"></a>2、某些数据对64位的支持较差</h3><p>我使用 ENVI 32bit 与 ENVI Classic 进行多次尝试，均以失败告终。<br>此项排除。</p>
-<h3 id="3、安装包有误"><a href="#3、安装包有误" class="headerlink" title="3、安装包有误"></a>3、安装包有误</h3><p>有句话说得好啊</p>
-<blockquote>
-<p><strong>如果一次重装解决不了问题，那就两次,两次不行就三次…</strong></p>
-</blockquote>
-<p>我更换不同版本，不同安装位置（甚至专门分了个新硬盘区用来装ENVI)，重新安装了7次！<br>无效！！！！！<br>心好累….</p>
-<h3 id="4、输入输出目录中有非法字符"><a href="#4、输入输出目录中有非法字符" class="headerlink" title="4、输入输出目录中有非法字符"></a>4、输入输出目录中有非法字符</h3><p>从安装目录开始排查起，到最后数据输入输出、软件根目录一切全部使用纯字母，我连 <code>_</code> 都没敢用，用驼峰命名法了…</p>
-<p>但是依然没有解决问题，闪退依旧…</p>
-<p>我忍不了了，此时我已经在电脑前坐了三个小时，就这样一个小问题都还没解决，我美好的周末在流逝！！！ 已经瘫在椅子上准备摆烂了，但是我这个人有点倔，这个问题解决不了就如鲠在喉，很难受。于是我坐了起来，打算给它最后一次机会。把ENVI<strong>卸载干净</strong>再重新安装。</p>
-<p>于是我使用 Everything 查询了所有带 <code>ENVI</code> 关键词的文件，打算把它们清空，这时候我看到了一个文件，它的文件地址在我习惯了纯英文且无特殊字符的眼睛里看来是如此的突兀。<br>啊哈，终于抓到你了！<br><code>C:\Users\y'c'l\AppData\....</code><br>这是一个属于IDL的文件，而ENVI的辐射校正，正是通过IDL来实现的，这下就解释的通了，编程语言的环境目录里不能有汉字，不能有特殊符号，我这里就是因为有<code> '</code>这个符号才报错而无法运行。<br>既然问题找到了，那下面就很简单了。<br><strong>只需要修改User的名字为标准格式就可以了！</strong></p>
-<h1 id="解决步骤"><a href="#解决步骤" class="headerlink" title="解决步骤"></a>解决步骤</h1><p><strong>！！！！！！！更改注册表有风险，建议先备份好！！！！！！！！！</strong></p>
-<h2 id="1-在当前账户先把环境变量改好"><a href="#1-在当前账户先把环境变量改好" class="headerlink" title="1.在当前账户先把环境变量改好"></a>1.在当前账户先把环境变量改好</h2><p>如果不进行这项，很多应用是无法使用的，还会有其他奇奇怪怪的问题</p>
-<ul>
-<li><p>右击此电脑，选择属性，点击高级系统设置，进入下面的页面<img src="https://img-blog.csdnimg.cn/a94b7e1b42054d138d04db07d593c32e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-</li>
-<li><p>单击环境变量<br><img src="https://img-blog.csdnimg.cn/80d722ae1455433abc20847174a01b1b.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"></p>
-</li>
-<li><p>在这一栏里把非法格式删去<br>改成你想要的名字(记住它，后面有用！！！）<br>（纯英文，数字不开头，无特殊符号）</p>
-</li>
-<li><p>设置完后单击确定来保存</p>
-</li>
-</ul>
-<h2 id="2-进入Administrator账户"><a href="#2-进入Administrator账户" class="headerlink" title="2.进入Administrator账户"></a>2.进入Administrator账户</h2><p>先以管理员模式启动命令提示符（Win+X组合键后就能看到），输入</p>
-<p><code>net user administrator /active:yes</code><br><img src="https://img-blog.csdnimg.cn/1115fec06711480ea2f9dabdc998a414.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>注销当前账户，进入Administrator账户<br><img src="https://img-blog.csdnimg.cn/91d4614f2bbd4133802b9eb72aa7da7f.png" alt="在这里插入图片描述"><br><strong>2021.12.27更新，其实做到这一步就行了，你可以直接在Administrator的账户下运行ENVI,这样是绝对不会有任何奇奇怪怪的问题的，建议运行专业软件就在Administrator账户里进行</strong></p>
-<h2 id="3-打开注册表"><a href="#3-打开注册表" class="headerlink" title="3. 打开注册表"></a>3. 打开注册表</h2><p>按住键盘的[win+R]，输入regedit，确定<br><img src="https://img-blog.csdnimg.cn/b5938dc67d6a4a1f819c7fd58c6dfeda.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_17,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br>跳转到<br><code>计算机\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\ProfileList</code>目录下方<img src="https://img-blog.csdnimg.cn/035cfff055644301845b3c1b20e31868.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA5rmb5rO45YWU5a2Q,size_20,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述"><br><img src="https://img-blog.csdnimg.cn/55f0998c8ccd4e2dbed987429f2c7476.png" alt="在这里插入图片描述"></p>
-<p>将此项修改为<strong>环境变量里你设置的那一个</strong><br>注意：只改最后一项，即图中 “ycl” 所处的位置.</p>
-<p>完成改变后单击确定，并关闭注册表。</p>
-<h2 id="4-修改用户文件名"><a href="#4-修改用户文件名" class="headerlink" title="4.修改用户文件名"></a>4.修改用户文件名</h2><p>在<code>C:\Users</code>目录下，找到你要修改的那个文件夹<br>重命名它为<strong>环境变量里你设置的那一个</strong></p>
-<p>保存，重新启动就可以啦！</p>
-<h1 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h1><p>这是我第一次写CSDN,这个问题让我苦恼了很久，在搜索引擎里搜不到解决的方法，于是我就想写这样一篇文章，能够帮助到遇到这个问题和我一样束手无策的朋友们！<br><strong>我们都站在前人的肩膀上，这个坑我先替你们踩啦！</strong></p>
-<p>朋友们，答应我，以后买了新的电脑，一定要设置标准格式的用户名，避免这些恼人的问题！</p>
-<p><strong>标准格式</strong></p>
-<ul>
-<li><strong>纯字母</strong></li>
-<li><strong>无特殊符号</strong></li>
-<li><strong>不要以数字开头</strong></li>
-</ul>
+<p>​    这类区分在汉字字体中也有所体现，下图很清晰地展示出来了衬线与非衬线之间的区别。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png"></p>
+<p>​    可以看出，我们平时所用的<code>Georgia</code>、<code>Times New Roman</code>等就属于<code>Serif</code>字体，而<code>Arial</code>、<code>Tahoma</code>等则属于<code>Sans Serif</code>字体。对中文而言，同样存在这两大种类，很明显，宋体、细明体(繁体中常用)等就属于<code>Serif</code>，而黑体、幼圆等则属于<code>Sans Serif</code>。 </p>
+<h1 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h1><p><strong>Serif 和 Sans Serif 的一般比较：</strong></p>
+<p>　　①Serif 的字体容易辨认，因此易读性较高。反之 Sans Serif 则较醒目，但在行文阅读的情况下，Sans Serif 容易造成字母辨认的困扰，常会有来回重读及上下行错乱的情形。</p>
+<p>　　②<strong>Serif</strong> 强调了字母笔划的开始及结束，因此<strong>较易前后连续性的辨识</strong>。 </p>
+<p>　　③Serif 强调一个 word，而非单一的字母，反之 <strong>Sans Serif 则强调个别字母</strong>。</p>
+<p>　　④在小字体的场合，通常 Sans Serif 比 Serif 更清晰。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222223959444.png"></p>
+<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>​            通常文章的<strong>内文、正文使用易读性较佳的 Serif 字体</strong>，这可增加易读性，而且长时间阅读下因为会以 word 为单位来阅读，较不容易疲倦。</p>
+<p>​            <strong>标题、表格内用字则采用较醒目的 Sans Serif 字体</strong>，它需要显着、醒目，但不必长时间盯着这些字来阅读。 </p>
+<p>　　像宣传品、海报类，为求醒目，它的短篇的段落也会采用 Sans Serif 字体。但在书籍、报刊杂志，正文有相当篇幅的情形下，则应采用 Serif 字体来减轻读者阅读上的负担。在Web设计及浏览器设置中也应遵循此原则。</p>
+<h1 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h1><p>​            <strong>其他的通用字体族</strong></p>
+<p>　　印刷学中，除了 <code>serif </code>和 <code>sans-serif </code>之外，通常还有 <code>Monospace</code> 等宽字体、<code>scripts</code>手写体（比如花体）、<code>blackletter </code>铅字体（也叫 <code>gothic</code> 哥特体。严格的说，很多常用的 <code>serif</code> 字体其实是 <code>gothic</code>字体）、<code>ornamental</code> 装饰体和<code>symbol </code>符号字体（比如有名的<code>wedding123</code>）</p>
+<p>　　<strong>Monospace 等宽字体：</strong></p>
+<p>　　所谓的等宽字体，是指每个字符宽度都一致的字体。一个著名的例子就是 <code>Courier New </code>字体。因为字符宽度一致，所以特别容易对齐，能快速精确的定位到某行某列，因此经常用来显示代码。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222224931325.png" alt="Courier New 字体">　　</p>
+<p>​        Cursive书写体：相当于印刷学中的手写体。中文的华文行草就是这样的一个字体。</p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>在显示不同内容的时候，应该根据该内容的阅读效果合理选择字体种类，达到功能性与美观性的统一。</p>
+<p><strong>参考资料：</strong></p>
+<p><a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/192018/">Serif和Sans-serif字体的区别</a></p>
 
                 
             </div>
@@ -564,7 +562,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">湛泸兔子</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhanlutuzi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -574,7 +572,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/13/envi-shan-tui/">https://zhanlutuzi.github.io/2022/02/13/envi-shan-tui/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">https://zhanlutuzi.github.io/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -587,7 +585,7 @@
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">湛泸兔子</a>
+                    <a href="/about" target="_blank">zhanlutuzi</a>
                     !
                 </span>
             </div>
@@ -612,16 +610,20 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/ENVI/">
-                                    <span class="chip bg-color">ENVI</span>
+                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                                    <span class="chip bg-color">前端</span>
                                 </a>
                             
-                                <a href="/tags/GIS/">
-                                    <span class="chip bg-color">GIS</span>
+                                <a href="/tags/%E8%AE%BE%E8%AE%A1/">
+                                    <span class="chip bg-color">设计</span>
                                 </a>
                             
-                                <a href="/tags/%E9%81%A5%E6%84%9F/">
-                                    <span class="chip bg-color">遥感</span>
+                                <a href="/tags/%E5%AD%97%E4%BD%93/">
+                                    <span class="chip bg-color">字体</span>
+                                </a>
+                            
+                                <a href="/tags/%E7%A7%91%E6%99%AE/">
+                                    <span class="chip bg-color">科普</span>
                                 </a>
                             
                         </div>
@@ -795,9 +797,71 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">
+                    <div class="card-image">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png" class="responsive-img" alt="你真的了解字体吗？| 衬线与非衬线">
+                        
+                        <span class="card-title">你真的了解字体吗？| 衬线与非衬线</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            详解几种字体之间的区别
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%A7%91%E6%99%AE/" class="post-category">
+                                    科普
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">设计</span>
+                    </a>
+                    
+                    <a href="/tags/%E5%AD%97%E4%BD%93/">
+                        <span class="chip bg-color">字体</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A7%91%E6%99%AE/">
+                        <span class="chip bg-color">科普</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/">
                     <div class="card-image">
@@ -814,9 +878,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -846,63 +910,6 @@
                     
                     <a href="/tags/%E5%9B%BE%E5%BA%8A/">
                         <span class="chip bg-color">图床</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/02/13/hexo-wen-zhang-shu-xing/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Hexo文章属性">
-                        
-                        <span class="card-title">Hexo文章属性</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            对于Hexo新文章头部标签的解释说明
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
                     </a>
                     
                 </div>
