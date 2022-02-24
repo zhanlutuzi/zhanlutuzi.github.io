@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo文章属性, 湛泸兔子">
-    <meta name="description" content="对于Hexo新文章头部标签的解释说明">
+    <meta name="keywords" content="你的第一台Mac何必是Mac？, 湛泸兔子">
+    <meta name="description" content="手把手教你在Windows环境下安装MacOS">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo文章属性 | 湛泸兔子</title>
+    <title>你的第一台Mac何必是Mac？ | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo文章属性</h1>
+                    <h1 class="description center-align post-title">你的第一台Mac何必是Mac？</h1>
                 </div>
             </div>
         </div>
@@ -432,16 +432,20 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                <span class="chip bg-color">转载</span>
-                            </a>
-                        
                             <a href="/tags/%E6%95%99%E7%A8%8B/">
                                 <span class="chip bg-color">教程</span>
                             </a>
                         
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/VMware/">
+                                <span class="chip bg-color">VMware</span>
+                            </a>
+                        
+                            <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                <span class="chip bg-color">虚拟机</span>
+                            </a>
+                        
+                            <a href="/tags/MacOS/">
+                                <span class="chip bg-color">MacOS</span>
                             </a>
                         
                     </div>
@@ -452,8 +456,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
                             </a>
                         
                     </div>
@@ -465,28 +469,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-02-24
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-02-24
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    371
+                    991
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -509,35 +513,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><pre class="line-numbers language-none"><code class="language-none">本文为转载，一切著作权归原作者所有！<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>来源：</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        前两天上操作系统课，老师给我们布置了一个作业——“在电脑上装上虚拟机，自己运行一下 Ubuntu。” 我操作了一下，成功安装上了 Ubuntu。于是我就想顺便装上 MacOS 体验一下程序员人手一个的 Mac 系统。这便催生了这篇文章的产生，希望对你有所帮助。</p>
+<p>​        为了这篇教程，我花了很大的精力，尝试了常见的<code>VMware</code>&amp;<code>VisualBox</code>两大主流虚拟机，查询了中英文资料，最终成功安装。（PS. 折戟 VisualBox 十次、VMware 配环境三次…）</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png" alt="MacOS_Catalina_Desktop"></p>
+<h1 id="你需要准备"><a href="#你需要准备" class="headerlink" title="你需要准备"></a>你需要准备</h1><ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html">VMware安装包</a></p>
+</li>
+<li><p><a href="">MacOS镜像 ISO 文件</a></p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://tbfungeek.github.io/2016/02/27/Hexo-%E6%96%87%E7%AB%A0%E5%B1%9E%E6%80%A7/">Hexo文章属性</a></p>
+<p>在我的网盘里我提供了<code>Catalina</code>和<code>Big Sur</code>两个版本的 ISO 文件</p>
 </blockquote>
-<hr>
-<p>之前介绍使用hexo new 的时候可以带一个参数layout，那么这个layout指的是什么呢？<br>它其实是在scaffolds文件夹下的*.md<em>，默认情况下有</em>draft.md* <em>page.md</em> <em>post.md</em><br>如果没有指定的话它会默认使用<em>post.md</em> ，这个属性可以在根目录下的_config 文件中进行配置：</p>
+</li>
+<li><p>VMware激活码</p>
+<p>关于激活码，百度直接搜就有一大把，而且基本上都是有效的。这里就给各位附上三条：</p>
 <blockquote>
-<p>default_layout: post 配置默认的layout</p>
+<p>   ZF3R0-FHED2-M80TY-8QYGC-NPKYF<br>   YF390-0HF8P-M81RQ-2DXQE-M2UT6<br>   ZF71R-DMX85-08DQY-8YMNC-PPHV8</p>
 </blockquote>
-<p>同时我们也可以看到当你hexo new 的时候产生的md文件中会默认产生一些内容，这个内容就是上述介绍的<em>draft.md</em> <em>page.md</em> <em>post.md</em> 所指定的，比如下面是我自己定制的<em>post.md</em>布局：</p>
-<pre class="line-numbers language-none"><code class="language-none">title: {{ title }}
-date: {{ date }}
-tags:
-categories:
-description:
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/DrDonk/unlocker/releases">VMware_UnLocker</a></p>
+</li>
+</ol>
+<p>当然，如果你想一步到位的话，我已经将所有需要的文件打包上传到百度云盘里了，各位可直接点击链接<a target="_blank" rel="noopener" href="https://pan.baidu.com/s/1l7MVW3mUDPSzbnliPBRaqw?pwd=1304">下载</a></p>
+<p>提取码：1304</p>
+<h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="1、安装VMware"><a href="#1、安装VMware" class="headerlink" title="1、安装VMware"></a>1、安装VMware</h2><p>运行安装程序，程序自动安装，最后一步使用激活码激活。</p>
+<h2 id="2、停止-VMware-Workstation-Pro-16-的系统服务"><a href="#2、停止-VMware-Workstation-Pro-16-的系统服务" class="headerlink" title="2、停止 VMware Workstation Pro 16 的系统服务"></a>2、停止 VMware Workstation Pro 16 的系统服务</h2><p>（1）打开任务管理器，进入“服务”版块；</p>
+<p>（2）从下至上，按右键依次停止如图所示与 VM 相关的4个服务。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224150623344.png" alt="停止VM服务"></p>
+<h2 id="3、用-Unlocker-让-VMware-支持安装-macOS-系统"><a href="#3、用-Unlocker-让-VMware-支持安装-macOS-系统" class="headerlink" title="3、用 Unlocker 让 VMware 支持安装 macOS 系统"></a>3、用 Unlocker 让 VMware 支持安装 macOS 系统</h2><p>（1）到 <a target="_blank" rel="noopener" href="https://github.com/DrDonk/unlocker/releases">https://github.com/DrDonk/unlocker/releases</a> 下载最新的 Unlocker。</p>
+<p>（2）解压出文件夹之后，找到<code>win-install.cmd</code>，按右键以管理员身份运行。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132550731.png"></p>
+<p>​        如何确认这一步成功了呢？一种方法是看你的小黑窗里面的一长串英语有没有报错，另一种方法比较简单：看运行完<code>win-install.cmd</code>文件后有没有在 <code>unlocker</code>的文件夹里多出一个<code> backup</code>文件夹（见上一张图），以及你的<code>VMware Workstation</code>文件夹里有没有多出 <code>darwin.iso</code> 和 <code>darwinPre15.iso</code>这两个文件（如下图所示）。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132846085.png" alt="在Everything中查找"></p>
+<p>（这里推荐一款搜索工具<code>Everything</code>拥有远超 Windows 默认搜索的速度！<a target="_blank" rel="noopener" href="https://github.com/Wox-launcher/Wox/releases/tag/v1.3.524">点击我下载</a>）</p>
+<h2 id="4、创建虚拟机"><a href="#4、创建虚拟机" class="headerlink" title="4、创建虚拟机"></a>4、创建虚拟机</h2><p>按照与第2步相反的顺序启动VM相关的4个服务</p>
+<p>然后启动 VMware Workstation Pro 16，创建新的虚拟机。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133336529.png"></p>
+<p>找到之前下载的苹果系统镜像文件，打开。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133410517.png"></p>
+<p>选择系统</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133440357.png"></p>
+<p>找一个大一点的磁盘存虚拟机文件</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133501865.png"></p>
+<p> 继续，最大磁盘100G更宽裕点</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133529741.png"></p>
+<p>默认的硬件配置差不多够了，后期还可以修改的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133613717.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133725154.png" alt="后期在这里改配置"></p>
+<h2 id="5、AMD-CPU再做最后一步设置"><a href="#5、AMD-CPU再做最后一步设置" class="headerlink" title="5、AMD CPU再做最后一步设置"></a>5、AMD CPU再做最后一步设置</h2><p>在虚拟机的目录中找到<code>.vmx</code>后缀的文件，我的虚拟机命名为”mac 11”，因此该文件名为mac 11.vmx，右键编辑(可以使用 VScode 打开)。</p>
+<p>在该文件末尾追加下列语句。</p>
+<pre class="line-numbers language-none"><code class="language-none">smc.version = "0"
+cpuid.0.eax = "0000:0000:0000:0000:0000:0000:0000:1011"
+cpuid.0.ebx = "0111:0101:0110:1110:0110:0101:0100:0111"
+cpuid.0.ecx = "0110:1100:0110:0101:0111:0100:0110:1110"
+cpuid.0.edx = "0100:1001:0110:0101:0110:1110:0110:1001"
+cpuid.1.eax = "0000:0000:0000:0001:0000:0110:0111:0001"
+cpuid.1.ebx = "0000:0010:0000:0001:0000:1000:0000:0000"
+cpuid.1.ecx = "1000:0010:1001:1000:0010:0010:0000:0011"
+cpuid.1.edx = "0000:0111:1000:1011:1111:1011:1111:1111"
+featureCompat.enable = "TRUE"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
-<p>这些比较常见，介绍如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">title: postName           文章标题
-date: 2013-12-02 15:30:16 文章编写的时间，这里可以随意修改
-categories:               文章分类目录，可以为空
-tags:                     文章标签，可空，多标签请用格式[tag1,tag2,tag3]
-description:              对本页的描述，相当于是一个简介，如果这个定义了，就会在首页中出现这里的内容而不会出现整个文章详细内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​    这里需要注意的是每个属性冒号后面都应该有个空格，然后再加属性值。并且一定要注意最后的三个下划线，否则文章的内容就不会被显示出来。</p>
+<h2 id="6、启动虚拟机"><a href="#6、启动虚拟机" class="headerlink" title="6、启动虚拟机"></a>6、启动虚拟机</h2><p>​        如果你启动虚拟机后看到苹果的 Logo 恭喜你，你离胜利不远了！</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134529762.png" alt=" 选磁盘工具，点“继续”"></p>
+<p>​        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134619582.png" alt="抹掉磁盘"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134648645.png" alt="自己命名，改格式，点“抹掉”"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134715160.png" alt="抹掉后叉掉这个窗口"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134755581.png" alt="点安装macOS、“继续”"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134830518.png" alt="选择之前抹掉的磁盘进行安装"></p>
+<p>到了这一步就没有什么难度了，按照官方的引导一步一步做下去就可以了，但可能需要20分钟安装系统😶请耐心等待.</p>
+<h3 id="Enjoy-your-MacOS😉"><a href="#Enjoy-your-MacOS😉" class="headerlink" title="Enjoy your MacOS😉"></a>Enjoy your MacOS😉</h3><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224142433087.png" alt="MacOS"></p>
+<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>VisualBox 安装 MacOS 可谓困难重重… 如果你是 AMD CPU 我建议你用 VMware.</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>鸣谢:</p>
+<p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/eMAgVApZNt98ovbBEly6Pw">2022年最新保姆级VM16虚拟机安装macOS苹果系统教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jxzssy.top/article/90.html">VMware安装MacOS遇到“客户机操作系统已禁用 CPU。请关闭或重置虚拟机。”解决方案</a></p>
 
                 
             </div>
@@ -554,7 +603,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Zhanlutuzi</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhanlutuzi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -564,7 +613,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/">https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/02/24/macos-xu-ni-ji/">https://zhanlutuzi.github.io/2022/02/24/macos-xu-ni-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,7 +626,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Zhanlutuzi</a>
+                    <a href="/about" target="_blank">zhanlutuzi</a>
                     !
                 </span>
             </div>
@@ -602,16 +651,20 @@ description:              对本页的描述，相当于是一个简介，如果
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                    <span class="chip bg-color">转载</span>
-                                </a>
-                            
                                 <a href="/tags/%E6%95%99%E7%A8%8B/">
                                     <span class="chip bg-color">教程</span>
                                 </a>
                             
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/VMware/">
+                                    <span class="chip bg-color">VMware</span>
+                                </a>
+                            
+                                <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                                    <span class="chip bg-color">虚拟机</span>
+                                </a>
+                            
+                                <a href="/tags/MacOS/">
+                                    <span class="chip bg-color">MacOS</span>
                                 </a>
                             
                         </div>
@@ -785,49 +838,59 @@ description:              对本页的描述，相当于是一个简介，如果
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/13/envi-shan-tui/">
+                <a href="/2022/02/24/macos-xu-ni-ji/">
                     <div class="card-image">
                         
-                        <img src="https://pic.imgdb.cn/item/6208ec412ab3f51d91ada4d6.png" class="responsive-img" alt="ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案">
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png" class="responsive-img" alt="你的第一台Mac何必是Mac？">
                         
-                        <span class="card-title">ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案</span>
+                        <span class="card-title">你的第一台Mac何必是Mac？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ENVI 5.3 闪退的一种方法
+                            手把手教你在Windows环境下安装MacOS
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            湛泸兔子
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ENVI/">
-                        <span class="chip bg-color">ENVI</span>
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
                     </a>
                     
-                    <a href="/tags/GIS/">
-                        <span class="chip bg-color">GIS</span>
+                    <a href="/tags/VMware/">
+                        <span class="chip bg-color">VMware</span>
                     </a>
                     
-                    <a href="/tags/%E9%81%A5%E6%84%9F/">
-                        <span class="chip bg-color">遥感</span>
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
+                    </a>
+                    
+                    <a href="/tags/MacOS/">
+                        <span class="chip bg-color">MacOS</span>
                     </a>
                     
                 </div>
@@ -841,31 +904,30 @@ description:              对本页的描述，相当于是一个简介，如果
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/13/hexo-bo-ke-da-jian/">
+                <a href="/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png" class="responsive-img" alt="你真的了解字体吗？| 衬线与非衬线">
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
-                        
-                        <span class="card-title">Hexo博客搭建</span>
+                        <span class="card-title">你真的了解字体吗？| 衬线与非衬线</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手教你搭建Hexo博客
+                            详解几种字体之间的区别
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/%E7%A7%91%E6%99%AE/" class="post-category">
+                                    科普
                                 </a>
                             
                             
@@ -875,16 +937,20 @@ description:              对本页的描述，相当于是一个简介，如果
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
+                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
+                        <span class="chip bg-color">前端</span>
                     </a>
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
+                    <a href="/tags/%E8%AE%BE%E8%AE%A1/">
+                        <span class="chip bg-color">设计</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/%E5%AD%97%E4%BD%93/">
+                        <span class="chip bg-color">字体</span>
+                    </a>
+                    
+                    <a href="/tags/%E7%A7%91%E6%99%AE/">
+                        <span class="chip bg-color">科普</span>
                     </a>
                     
                 </div>
