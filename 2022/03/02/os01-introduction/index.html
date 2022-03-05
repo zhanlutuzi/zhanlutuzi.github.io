@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Hexo文章属性, 湛泸兔子">
-    <meta name="description" content="对于Hexo新文章头部标签的解释说明">
+    <meta name="keywords" content="操作系统学习笔记_01, 湛泸兔子">
+    <meta name="description" content="从零开始的操作系统学习记录『第一章绪论』">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Hexo文章属性 | 湛泸兔子</title>
+    <title>操作系统学习笔记_01 | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Hexo文章属性</h1>
+                    <h1 class="description center-align post-title">操作系统学习笔记_01</h1>
                 </div>
             </div>
         </div>
@@ -432,16 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                <span class="chip bg-color">转载</span>
+                            <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                <span class="chip bg-color">操作系统</span>
                             </a>
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
-                            </a>
-                        
-                            <a href="/tags/Hexo/">
-                                <span class="chip bg-color">Hexo</span>
+                            <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                <span class="chip bg-color">笔记</span>
                             </a>
                         
                     </div>
@@ -452,8 +448,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/Hexo/" class="post-category">
-                                Hexo
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                笔记
                             </a>
                         
                     </div>
@@ -465,28 +461,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-03-02
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-03-03
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    371
+                    2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    7 分
                 </div>
                 
 
@@ -509,35 +505,153 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="声明"><a href="#声明" class="headerlink" title="声明"></a>声明</h1><pre class="line-numbers language-none"><code class="language-none">本文为转载，一切著作权归原作者所有！<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<p>来源：</p>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>本系列笔记参考书籍为 Tanenbaum 的 Operating Systems Design and Implementation ,3th edition.</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="https://tbfungeek.github.io/2016/02/27/Hexo-%E6%96%87%E7%AB%A0%E5%B1%9E%E6%80%A7/">Hexo文章属性</a></p>
+<p>Tanenbaum 是荷兰的一名计算机科学家，20世纪80年代，他教授操作系统这门课，由于 UNIX 的版权原因，许多大学的操作系统课程不能再使用 UNIX 的源码进行剖析教学，转而教授更偏向理论层面的内容，而这些内容往往触碰不到操作系统这门课的核心之处。出于教学的需要，Tanenbaum 从头开始，开发出了一个小巧、完整、开源、UNIX 兼容的操作系统 <strong>MINIX</strong>，MINIX 的诞生也推动了 Linux 的产生！</p>
 </blockquote>
-<hr>
-<p>之前介绍使用hexo new 的时候可以带一个参数layout，那么这个layout指的是什么呢？<br>它其实是在scaffolds文件夹下的*.md<em>，默认情况下有</em>draft.md* <em>page.md</em> <em>post.md</em><br>如果没有指定的话它会默认使用<em>post.md</em> ，这个属性可以在根目录下的_config 文件中进行配置：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302202457342.png" alt="现代计算机的组成"></p>
+<ul>
+<li>物理设备<ul>
+<li>组成计算机的硬件部分</li>
+</ul>
+</li>
+<li>微体系结构<ul>
+<li>各物理设备被组成一个个<strong>功能单元</strong></li>
+</ul>
+</li>
+<li>机器语言<ul>
+<li>用于操作硬件的指令集，50~300条，如数据传送、数值比较等</li>
+</ul>
+</li>
+</ul>
+<h1 id="什么是操作系统"><a href="#什么是操作系统" class="headerlink" title="什么是操作系统"></a>什么是操作系统</h1><p>​        所谓操作系统，一般是指在<strong>内核态(Kernel Mode)</strong> 或<strong>管态 (Supervisor mode)</strong> 下运行的软件，它受到硬件的保护！</p>
+<h2 id="Kernel-？"><a href="#Kernel-？" class="headerlink" title="Kernel ？"></a>Kernel ？</h2><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/Kernel_Layout.svg" alt="Kernel_Layout"></p>
+<p>​        上图很清楚的为我们解释了什么叫做 Kernel ，在操作系统中，Kernel 是硬件与软件的中介，它将应用与硬件分割开来，保证了硬件的统一调用，将底层的复杂性封装起来，同时提供接口供应用层使用。</p>
+<p>​        MINIX3 的内核是微内核，这个我们后面再谈。</p>
+<h2 id="操作系统是拓展机"><a href="#操作系统是拓展机" class="headerlink" title="操作系统是拓展机"></a>操作系统是拓展机</h2><p>​        它将硬件细节与程序员隔离开来，对于每一个硬件，操作系统都提供了一种简单、好用的接口。它为用户提供一台等价的拓展计算机，更易编程，为用户提供各种服务，用户程序可以通过系统调用<code>System Call</code>来使用这些服务。</p>
+<h2 id="操作系统是资源管理器"><a href="#操作系统是资源管理器" class="headerlink" title="操作系统是资源管理器"></a>操作系统是资源管理器</h2><p>​        现代计算机包括诸如 CPU、GPU、存储器、I/O设备、网络接口、打印机等其他设备，它是一个复杂系统的管理者，负责合理高效地分配系统资源。</p>
+<ul>
+<li>共享<ul>
+<li>时间上</li>
+<li>空间上</li>
+</ul>
+</li>
+</ul>
+<h1 id="操作系统发展史"><a href="#操作系统发展史" class="headerlink" title="操作系统发展史"></a>操作系统发展史</h1><h2 id="第一代计算机-1950-真空管和插接板"><a href="#第一代计算机-1950-真空管和插接板" class="headerlink" title="第一代计算机 1950 真空管和插接板"></a>第一代计算机 1950 真空管和插接板</h2><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302210018053.png" alt="ENIAC"></p>
+<p>​        这个时代没有编程语言，只有机器语言，更没有操作系统，用插接板来控制计算机的基本操作以及编程。</p>
 <blockquote>
-<p>default_layout: post 配置默认的layout</p>
+<p>主要用于计算正弦余弦函数表</p>
 </blockquote>
-<p>同时我们也可以看到当你hexo new 的时候产生的md文件中会默认产生一些内容，这个内容就是上述介绍的<em>draft.md</em> <em>page.md</em> <em>post.md</em> 所指定的，比如下面是我自己定制的<em>post.md</em>布局：</p>
-<pre class="line-numbers language-none"><code class="language-none">title: {{ title }}
-date: {{ date }}
-tags:
-categories:
-description:
----<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="第二代计算机-1960-晶体管与批处理"><a href="#第二代计算机-1960-晶体管与批处理" class="headerlink" title="第二代计算机 1960 晶体管与批处理"></a>第二代计算机 1960 晶体管与批处理</h2><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/IBM7094.jpg" alt="IBM7094"></p>
+<p>​        有了晶体管，故障率明显降低，但计算机（那时多称主机 mainframe），十分昂贵，高达几百万美元一台，这就显得机时的宝贵，也就促成了批处理系统的诞生，这个时代的人们多采用打孔卡片与计算机进行通讯，通过卡片传入数据与程序。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302211113810.png" alt="批处理系统"></p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">$ JOB,最大运行时间（minutes),收费员姓名
+$ FORTRAN (提示系统装入该语言的编译器)
+//////
+程序员编写的FORTRAN源程序
+//////
+$LOAD
+$RUN
+//////
+数据
+//////
+$END<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-
-
-<p>这些比较常见，介绍如下：</p>
-<pre class="line-numbers language-none"><code class="language-none">title: postName           文章标题
-date: 2013-12-02 15:30:16 文章编写的时间，这里可以随意修改
-categories:               文章分类目录，可以为空
-tags:                     文章标签，可空，多标签请用格式[tag1,tag2,tag3]
-description:              对本页的描述，相当于是一个简介，如果这个定义了，就会在首页中出现这里的内容而不会出现整个文章详细内容。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<p>​    这里需要注意的是每个属性冒号后面都应该有个空格，然后再加属性值。并且一定要注意最后的三个下划线，否则文章的内容就不会被显示出来。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302211522984.png" alt="工作流程"></p>
+<blockquote>
+<p>主要用于求解偏微分方程</p>
+</blockquote>
+<p>​        此时已经出现操作系统，FMS（FORTRAN Monitor System)、IBSYS(IBM为7096机开发的操作系统）等</p>
+<h2 id="第三代计算机-1970-集成电路和多道程序"><a href="#第三代计算机-1970-集成电路和多道程序" class="headerlink" title="第三代计算机 1970 集成电路和多道程序"></a>第三代计算机 1970 集成电路和多道程序</h2><p>​        为了减少机时的浪费，将内存分割为多块，存入不同的任务。</p>
+<p>​        假脱机技术SPOOLING(<strong>S</strong>imultaneous <strong>P</strong>eripheral <strong>O</strong>perations <strong>O</strong>n-line)</p>
+<p>的产生使得不再需要一台专门的机器读取磁带了，在现代，SPOOLING也应用广泛，比如打印机的使用就采用了SPOOLING,在计算机后台往往有一个程序<code>Spooler</code>管理打印机</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302213710950.png" alt="Windows后台的Spooler进程"></p>
+<blockquote>
+<p>Spooling is a combination of <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Data_buffer">buffering</a> and <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Queue_(data_structure)">queueing</a>.</p>
+</blockquote>
+<h3 id="分时系统"><a href="#分时系统" class="headerlink" title="分时系统"></a>分时系统</h3><p>​        为了弥补批处理系统的缺陷，对CPU进行分时处理，每个用户都有一个联机的终端，看起来就好像是每个人独占一台计算机一样，实际上只有一台主机进行处理任务，每台终端的任务会被CPU分配一段时间间断执行，CPU在多个任务中切换运算。</p>
+<blockquote>
+<p>Compatible Time-Sharing System (CTSS) MIT开发，第一个真正的分时系统</p>
+</blockquote>
+<h3 id="MULTICS"><a href="#MULTICS" class="headerlink" title="MULTICS"></a>MULTICS</h3><p>​    <em>Multics</em> (“Multiplexed Information and Computing Service”) ，MIT, Bell Lab, General Electric(GE)，共同开发的一种<code>公用计算服务系统</code>，想像电力系统一样即插即用。但这个项目最终失败了，不过它带给计算机领域的贡献是巨大的。</p>
+<p><strong>它催生了 UNIX 和 C 语言的产生</strong></p>
+<h3 id="小型机的崛起"><a href="#小型机的崛起" class="headerlink" title="小型机的崛起"></a>小型机的崛起</h3><p>​        DEC公司的 PDP 系列大获成功</p>
+<p>​        贝尔实验室的<code>Ken Thompson</code>在一台<code>PDP-7</code>中开发了一种简化版的<code>MULTICS</code>，为单用户打造，这也是<code>UNIX</code>的源头</p>
+<p>​        UNIX 又衍生出两个分支</p>
+<ul>
+<li>AT&amp;T <code>System V</code></li>
+<li>University of California, Berkeley <ul>
+<li><code>BSD</code>(Berkeley Software Distribution)</li>
+</ul>
+</li>
+</ul>
+<p>由于系统版本过多，IEEE制定了最小接口标准<code>POSIX</code></p>
+<h2 id="第四代计算机-1980-个人计算机和微处理器"><a href="#第四代计算机-1980-个人计算机和微处理器" class="headerlink" title="第四代计算机 1980 个人计算机和微处理器"></a>第四代计算机 1980 个人计算机和微处理器</h2><p>​        初期 Intel 的8086微处理器和<code>CP/M</code>操作系统共同占有市场，微软早期销售CP/M卡和Basic解释器。</p>
+<p>​        随着16位处理器的出现，微软将 DOS 和 Basic 解释器打包并改进得到了<code>MS-DOS</code>，这是微软的第一个操作系统。</p>
+<h3 id="GUI"><a href="#GUI" class="headerlink" title="GUI"></a>GUI</h3><blockquote>
+<p>Graphical user interface 图形化用户界面</p>
+</blockquote>
+<ul>
+<li>斯坦福的 Doug Engelbart 发明了它</li>
+<li>乔布斯 Macintosh 采用了GUI界面</li>
+</ul>
+<h3 id="——当代"><a href="#——当代" class="headerlink" title="——当代"></a>——当代</h3><p>Mac OS X 基于<code>Berkeley UNIX</code></p>
+<p>Window NT 是 当前 Window 系统的源头</p>
+<h1 id="MINIX"><a href="#MINIX" class="headerlink" title="MINIX"></a>MINIX</h1><ul>
+<li>微内核，内核只有几千行代码</li>
+<li>模块化</li>
+</ul>
+<p>Linux 正是基于 MINIX 开发出来的</p>
+<h2 id="挂装-mount"><a href="#挂装-mount" class="headerlink" title="挂装 mount"></a>挂装 mount</h2><p>​        在 MINIX 中，可移动存储设备往往需要通过挂装的方式与文件系统合并，从而 达成访问的目的。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/ApplicationFrameHost_0da5ZNJa31.png"></p>
+<h2 id="设备文件-special-files"><a href="#设备文件-special-files" class="headerlink" title="设备文件 special files"></a>设备文件 special files</h2><p>​        由于 MINIX 采用微内核，因此设备被特化为一种特殊形式的文件，设备文件又分为两种。</p>
+<ul>
+<li>块设备文件 Block special file<ul>
+<li>磁盘</li>
+</ul>
+</li>
+<li>字符设备文件 character special file<ul>
+<li>打印机</li>
+</ul>
+</li>
+</ul>
+<h2 id="文件保护机制"><a href="#文件保护机制" class="headerlink" title="文件保护机制"></a>文件保护机制</h2><ul>
+<li>rwx r– r–  ↔ r w x   r - -   r - -<ul>
+<li>r: read</li>
+<li>w: write</li>
+<li>x: execute(file)   search( folder, directory )</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303085937921.png"></p>
+<blockquote>
+<p><strong>一个文件有的权限部分共有三组</strong> <strong>rwx</strong> <strong>rwx</strong> <strong>rwx</strong><br> 每一位只有两种可能: 一种是有这个位的权限，另一种是没有这个位的权限，所以可以用二进制表示有和没有，但为简化，所以chmod后面需是8进制数，每个数代表属主属组和其它，<code>r为4，w为2, x为1 -为0,</code> 将每组中的三个要素的数字加到一起就是这个组的权限代数，每个权限与进制数的关系如下 rwx rwx rwx<br> 421 421 421 也就是4+2+1=7 4+2+1=7 4+2+1=7 所以最大权限是777<br> 又如下面的权限就是 660<br> rw- rw- —<br> 420 420 000     4+2=6,4+2=6,0<br> 再如下面的权限是 526<br> r-x -w- rw-<br> 401 020 420  </p>
+<p>​    也就是说想把一个文件的权限变成以上情况则输入chmod 526 filename ;  0751呢<br>但在此要说明一下，只是运行<em>chmod</em> 的用户对此文件有<strong>w</strong>的权限才能重新设置文件权限。<br> root可设置任何文件的权限.</p>
+</blockquote>
+<h2 id="系统调用-System-Call"><a href="#系统调用-System-Call" class="headerlink" title="系统调用 System Call"></a>系统调用 System Call</h2><p>MINIX的系统调用如下图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303125622421.png"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303125645196.png"></p>
+<p><code>Ctrl+C</code>==<code>SIGINT</code>中断信号</p>
+<p><code>Ctrl+\</code>==<code>SIGQUIT</code>产生退出信号并强制进行内核映像转储</p>
+<p><code>Ctrl+S</code>停止输出，<code>Ctrl+Q</code>恢复终端输出</p>
+<p><code>Ctrl+D</code>文件结束</p>
+<h1 id="操作系统结构"><a href="#操作系统结构" class="headerlink" title="操作系统结构"></a>操作系统结构</h1><h2 id="整体结构"><a href="#整体结构" class="headerlink" title="整体结构"></a>整体结构</h2><p><code>一锅粥</code>，是各类函数的集合，没有隐藏，所有函数都是相互可见的。</p>
+<blockquote>
+<p>访问操作系统提供的服务流程是：</p>
+<p>​                先把参数放入指定位置（如栈），然后执行<code>TRAP</code>指令，即内核调用<code>Kernel Call</code></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303173128085.png"></p>
+<h2 id="分层结构"><a href="#分层结构" class="headerlink" title="分层结构"></a>分层结构</h2><p>组织成层次结构，层层封装，向上提供接口</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201333799.png"></p>
+<h2 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h2><p>此虚拟机非彼虚拟机</p>
+<p>核心是一个虚拟机监控程序</p>
+<p>裸机硬件的精确拷贝</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201354792.png"></p>
+<h2 id="外核"><a href="#外核" class="headerlink" title="外核"></a>外核</h2><p>省去映射层的虚拟机，划分磁盘块给不同的虚拟机运行</p>
+<h2 id="客户-服务器结构"><a href="#客户-服务器结构" class="headerlink" title="客户-服务器结构"></a>客户-服务器结构</h2><p>适用于分布式系统</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201430393.png"></p>
+<p>内核只处理客户与服务器间的通信</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201417706.png"></p>
 
                 
             </div>
@@ -554,7 +668,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="/about" rel="external nofollow noreferrer">Zhanlutuzi</a>
+                    <a href="/about" rel="external nofollow noreferrer">zhanlutuzi</a>
                 </span>
             </div>
             <div class="reprint__type">
@@ -564,7 +678,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/">https://zhanlutuzi.github.io/2022/02/13/hexo-wen-zhang-shu-xing/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/03/02/os01-introduction/">https://zhanlutuzi.github.io/2022/03/02/os01-introduction/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -577,7 +691,7 @@ description:              对本页的描述，相当于是一个简介，如果
                     本博客所有文章除特別声明外，均采用
                     <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
                     许可协议。转载请注明来源
-                    <a href="/about" target="_blank">Zhanlutuzi</a>
+                    <a href="/about" target="_blank">zhanlutuzi</a>
                     !
                 </span>
             </div>
@@ -602,16 +716,12 @@ description:              对本页的描述，相当于是一个简介，如果
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                                    <span class="chip bg-color">转载</span>
+                                <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                                    <span class="chip bg-color">操作系统</span>
                                 </a>
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
-                                </a>
-                            
-                                <a href="/tags/Hexo/">
-                                    <span class="chip bg-color">Hexo</span>
+                                <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                                    <span class="chip bg-color">笔记</span>
                                 </a>
                             
                         </div>
@@ -785,49 +895,51 @@ description:              对本页的描述，相当于是一个简介，如果
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/13/envi-shan-tui/">
+                <a href="/2022/03/02/os01-introduction/">
                     <div class="card-image">
                         
-                        <img src="https://pic.imgdb.cn/item/6208ec412ab3f51d91ada4d6.png" class="responsive-img" alt="ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案">
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
                         
-                        <span class="card-title">ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案</span>
+                        <span class="card-title">操作系统学习笔记_01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ENVI 5.3 闪退的一种方法
+                            从零开始的操作系统学习记录『第一章绪论』
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            湛泸兔子
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ENVI/">
-                        <span class="chip bg-color">ENVI</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/GIS/">
-                        <span class="chip bg-color">GIS</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%81%A5%E6%84%9F/">
-                        <span class="chip bg-color">遥感</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>
@@ -841,31 +953,30 @@ description:              对本页的描述，相当于是一个简介，如果
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/13/hexo-bo-ke-da-jian/">
+                <a href="/2022/02/24/macos-xu-ni-ji/">
                     <div class="card-image">
                         
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png" class="responsive-img" alt="你的第一台Mac何必是Mac？">
                         
-                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="Hexo博客搭建">
-                        
-                        <span class="card-title">Hexo博客搭建</span>
+                        <span class="card-title">你的第一台Mac何必是Mac？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手教你搭建Hexo博客
+                            手把手教你在Windows环境下安装MacOS
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Hexo/" class="post-category">
-                                    Hexo
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
                                 </a>
                             
                             
@@ -875,16 +986,20 @@ description:              对本页的描述，相当于是一个简介，如果
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
-                        <span class="chip bg-color">转载</span>
-                    </a>
-                    
                     <a href="/tags/%E6%95%99%E7%A8%8B/">
                         <span class="chip bg-color">教程</span>
                     </a>
                     
-                    <a href="/tags/Hexo/">
-                        <span class="chip bg-color">Hexo</span>
+                    <a href="/tags/VMware/">
+                        <span class="chip bg-color">VMware</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
+                        <span class="chip bg-color">虚拟机</span>
+                    </a>
+                    
+                    <a href="/tags/MacOS/">
+                        <span class="chip bg-color">MacOS</span>
                     </a>
                     
                 </div>
