@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="使用PicGo+Github部署免费图床, 湛泸兔子">
-    <meta name="description" content="手把手教你使用Github仓库免费创立图床">
+    <meta name="keywords" content="配置OpenGL C++ 开发环境, 湛泸兔子">
+    <meta name="description" content="教你配置 OpenGL 的开发环境，使用 Vcpkg 或者原始手动配置。">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>使用PicGo+Github部署免费图床 | 湛泸兔子</title>
+    <title>配置OpenGL C++ 开发环境 | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214205811477.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320010437117.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">使用PicGo+Github部署免费图床</h1>
+                    <h1 class="description center-align post-title">配置OpenGL C++ 开发环境</h1>
                 </div>
             </div>
         </div>
@@ -432,20 +432,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                <span class="chip bg-color">教程</span>
+                            <a href="/tags/C/">
+                                <span class="chip bg-color">C++</span>
                             </a>
                         
-                            <a href="/tags/Typora/">
-                                <span class="chip bg-color">Typora</span>
-                            </a>
-                        
-                            <a href="/tags/Github/">
-                                <span class="chip bg-color">Github</span>
-                            </a>
-                        
-                            <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                                <span class="chip bg-color">图床</span>
+                            <a href="/tags/OpenGL/">
+                                <span class="chip bg-color">OpenGL</span>
                             </a>
                         
                     </div>
@@ -469,21 +461,21 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-13
+                    2022-03-20
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-14
+                    2022-03-20
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    698
+                    646
                 </div>
                 
 
@@ -513,50 +505,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><blockquote>
-<p>为什么需要图床？</p>
-</blockquote>
-<p>​    因为足够简单、方便。在编写 Markdown 文档时引用图片可以直接部署URL , 不必专门去纠结相对路径、绝对路径，不必专门找个文件夹放图片。</p>
-<h1 id="需要提前准备的东西"><a href="#需要提前准备的东西" class="headerlink" title="需要提前准备的东西"></a>需要提前准备的东西</h1><ul>
-<li><p>安装<a target="_blank" rel="noopener" href="https://github.com/Molunerfinn/PicGo/releases">PicGo</a></p>
-<blockquote>
-<p>PicGo 是一款开源的图床工具，Typora 也对它进行了支持</p>
-</blockquote>
-</li>
-<li><p>拥有一个<a target="_blank" rel="noopener" href="https://github.com/">Github</a>账号</p>
-</li>
+                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    这学期新开了计算机图形学的课程，第一次作业就是配置<code>OpenGL</code>开发环境。配置环境对于许多人来说都是头疼的问题，我也不例外。</p>
+<p>​    这里我提供两种配置环境的方法供参考。</p>
+<ul>
+<li>使用<code>Vcpkg</code>进行配置（强烈推荐）</li>
+<li>使用<code>Visual Studio</code>内部手动设置（很麻烦）</li>
 </ul>
-<h1 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h1><h2 id="1-新建-Github-仓库"><a href="#1-新建-Github-仓库" class="headerlink" title="1.新建 Github 仓库"></a>1.新建 Github 仓库</h2><p>点击github 主页右上角的 <code>+</code> 创建<code>New repository</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214200934506.png" alt="新建仓库"></p>
-<p>​    填写仓库信息，仓库得设置为 <code>Public</code> 因为后面通过客户端访问算是外部访问，因此无法访问<code>Private</code>，这样的话图片传上来之后只能存储不能显示。所以要设置为<code>Public</code>，填写好后直接点击 <code>Create repository</code> 就行了。</p>
-<p>​    这也是Github做图床的一个劣势，隐私性低，不过一般人也不会随便把重要的图片上传到图床里，真正传入的都是博客里公开的照片，因此不用担心。</p>
-<h2 id="2-获得-Token"><a href="#2-获得-Token" class="headerlink" title="2.获得 Token"></a>2.获得 Token</h2><h3 id="什么是-Token"><a href="#什么是-Token" class="headerlink" title="什么是 Token"></a>什么是 Token</h3><blockquote>
-<p>token的意思是“令牌”，是服务端生成的一串字符串，作为客户端进行请求的一个标识。</p>
-<p>当用户第一次登录后，服务器生成一个token并将此token返回给客户端，以后客户端只需带上这个token前来请求数据即可，无需再次带上用户名和密码。</p>
-<p>简单token的组成；uid(用户唯一的身份标识)、time(当前时间的时间戳)、sign（签名，token的前几位以哈希算法压缩成的一定长度的十六进制字符串。为防止token泄露）。</p>
+<h1 id="使用-Vcpkg-配置"><a href="#使用-Vcpkg-配置" class="headerlink" title="使用 Vcpkg 配置"></a>使用 Vcpkg 配置</h1><h2 id="什么是Vcpkg"><a href="#什么是Vcpkg" class="headerlink" title="什么是Vcpkg?"></a>什么是<code>Vcpkg</code>?</h2><blockquote>
+<p>Vcpkg 可帮助您在 Windows、 Linux 和 MacOS 上管理 C 和 C++ 库。</p>
+<p>它是一个开源的包管理工具</p>
 </blockquote>
-<p>​    简单来说，Token 就是一串暗号，告诉 Github 使用这个暗号的人有资格访问你的仓库，并具备一定的权限。</p>
-<h3 id="配置-Token"><a href="#配置-Token" class="headerlink" title="配置 Token"></a>配置 Token</h3><p>如图点击 Settings</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214203401076.png"></p>
-<p>找到<code>Developer settings</code>，并进入 <code>Personal access tokens</code> 然后点击<code>Generate new token</code>，创建token；</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212120387.png"></p>
-<p>把repo的勾打上即可。然后翻到页面最底部，点击<code>Generate token</code>的绿色按钮生成token。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212233490.png"></p>
-<p>然后复制生成一串字符token，这个token 只出现一次，所以要保存一下。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212315516.png"></p>
-<h2 id="3-配置-PicGo"><a href="#3-配置-PicGo" class="headerlink" title="3.配置 PicGo"></a>3.配置 PicGo</h2><p>在 PicGo 图床设置中找到 Github 图床，按下图进行设置。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204301080.png" alt="配置PicGo"></p>
-<p><code>jsdelivr</code>的配置格式如下</p>
-<p><code>https://cdn.jsdelivr.net/gh/Github用户名/仓库名</code></p>
-<h2 id="4-配置-Typora"><a href="#4-配置-Typora" class="headerlink" title="4.配置 Typora"></a>4.配置 Typora</h2><p>打开偏好设置</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204555951.png"></p>
-<p>按下图所示配置相关设定</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204645430.png" alt="配置Typora"></p>
-<p>注意：PicGo 路径就是你安装 PicGo 的位置，选中 PicGo.exe 即可</p>
-<p>配置完毕后点击<code>验证图片上传选项</code><br><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/Typora_fKNbT3XizG.png" alt="配置成功"></p>
-<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>​    做完以上的步骤，你就会获得一个免费的Github图床，并且由于有<code>jsdelivr</code>的帮助，我们的图片从国内访问也会加载的非常快！</p>
-<p>你可能会需要：</p>
-<p><a target="_blank" rel="noopener" href="https://picgo.github.io/PicGo-Doc/zh/guide/config.html#%E9%98%BF%E9%87%8C%E4%BA%91oss">PicGo官方文档</a></p>
+<p>在<code>Github</code>上有相关的仓库，具体的配置可以参考官方的说明文档，有中文版👉<a target="_blank" rel="noopener" href="https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md">链接</a></p>
+<p>如果你比较懒，那么请看我下面简易的讲解。</p>
+<h2 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h2><h3 id="配置-vcpkg"><a href="#配置-vcpkg" class="headerlink" title="配置 vcpkg"></a>配置 vcpkg</h3><p>​    首先，根据官方推荐 ，可在C盘新建一个 <code>src </code>文件夹（<code>C:\src</code>）</p>
+<p>​    在该目录下运行 PowerShell 或普通 cmd。运行以下命令下载<code>vcpkg</code>，执行<code>bootstrap-vcpkg.bat</code>脚本，并使其可在VS中使用</p>
+<p>​    可将安装目录（如<code>C:\src\vcpkg</code>）添加进系统环境变量中以方便命令行调用</p>
+<p>​    如未安装过Git需先下载安装 Git，并将Git所在目录添加进环境变量中</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git clone https://github.com/microsoft/vcpkg
+.\vcpkg\bootstrap-vcpkg.bat
+.\vcpkg\vcpkg integrate install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="配置-OpenGL"><a href="#配置-OpenGL" class="headerlink" title="配置 OpenGL"></a>配置 OpenGL</h3><p>目前最新的也是最推荐安装的IoenGL窗口相关第三方库为glfw，API相关第三方库为glad。运行下列命令安装。</p>
+<pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">.\vcpkg\vcpkg install glfw3 
+.\vcpkg\vcpkg install glad<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>📌请注意: vcpkg在Windows中默认编译并安装x86版本的库。 若要编译并安装x64版本，请执行</p>
+</blockquote>
+<pre class="line-numbers language-she" data-language="she"><code class="language-she">&gt; .\vcpkg\vcpkg install [package name]:x64-windows<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p>接下来就可以在vs里直接include所需文件，不会产生编译和链接问题。</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;glad/glad.h&gt;
+#include &lt;GLFW/glfw3.h&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>​    <code>vcpkg</code>方式配置的缺点就是因为是直接使用编译好的库，所以不方便查看源码。如有查看源码需求还是要使用自己编译相关库并链接进自己的工程的方式。但如只是想调用接口这种方式即可满足需求。如库有更新，可直接使用<code>vcpkg</code>进行更新。</p>
+<h1 id="VS内部设置"><a href="#VS内部设置" class="headerlink" title="VS内部设置"></a>VS内部设置</h1><p>虽然挺麻烦,但是我建议自己跟着做一做，会加深你对<code>C++</code>引用第三方库的理解。</p>
+<p>这里可以参考这篇文章👉<a target="_blank" rel="noopener" href="https://blog.csdn.net/AvatarForTest/article/details/79199807?utm_source=app&amp;app_version=5.0.1&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">链接</a></p>
+<h1 id="你可能会需要"><a href="#你可能会需要" class="headerlink" title="你可能会需要"></a>你可能会需要</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AvatarForTest/article/details/79199807?utm_source=app&amp;app_version=5.0.1&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">OpenGL+VS2017 环境配置(亲测好使)::附带必要知识点</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/linuxAndMcu/p/14696542.html">C++开源库 - 包管理工具Vcpkg安装使用教程 </a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_39690181/article/details/82910610">解决vcpkg下载缓慢的问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://learnopengl-cn.github.io/">OpenGL经典教程</a></p>
 
                 
             </div>
@@ -583,7 +571,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/">https://zhanlutuzi.github.io/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/03/20/use-vcpkg-to-manage-cpp-libs/">https://zhanlutuzi.github.io/2022/03/20/use-vcpkg-to-manage-cpp-libs/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,20 +609,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%99%E7%A8%8B/">
-                                    <span class="chip bg-color">教程</span>
+                                <a href="/tags/C/">
+                                    <span class="chip bg-color">C++</span>
                                 </a>
                             
-                                <a href="/tags/Typora/">
-                                    <span class="chip bg-color">Typora</span>
-                                </a>
-                            
-                                <a href="/tags/Github/">
-                                    <span class="chip bg-color">Github</span>
-                                </a>
-                            
-                                <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                                    <span class="chip bg-color">图床</span>
+                                <a href="/tags/OpenGL/">
+                                    <span class="chip bg-color">OpenGL</span>
                                 </a>
                             
                         </div>
@@ -808,57 +788,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">
+                <a href="/2022/03/20/use-vcpkg-to-manage-cpp-libs/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png" class="responsive-img" alt="你真的了解字体吗？| 衬线与非衬线">
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320010437117.png" class="responsive-img" alt="配置OpenGL C++ 开发环境">
                         
-                        <span class="card-title">你真的了解字体吗？| 衬线与非衬线</span>
+                        <span class="card-title">配置OpenGL C++ 开发环境</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            详解几种字体之间的区别
+                            教你配置 OpenGL 的开发环境，使用 Vcpkg 或者原始手动配置。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-20
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%A7%91%E6%99%AE/" class="post-category">
-                                    科普
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                        <span class="chip bg-color">前端</span>
+                    <a href="/tags/C/">
+                        <span class="chip bg-color">C++</span>
                     </a>
                     
-                    <a href="/tags/%E8%AE%BE%E8%AE%A1/">
-                        <span class="chip bg-color">设计</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%AD%97%E4%BD%93/">
-                        <span class="chip bg-color">字体</span>
-                    </a>
-                    
-                    <a href="/tags/%E7%A7%91%E6%99%AE/">
-                        <span class="chip bg-color">科普</span>
+                    <a href="/tags/OpenGL/">
+                        <span class="chip bg-color">OpenGL</span>
                     </a>
                     
                 </div>
@@ -872,28 +846,32 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/13/envi-shan-tui/">
+                <a href="/2022/03/02/os01-introduction/">
                     <div class="card-image">
                         
-                        <img src="https://pic.imgdb.cn/item/6208ec412ab3f51d91ada4d6.png" class="responsive-img" alt="ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案">
+                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
                         
-                        <span class="card-title">ENVI 5.3 辐射定标时无法读取Landsat头文件并闪退的解决方案</span>
+                        <span class="card-title">操作系统学习笔记_01</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            ENVI 5.3 闪退的一种方法
+                            从零开始的操作系统学习记录『第一章绪论』
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-02
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            湛泸兔子
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%AC%94%E8%AE%B0/" class="post-category">
+                                    笔记
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -901,16 +879,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/ENVI/">
-                        <span class="chip bg-color">ENVI</span>
+                    <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">
+                        <span class="chip bg-color">操作系统</span>
                     </a>
                     
-                    <a href="/tags/GIS/">
-                        <span class="chip bg-color">GIS</span>
-                    </a>
-                    
-                    <a href="/tags/%E9%81%A5%E6%84%9F/">
-                        <span class="chip bg-color">遥感</span>
+                    <a href="/tags/%E7%AC%94%E8%AE%B0/">
+                        <span class="chip bg-color">笔记</span>
                     </a>
                     
                 </div>

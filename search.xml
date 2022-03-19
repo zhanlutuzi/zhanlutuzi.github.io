@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>配置OpenGL C++ 开发环境</title>
+      <link href="/2022/03/20/use-vcpkg-to-manage-cpp-libs/"/>
+      <url>/2022/03/20/use-vcpkg-to-manage-cpp-libs/</url>
+      
+        <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    这学期新开了计算机图形学的课程，第一次作业就是配置<code>OpenGL</code>开发环境。配置环境对于许多人来说都是头疼的问题，我也不例外。</p><p>​    这里我提供两种配置环境的方法供参考。</p><ul><li>使用<code>Vcpkg</code>进行配置（强烈推荐）</li><li>使用<code>Visual Studio</code>内部手动设置（很麻烦）</li></ul><h1 id="使用-Vcpkg-配置"><a href="#使用-Vcpkg-配置" class="headerlink" title="使用 Vcpkg 配置"></a>使用 Vcpkg 配置</h1><h2 id="什么是Vcpkg"><a href="#什么是Vcpkg" class="headerlink" title="什么是Vcpkg?"></a>什么是<code>Vcpkg</code>?</h2><blockquote><p>Vcpkg 可帮助您在 Windows、 Linux 和 MacOS 上管理 C 和 C++ 库。</p><p>它是一个开源的包管理工具</p></blockquote><p>在<code>Github</code>上有相关的仓库，具体的配置可以参考官方的说明文档，有中文版👉<a href="https://github.com/microsoft/vcpkg/blob/master/README_zh_CN.md">链接</a></p><p>如果你比较懒，那么请看我下面简易的讲解。</p><h2 id="详细步骤"><a href="#详细步骤" class="headerlink" title="详细步骤"></a>详细步骤</h2><h3 id="配置-vcpkg"><a href="#配置-vcpkg" class="headerlink" title="配置 vcpkg"></a>配置 vcpkg</h3><p>​    首先，根据官方推荐 ，可在C盘新建一个 <code>src </code>文件夹（<code>C:\src</code>）</p><p>​    在该目录下运行 PowerShell 或普通 cmd。运行以下命令下载<code>vcpkg</code>，执行<code>bootstrap-vcpkg.bat</code>脚本，并使其可在VS中使用</p><p>​    可将安装目录（如<code>C:\src\vcpkg</code>）添加进系统环境变量中以方便命令行调用</p><p>​    如未安装过Git需先下载安装 Git，并将Git所在目录添加进环境变量中</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">git clone https://github.com/microsoft/vcpkg.\vcpkg\bootstrap-vcpkg.bat.\vcpkg\vcpkg integrate install<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre><h3 id="配置-OpenGL"><a href="#配置-OpenGL" class="headerlink" title="配置 OpenGL"></a>配置 OpenGL</h3><p>目前最新的也是最推荐安装的IoenGL窗口相关第三方库为glfw，API相关第三方库为glad。运行下列命令安装。</p><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">.\vcpkg\vcpkg install glfw3 .\vcpkg\vcpkg install glad<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><blockquote><p>📌请注意: vcpkg在Windows中默认编译并安装x86版本的库。 若要编译并安装x64版本，请执行</p></blockquote><pre class="line-numbers language-she" data-language="she"><code class="language-she">&gt; .\vcpkg\vcpkg install [package name]:x64-windows<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>接下来就可以在vs里直接include所需文件，不会产生编译和链接问题。</p><pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;glad/glad.h&gt;#include &lt;GLFW/glfw3.h&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h2 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h2><p>​    <code>vcpkg</code>方式配置的缺点就是因为是直接使用编译好的库，所以不方便查看源码。如有查看源码需求还是要使用自己编译相关库并链接进自己的工程的方式。但如只是想调用接口这种方式即可满足需求。如库有更新，可直接使用<code>vcpkg</code>进行更新。</p><h1 id="VS内部设置"><a href="#VS内部设置" class="headerlink" title="VS内部设置"></a>VS内部设置</h1><p>虽然挺麻烦,但是我建议自己跟着做一做，会加深你对<code>C++</code>引用第三方库的理解。</p><p>这里可以参考这篇文章👉<a href="https://blog.csdn.net/AvatarForTest/article/details/79199807?utm_source=app&amp;app_version=5.0.1&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">链接</a></p><h1 id="你可能会需要"><a href="#你可能会需要" class="headerlink" title="你可能会需要"></a>你可能会需要</h1><p><a href="https://blog.csdn.net/AvatarForTest/article/details/79199807?utm_source=app&amp;app_version=5.0.1&amp;code=app_1562916241&amp;uLinkId=usr1mkqgl919blen">OpenGL+VS2017 环境配置(亲测好使)::附带必要知识点</a></p><p><a href="https://www.cnblogs.com/linuxAndMcu/p/14696542.html">C++开源库 - 包管理工具Vcpkg安装使用教程 </a></p><p><a href="https://blog.csdn.net/qq_39690181/article/details/82910610">解决vcpkg下载缓慢的问题</a></p><p><a href="https://learnopengl-cn.github.io/">OpenGL经典教程</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> C++ </tag>
+            
+            <tag> OpenGL </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>操作系统学习笔记_01</title>
       <link href="/2022/03/02/os01-introduction/"/>
       <url>/2022/03/02/os01-introduction/</url>
