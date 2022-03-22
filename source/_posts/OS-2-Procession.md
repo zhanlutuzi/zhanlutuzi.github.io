@@ -163,7 +163,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 - 中断响应关闭后，系统就完全失去控制了
 - 多处理的系统中，该方案无效，因为其他CPU也会响应中断的。
 
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
+![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
 
 #### 锁变量
 
@@ -175,7 +175,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 - 有纰漏，如果某进程检查锁，发现是开的，但在它准备进入时且还没上锁时，另一个进程进行检测，发现锁是开的，这样就会造成冲突。
 
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
+![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
 
 #### 严格轮换法
 
@@ -189,7 +189,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 - 轮流进入临界区在一个进程比另一个进程慢很多的情况下不适用
 
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
+![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
 
 #### Peterson解决方案
 
