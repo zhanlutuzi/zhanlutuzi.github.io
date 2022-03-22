@@ -619,8 +619,7 @@
 <li>中断响应关闭后，系统就完全失去控制了</li>
 <li>多处理的系统中，该方案无效，因为其他CPU也会响应中断的。</li>
 </ul>
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
-
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
 <h4 id="锁变量"><a href="#锁变量" class="headerlink" title="锁变量"></a>锁变量</h4><p>一种<em>软件解决方案</em></p>
 <blockquote>
 <p>定义一个变量，当作一把锁，进临界区后锁上，出临界区开锁</p>
@@ -629,8 +628,7 @@
 <ul>
 <li>有纰漏，如果某进程检查锁，发现是开的，但在它准备进入时且还没上锁时，另一个进程进行检测，发现锁是开的，这样就会造成冲突。</li>
 </ul>
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
-
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
 <h4 id="严格轮换法"><a href="#严格轮换法" class="headerlink" title="严格轮换法"></a>严格轮换法</h4><blockquote>
 <p>几个进程轮换进入某一临界区，且顺序不能紊乱</p>
 </blockquote>
@@ -640,8 +638,7 @@
 <ul>
 <li>轮流进入临界区在一个进程比另一个进程慢很多的情况下不适用</li>
 </ul>
-<img src="https://inews.gtimg.com/newsapp_bt/0/13508762465/1000" width="30%" height="30%">
-
+<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
 <h4 id="Peterson解决方案"><a href="#Peterson解决方案" class="headerlink" title="Peterson解决方案"></a>Peterson解决方案</h4><p>​    基于<code>Dekker</code> 算法（将轮换法和锁变量以及警告变量的思想相结合）Dijkstra 提出了新的解决方案，<strong>它是有效的，可用的，且应用广泛。</strong>😍</p>
 <p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320204809033.png" alt="算法伪代码"></p>
 <h4 id="TSL指令"><a href="#TSL指令" class="headerlink" title="TSL指令"></a>TSL指令</h4><p>​    这是一种需要硬件支持的方法</p>
