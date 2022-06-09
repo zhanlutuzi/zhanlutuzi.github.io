@@ -311,7 +311,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/MacOS_Catalina_Desktop.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -476,7 +476,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-02-24
+                    2022-06-10
                 </div>
                 
 
@@ -515,7 +515,7 @@
             <div id="articleContent">
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​        前两天上操作系统课，老师给我们布置了一个作业——“在电脑上装上虚拟机，自己运行一下 Ubuntu。” 我操作了一下，成功安装上了 Ubuntu。于是我就想顺便装上 MacOS 体验一下程序员人手一个的 Mac 系统。这便催生了这篇文章的产生，希望对你有所帮助。</p>
 <p>​        为了这篇教程，我花了很大的精力，尝试了常见的<code>VMware</code>&amp;<code>VisualBox</code>两大主流虚拟机，查询了中英文资料，最终成功安装。（PS. 折戟 VisualBox 十次、VMware 配环境三次…）</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png" alt="MacOS_Catalina_Desktop"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/MacOS_Catalina_Desktop.png" alt="MacOS_Catalina_Desktop"></p>
 <h1 id="你需要准备"><a href="#你需要准备" class="headerlink" title="你需要准备"></a>你需要准备</h1><ol>
 <li><p><a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro/workstation-pro-evaluation.html">VMware安装包</a></p>
 </li>
@@ -538,27 +538,27 @@
 <h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="1、安装VMware"><a href="#1、安装VMware" class="headerlink" title="1、安装VMware"></a>1、安装VMware</h2><p>运行安装程序，程序自动安装，最后一步使用激活码激活。</p>
 <h2 id="2、停止-VMware-Workstation-Pro-16-的系统服务"><a href="#2、停止-VMware-Workstation-Pro-16-的系统服务" class="headerlink" title="2、停止 VMware Workstation Pro 16 的系统服务"></a>2、停止 VMware Workstation Pro 16 的系统服务</h2><p>（1）打开任务管理器，进入“服务”版块；</p>
 <p>（2）从下至上，按右键依次停止如图所示与 VM 相关的4个服务。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224150623344.png" alt="停止VM服务"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224150623344.png" alt="停止VM服务"></p>
 <h2 id="3、用-Unlocker-让-VMware-支持安装-macOS-系统"><a href="#3、用-Unlocker-让-VMware-支持安装-macOS-系统" class="headerlink" title="3、用 Unlocker 让 VMware 支持安装 macOS 系统"></a>3、用 Unlocker 让 VMware 支持安装 macOS 系统</h2><p>（1）到 <a target="_blank" rel="noopener" href="https://github.com/DrDonk/unlocker/releases">https://github.com/DrDonk/unlocker/releases</a> 下载最新的 Unlocker。</p>
 <p>（2）解压出文件夹之后，找到<code>win-install.cmd</code>，按右键以管理员身份运行。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132550731.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224132550731.png"></p>
 <p>​        如何确认这一步成功了呢？一种方法是看你的小黑窗里面的一长串英语有没有报错，另一种方法比较简单：看运行完<code>win-install.cmd</code>文件后有没有在 <code>unlocker</code>的文件夹里多出一个<code> backup</code>文件夹（见上一张图），以及你的<code>VMware Workstation</code>文件夹里有没有多出 <code>darwin.iso</code> 和 <code>darwinPre15.iso</code>这两个文件（如下图所示）。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132846085.png" alt="在Everything中查找"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224132846085.png" alt="在Everything中查找"></p>
 <p>（这里推荐一款搜索工具<code>Everything</code>拥有远超 Windows 默认搜索的速度！<a target="_blank" rel="noopener" href="https://github.com/Wox-launcher/Wox/releases/tag/v1.3.524">点击我下载</a>）</p>
 <h2 id="4、创建虚拟机"><a href="#4、创建虚拟机" class="headerlink" title="4、创建虚拟机"></a>4、创建虚拟机</h2><p>按照与第2步相反的顺序启动VM相关的4个服务</p>
 <p>然后启动 VMware Workstation Pro 16，创建新的虚拟机。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133336529.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133336529.png"></p>
 <p>找到之前下载的苹果系统镜像文件，打开。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133410517.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133410517.png"></p>
 <p>选择系统</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133440357.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133440357.png"></p>
 <p>找一个大一点的磁盘存虚拟机文件</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133501865.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133501865.png"></p>
 <p> 继续，最大磁盘100G更宽裕点</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133529741.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133529741.png"></p>
 <p>默认的硬件配置差不多够了，后期还可以修改的。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133613717.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133725154.png" alt="后期在这里改配置"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133613717.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133725154.png" alt="后期在这里改配置"></p>
 <h2 id="5、AMD-CPU再做最后一步设置"><a href="#5、AMD-CPU再做最后一步设置" class="headerlink" title="5、AMD CPU再做最后一步设置"></a>5、AMD CPU再做最后一步设置</h2><p>在虚拟机的目录中找到<code>.vmx</code>后缀的文件，我的虚拟机命名为”mac 11”，因此该文件名为mac 11.vmx，右键编辑(可以使用 VScode 打开)。</p>
 <p>在该文件末尾追加下列语句。</p>
 <pre class="line-numbers language-none"><code class="language-none">smc.version = "0"
@@ -575,14 +575,14 @@ featureCompat.enable = "TRUE"<span aria-hidden="true" class="line-numbers-rows">
 
 
 <h2 id="6、启动虚拟机"><a href="#6、启动虚拟机" class="headerlink" title="6、启动虚拟机"></a>6、启动虚拟机</h2><p>​        如果你启动虚拟机后看到苹果的 Logo 恭喜你，你离胜利不远了！</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134529762.png" alt=" 选磁盘工具，点“继续”"></p>
-<p>​        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134619582.png" alt="抹掉磁盘"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134648645.png" alt="自己命名，改格式，点“抹掉”"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134715160.png" alt="抹掉后叉掉这个窗口"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134755581.png" alt="点安装macOS、“继续”"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134830518.png" alt="选择之前抹掉的磁盘进行安装"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134529762.png" alt=" 选磁盘工具，点“继续”"></p>
+<p>​        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134619582.png" alt="抹掉磁盘"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134648645.png" alt="自己命名，改格式，点“抹掉”"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134715160.png" alt="抹掉后叉掉这个窗口"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134755581.png" alt="点安装macOS、“继续”"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134830518.png" alt="选择之前抹掉的磁盘进行安装"></p>
 <p>到了这一步就没有什么难度了，按照官方的引导一步一步做下去就可以了，但可能需要20分钟安装系统😶请耐心等待.</p>
-<h3 id="Enjoy-your-MacOS😉"><a href="#Enjoy-your-MacOS😉" class="headerlink" title="Enjoy your MacOS😉"></a>Enjoy your MacOS😉</h3><p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224142433087.png" alt="MacOS"></p>
+<h3 id="Enjoy-your-MacOS😉"><a href="#Enjoy-your-MacOS😉" class="headerlink" title="Enjoy your MacOS😉"></a>Enjoy your MacOS😉</h3><p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224142433087.png" alt="MacOS"></p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>VisualBox 安装 MacOS 可谓困难重重… 如果你是 AMD CPU 我建议你用 VMware.</p>
 <h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p>鸣谢:</p>
 <p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/eMAgVApZNt98ovbBEly6Pw">2022年最新保姆级VM16虚拟机安装macOS苹果系统教程</a></p>
@@ -871,7 +871,7 @@ featureCompat.enable = "TRUE"<span aria-hidden="true" class="line-numbers-rows">
                 <a href="/2022/03/02/os01-introduction/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
                         
                         <span class="card-title">操作系统学习笔记_01</span>
                     </div>
@@ -923,7 +923,7 @@ featureCompat.enable = "TRUE"<span aria-hidden="true" class="line-numbers-rows">
                 <a href="/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220222215434044.png" class="responsive-img" alt="你真的了解字体吗？| 衬线与非衬线">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222215434044.png" class="responsive-img" alt="你真的了解字体吗？| 衬线与非衬线">
                         
                         <span class="card-title">你真的了解字体吗？| 衬线与非衬线</span>
                     </div>
@@ -1207,7 +1207,7 @@ featureCompat.enable = "TRUE"<span aria-hidden="true" class="line-numbers-rows">
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">31k</span>
+                        class="white-color">32.5k</span>
             
             
             

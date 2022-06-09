@@ -311,7 +311,7 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
@@ -468,7 +468,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-03-22
+                    2022-06-10
                 </div>
                 
 
@@ -512,7 +512,7 @@
 <blockquote>
 <p>随着计算机技术的不断发展，真正的并行已经可以实现了，现代 CPU 有多个核心，能够同时运行多道进程。</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320164311643.png">    ❗ 由于 CPU 不停地在不同进程之间进行切换，每个进程的执行速度往往不确定，所以在编程的时候不能对时序做固定的假设。</p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320164311643.png">    ❗ 由于 CPU 不停地在不同进程之间进行切换，每个进程的执行速度往往不确定，所以在编程的时候不能对时序做固定的假设。</p>
 <h2 id="进程与程序之间的关系"><a href="#进程与程序之间的关系" class="headerlink" title="进程与程序之间的关系"></a>进程与程序之间的关系</h2><ul>
 <li>一个进程是某种类型的一个活动，它具有不可再现性</li>
 <li>一个程序则是用适当形式描述的算法</li>
@@ -565,7 +565,7 @@
 </li>
 </ul>
 <p>他们之间的关系与转换如下图：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320194220624.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320194220624.png"></p>
 <ul>
 <li>当某个进程在逻辑上不能继续运行时，它就会被阻塞<ul>
 <li>等待使用别的输入</li>
@@ -590,7 +590,7 @@
 <li>进程间如果存在依赖关系，如何设计他们合适的运行顺序</li>
 </ul>
 <h3 id="竞争条件"><a href="#竞争条件" class="headerlink" title="竞争条件"></a>竞争条件</h3><p>​    两个多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序，就称为竞争条件<code>race condition</code></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320200559380.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320200559380.png"></p>
 <h3 id="临界区"><a href="#临界区" class="headerlink" title="临界区"></a>临界区</h3><ul>
 <li>互斥<code>mutual exclusion</code><ul>
 <li>以某种手段确保当一个进程在使用一个共享变量或文件时，其他进程不能做同样的操作</li>
@@ -619,7 +619,7 @@
 <li>中断响应关闭后，系统就完全失去控制了</li>
 <li>多处理的系统中，该方案无效，因为其他CPU也会响应中断的。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png"></p>
 <h4 id="锁变量"><a href="#锁变量" class="headerlink" title="锁变量"></a>锁变量</h4><p>一种<em>软件解决方案</em></p>
 <blockquote>
 <p>定义一个变量，当作一把锁，进临界区后锁上，出临界区开锁</p>
@@ -628,19 +628,19 @@
 <ul>
 <li>有纰漏，如果某进程检查锁，发现是开的，但在它准备进入时且还没上锁时，另一个进程进行检测，发现锁是开的，这样就会造成冲突。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png"></p>
 <h4 id="严格轮换法"><a href="#严格轮换法" class="headerlink" title="严格轮换法"></a>严格轮换法</h4><blockquote>
 <p>几个进程轮换进入某一临界区，且顺序不能紊乱</p>
 </blockquote>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320203026374.png" alt="伪代码"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320203026374.png" alt="伪代码"></p>
 <p>评价：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320203830167.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320203830167.png"></p>
 <ul>
 <li>轮流进入临界区在一个进程比另一个进程慢很多的情况下不适用</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png"></p>
 <h4 id="Peterson解决方案"><a href="#Peterson解决方案" class="headerlink" title="Peterson解决方案"></a>Peterson解决方案</h4><p>​    基于<code>Dekker</code> 算法（将轮换法和锁变量以及警告变量的思想相结合）Dijkstra 提出了新的解决方案，<strong>它是有效的，可用的，且应用广泛。</strong>😍</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320204809033.png" alt="算法伪代码"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320204809033.png" alt="算法伪代码"></p>
 <h4 id="TSL指令"><a href="#TSL指令" class="headerlink" title="TSL指令"></a>TSL指令</h4><p>​    这是一种需要硬件支持的方法</p>
 <ul>
 <li><strong>优点</strong><ul>
@@ -666,8 +666,8 @@
 <li>共享缓冲区共有N个；</li>
 <li>任何时刻只能有一个进程可对共享缓冲区进行操作。</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321172118498.png"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321172950133.png" alt="实现代码"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321172118498.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321172950133.png" alt="实现代码"></p>
 <h3 id="信号量"><a href="#信号量" class="headerlink" title="信号量"></a>信号量</h3><p>​        <code>E.W.Dijkstra</code>在 1965 年提出，它使用一个整型变量来累计唤醒次数，引入一种新的变量类型，称作信号量<code>semaphore</code>。</p>
 <p>​        <font color="green" size="5" face="黑体">信号量被广泛使用！</font></p>
 <ul>
@@ -680,16 +680,16 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321181542834.png" alt="原语"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321181542834.png" alt="原语"></p>
 <p>有这样两个<code>原子操作</code>：</p>
 <ul>
 <li><code>down</code>相当于 sleep 操作</li>
 <li><code>up</code>相当于 wakeup 操作</li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/ApplicationFrameHost_q5keEGrUr2.png" alt="信号量解决生产者消费者问题"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/ApplicationFrameHost_q5keEGrUr2.png" alt="信号量解决生产者消费者问题"></p>
 <p>​    信号量<code>mutex</code>用于互斥，用于保证任一时刻只有一个进程读写缓冲区和相关变量。</p>
 <h3 id="管程"><a href="#管程" class="headerlink" title="管程"></a>管程</h3><p>管程是对信号量的一种封装，提供一种实现互斥的简便途径。</p>
-<img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321182555079.png">
+<img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321182555079.png">
 
 <p>来自知乎陈龙的解释👉<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30641734/answer/378435042">链接</a></p>
 <blockquote>
@@ -709,8 +709,8 @@
 </ul>
 <p>所以，我们需要新的解决办法！</p>
 <h1 id="经典-IPC-问题"><a href="#经典-IPC-问题" class="headerlink" title="经典 IPC 问题"></a>经典 IPC 问题</h1><h2 id="哲学家进餐"><a href="#哲学家进餐" class="headerlink" title="哲学家进餐"></a>哲学家进餐</h2><p>是一类<font color="green">多进程访问有限资源</font>的问题</p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321194612142.png" alt="一种错误的解法"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321194255017.png" alt="解决的代码"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321194612142.png" alt="一种错误的解法"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321194255017.png" alt="解决的代码"></p>
 <h2 id="读者写者问题"><a href="#读者写者问题" class="headerlink" title="读者写者问题"></a>读者写者问题</h2><p>是一类<font color="green">数据库的访问模型</font></p>
 <h1 id="进程调度"><a href="#进程调度" class="headerlink" title="进程调度"></a>进程调度</h1><h2 id="几种分类"><a href="#几种分类" class="headerlink" title="几种分类"></a>几种分类</h2><h3 id="按调度层次"><a href="#按调度层次" class="headerlink" title="按调度层次"></a>按调度层次</h3><ul>
 <li>宏观调度<ul>
@@ -726,7 +726,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322130630989.png"></p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322130630989.png"></p>
 <h3 id="按时间周期"><a href="#按时间周期" class="headerlink" title="按时间周期"></a>按时间周期</h3><ul>
 <li>长期<ul>
 <li>进程投入进程缓冲池</li>
@@ -1080,7 +1080,7 @@
                 <a href="/2022/03/20/use-vcpkg-to-manage-cpp-libs/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320010437117.png" class="responsive-img" alt="配置OpenGL C++ 开发环境">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320010437117.png" class="responsive-img" alt="配置OpenGL C++ 开发环境">
                         
                         <span class="card-title">配置OpenGL C++ 开发环境</span>
                     </div>
@@ -1132,7 +1132,7 @@
                 <a href="/2022/03/02/os01-introduction/">
                     <div class="card-image">
                         
-                        <img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_01">
                         
                         <span class="card-title">操作系统学习笔记_01</span>
                     </div>
@@ -1408,7 +1408,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">31k</span>
+                        class="white-color">32.5k</span>
             
             
             

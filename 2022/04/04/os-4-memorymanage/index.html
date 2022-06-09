@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="操作系统学习笔记_03, 湛泸兔子">
-    <meta name="description" content="从零开始的操作系统学习记录『第三章|输入输出系统』">
+    <meta name="keywords" content="OS-4 MemoryManage, 湛泸兔子">
+    <meta name="description" content="从零开始的操作系统学习记录『第四章|存储管理』">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>操作系统学习笔记_03 | 湛泸兔子</title>
+    <title>OS-4 MemoryManage | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -316,7 +316,7 @@
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">操作系统学习笔记_03</h1>
+                    <h1 class="description center-align post-title">OS-4 MemoryManage</h1>
                 </div>
             </div>
         </div>
@@ -475,14 +475,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    768
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    2 分
                 </div>
                 
 
@@ -505,144 +505,62 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="I-x2F-O-硬件原理"><a href="#I-x2F-O-硬件原理" class="headerlink" title="I/O 硬件原理"></a>I/O 硬件原理</h1><h2 id="I-x2F-O-设备"><a href="#I-x2F-O-设备" class="headerlink" title="I/O 设备"></a>I/O 设备</h2><p>I/O 设备可以分为：</p>
-<ul>
-<li>块设备<code>Block Device</code><ul>
-<li>设备将信息存储在固定大小的块中<code>如磁盘</code></li>
-<li>数据块大小一般为<code>512 Bytes--&gt;32768 Bytes</code></li>
-<li>每个块都能独立于其它块而读写</li>
-</ul>
-</li>
-<li>字符设备<code>Character Device</code><ul>
-<li>设备发送或接收字符流</li>
-<li>无法编址，也就不存在寻址操作</li>
-<li>如<code>打印机、键盘、网络接口、鼠标等</code></li>
-</ul>
-</li>
-<li>其他<ul>
-<li>无法被分到块设备或字符设备中</li>
-<li>比如<code>时钟</code></li>
-</ul>
-</li>
-</ul>
-<blockquote>
-<p>❗ I/O 设备在速度上差异很大，见下图，这为我们管理 I/O 设备提出了挑战，在后文中会提到解决办法。</p>
-</blockquote>
-<img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404160027122.png" style="zoom:50%;">
-
-<h2 id="设备控制器"><a href="#设备控制器" class="headerlink" title="设备控制器"></a>设备控制器</h2><p>​    <strong>I/O设备组成中的电子部件</strong>被称为设备控制器，操作系统往往和设备的控制器打交道，大多数个人计算机采用<code>总线模型</code>进行 CPU 与控制器之间的交流。</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/ApplicationFrameHost_1vQQ1KaZ7j.png"></p>
-<p>​    大型机则采用其他模型，此类模型带有<code>I/O通道</code>，一种专用于输入输出工作的计算机。</p>
-<h2 id="内存映射I-x2F-O"><a href="#内存映射I-x2F-O" class="headerlink" title="内存映射I/O"></a>内存映射I/O</h2><blockquote>
-<p>❓ CPU如何控制寄存器与设备数据缓冲区进行通信？</p>
-</blockquote>
-<ul>
-<li>使用I/O端口<ul>
-<li>内存和I/O地址空间不同</li>
-</ul>
-</li>
-<li>内存映射I/O<ul>
-<li>I/O寄存器是内存空间的一部分</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404193104304.png"></p>
-<h2 id="中断"><a href="#中断" class="headerlink" title="中断"></a>中断</h2><p>大部分I/O接口提供一个输出用于驱动<code>IRQ Interrupt ReQuest</code>线</p>
-<p>即插即用技术使得 BIOS 在启动时为设备自动分配 IRQ 以避免冲突</p>
-<h2 id="直接存储器存取-DMA"><a href="#直接存储器存取-DMA" class="headerlink" title="直接存储器存取 DMA"></a>直接存储器存取 DMA</h2><p><code>Direct Memory Access , DMA</code></p>
-<p>它使得毋须占用CPU宝贵的时间去交换数据，利用 DMA 控制器调控多个设备的数据传送</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404193751362.png"></p>
-<h1 id="I-x2F-O-软件原理"><a href="#I-x2F-O-软件原理" class="headerlink" title="I/O 软件原理"></a>I/O 软件原理</h1><h2 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h2><ul>
-<li><p>设备无关性</p>
-<ul>
-<li>访问I/O毋须指定设备</li>
-</ul>
-</li>
-<li><p>统一命名法</p>
-</li>
-<li><p>错误处理</p>
-</li>
-<li><p>同步/异步传输</p>
-</li>
-<li><p>缓冲</p>
-</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404200109964.png"></p>
-<h2 id="设备驱动程序"><a href="#设备驱动程序" class="headerlink" title="设备驱动程序"></a>设备驱动程序</h2><p>用来控制特定设备的一组特定的代码被称作设备驱动程序，驱动程序传统上是系统内核的一部分</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404201218694.png"></p>
-<h1 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h1><h2 id="资源"><a href="#资源" class="headerlink" title="资源"></a>资源</h2><ul>
-<li>可抢占资源<ul>
-<li>抢占以后没有副作用，如存储器</li>
-</ul>
-</li>
-<li>不可抢占资源<ul>
-<li>抢占后危害很大，比如CD刻录机</li>
-<li>死锁与不可抢占资源相关</li>
-</ul>
-</li>
-</ul>
-<h3 id="使用一个资源的顺序"><a href="#使用一个资源的顺序" class="headerlink" title="使用一个资源的顺序"></a>使用一个资源的顺序</h3><ol>
-<li>请求资源</li>
-<li>使用资源</li>
-<li>释放资源</li>
-</ol>
-<h2 id="死锁的原理"><a href="#死锁的原理" class="headerlink" title="死锁的原理"></a>死锁的原理</h2><blockquote>
-<p>一个进程集合中的每个进程都在等待本集合中其他进程才能引发的事件，那么这组进程是死锁的</p>
-</blockquote>
-<h3 id="死锁发生的四个必要条件"><a href="#死锁发生的四个必要条件" class="headerlink" title="死锁发生的四个必要条件"></a>死锁发生的四个必要条件</h3><ul>
-<li>互斥条件<ul>
-<li>一个资源，要么被分配给一个进程，要么就是可用的</li>
-</ul>
-</li>
-<li>占有和等待条件<ul>
-<li>已分配到资源的进程可以请求新的资源</li>
-</ul>
-</li>
-<li>不可抢占条件<ul>
-<li>被分配的资源不能抢占</li>
-</ul>
-</li>
-<li>环路等待条件<ul>
-<li>环路中每个进程都在等待下一个进程占用的资源</li>
-</ul>
-</li>
-</ul>
-<h3 id="死锁模型"><a href="#死锁模型" class="headerlink" title="死锁模型"></a>死锁模型</h3><p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404202545162.png"></p>
-<h3 id="处理死锁的四个策略"><a href="#处理死锁的四个策略" class="headerlink" title="处理死锁的四个策略"></a>处理死锁的四个策略</h3><ul>
-<li>忽略该问题<ul>
-<li>鸵鸟算法</li>
-</ul>
-</li>
-<li>检测死锁并恢复</li>
-<li>谨慎地对资源进行动态分配</li>
-<li>破坏上述四个必要条件之一</li>
-</ul>
-<h2 id="死锁的预防"><a href="#死锁的预防" class="headerlink" title="死锁的预防"></a>死锁的预防</h2><ul>
-<li>破坏互斥使用条件</li>
-<li>禁止已拥有资源的进程等待其他资源</li>
-<li>给所有资源提供一个全局编号，请求需要按编号顺序提出</li>
-</ul>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404204123554.png"></p>
-<h2 id="避免死锁"><a href="#避免死锁" class="headerlink" title="避免死锁"></a>避免死锁</h2><p><strong><font color="red" size="4.5" face="仿宋">通过仔细分配资源来避免死锁</font></strong></p>
-<h3 id="单一资源的银行家算法"><a href="#单一资源的银行家算法" class="headerlink" title="单一资源的银行家算法"></a>单一资源的银行家算法</h3><p>在进程申请资源的时候，判断本次申请是否安全，如果安全再分配，就像银行借贷款。</p>
-<h3 id="资源轨迹"><a href="#资源轨迹" class="headerlink" title="资源轨迹"></a>资源轨迹</h3><p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404205750270.png"></p>
-<p>上图中，阴影区域内就是资源发生冲突的区域</p>
-<h3 id="多种资源的银行家算法"><a href="#多种资源的银行家算法" class="headerlink" title="多种资源的银行家算法"></a>多种资源的银行家算法</h3><p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404210239120.png"></p>
-<ul>
-<li>E 总资源</li>
-<li>P 已分配资源</li>
-<li>A 剩余资源</li>
-</ul>
-<p>算法详情：</p>
+                <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>最佳的存储器当然是容量无限大、速度无限快；但由于经济和技术原因，现实中通常把存储器分为四类：</p>
 <ol>
-<li>查找右边矩阵中是否有一行，其未被满足的资源数均小于等于A。如果不存在这样的行，系统将死锁，因为任何进程都无法运行结束。</li>
-<li>若找到这样一行，则可以假设它获得所需的资源并运行结束，将该进程标为结束，并将资源加到向量 A 上。</li>
-<li>重复以上两步，直到所有的进程都标记为结束。若能达到这种状态，则初始状态是安全的；或者直到发生死锁。</li>
+<li><code>CPU</code>内部寄存器<ul>
+<li>访问速度最快、容量小、昂贵</li>
+</ul>
+</li>
+<li>高速缓存<code>Cache</code></li>
+<li>内存<ul>
+<li>速度适中、价格适中</li>
+</ul>
+</li>
+<li>磁盘<ul>
+<li>容量大、断电数据仍然保存，非易失型</li>
+</ul>
+</li>
 </ol>
-<blockquote>
-<p>📌事实上，银行家算法虽然很有意义，但缺乏实用价值，因为很少有进程能在运行前知道自己所需资源的最大值！</p>
-</blockquote>
-
+<h2 id="存储器的层次结构"><a href="#存储器的层次结构" class="headerlink" title="存储器的层次结构"></a>存储器的层次结构</h2><p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220513221926760.png"></p>
+<h2 id="存储管理器"><a href="#存储管理器" class="headerlink" title="存储管理器"></a>存储管理器</h2><ul>
+<li>记录存储器的使用情况</li>
+<li>存储空间的分配与回收</li>
+<li>内存上保存不下的进程数据转移至磁盘上保存</li>
+</ul>
+<h1 id="2-基本的存储管理"><a href="#2-基本的存储管理" class="headerlink" title="2.基本的存储管理"></a>2.基本的存储管理</h1><p>存储管理系统分为两类：</p>
+<ol>
+<li>需要在磁盘和内存间把进程换进换出</li>
+<li>不需要换进换出</li>
+</ol>
+<p>上面的换进换出都是因为<font color="red">内存不足</font>而引起的。</p>
+<h2 id="2-1-单道程序存储管理"><a href="#2-1-单道程序存储管理" class="headerlink" title="2.1 单道程序存储管理"></a>2.1 单道程序存储管理</h2><p>​        把整个内存划分为用户区和系统区，用户区一次只能装入一个进程。</p>
+<p>下图中</p>
+<ul>
+<li>（a）用于早期大小型机</li>
+<li>（b）用于掌上电脑、嵌入式系统</li>
+<li>（c）用于早期PC 如MS-DOS</li>
+<li>存放在内存高端的ROM中的系统内容，称为基本输入输出系统<code>Basic Input and Output System,BIOS</code></li>
+</ul>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220513223826416.png"></p>
+<p>这种方式一次只能运行一个进程，若要运行新的进程就把旧的进程覆盖掉。</p>
+<h2 id="2-2-固定分区的多道程序系统"><a href="#2-2-固定分区的多道程序系统" class="headerlink" title="2.2 固定分区的多道程序系统"></a>2.2 固定分区的多道程序系统</h2><p>对于多进程的系统，一个进程由于I/O被阻塞时，另一个进程可以去使用CPU，增加了CPU的利用率。</p>
+<p>为了实现多道程序技术，将内存划分为n个分区，各分区的大小可以相等可以不等。</p>
+<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220513225505899.png"></p>
+<p>​        上图中a有缺陷，可能小分区队列是满的，大分区确是空的，造成浪费。为了改变这种情况就使用了b中的方案，使用单一的输入队列；有分区空闲时，找到能装入该分区的最大进程，减少浪费空间。但这样小进程被歧视，不易被分配到空间。</p>
+<p>解决方法</p>
+<ul>
+<li>始终保留至少一个小分区</li>
+<li>规定一个进程被忽略的次数不能超过k次</li>
+</ul>
+<p>​    上面讲到的方法被称为固定数量任务的多道程序<code>Multiprogramming with a Fixed number of Tasks,MFT</code>操作员早晨开机时人为划分出多个分区，在IBM早期的大型机OS/360上使用了多年。<font color="red">现在很少有人会使用这种方法。</font></p>
+<h2 id="2-3-重定位和存储保护"><a href="#2-3-重定位和存储保护" class="headerlink" title="2.3 重定位和存储保护"></a>2.3 重定位和存储保护</h2><p>不同的作业在不同的分区运行，当一个程序被链接的时候，链接器必须知道程序将在内存的什么地方运行。</p>
+<p>内存保护，不同分区不能彼此干扰</p>
+<p>一种解决方案</p>
+<ul>
+<li>加入基地址寄存器和边界寄存器</li>
+</ul>
+<p><font color="red">现在没有人会使用这种方法。</font></p>
+<h1 id="3-交换技术"><a href="#3-交换技术" class="headerlink" title="3.交换技术"></a>3.交换技术</h1><h1 id="4-虚拟存储管理"><a href="#4-虚拟存储管理" class="headerlink" title="4.虚拟存储管理"></a>4.虚拟存储管理</h1><h1 id="5-页面置换算法"><a href="#5-页面置换算法" class="headerlink" title="5.页面置换算法"></a>5.页面置换算法</h1><h1 id="6-页式存储管理中的设计问题"><a href="#6-页式存储管理中的设计问题" class="headerlink" title="6.页式存储管理中的设计问题"></a>6.页式存储管理中的设计问题</h1><h1 id="7-段式存储管理"><a href="#7-段式存储管理" class="headerlink" title="7.段式存储管理"></a>7.段式存储管理</h1>
                 
             </div>
             <hr/>
@@ -668,7 +586,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/04/04/os-3-i-o/">https://zhanlutuzi.github.io/2022/04/04/os-3-i-o/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/04/04/os-4-memorymanage/">https://zhanlutuzi.github.io/2022/04/04/os-4-memorymanage/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -877,9 +795,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhanlutuzi.github.io/2022/04/04/os-3-i-o/';
-        this.page.identifier = '/2022/04/04/os-3-i-o/';
-        this.page.title = '操作系统学习笔记_03';
+        this.page.url = 'https://zhanlutuzi.github.io/2022/04/04/os-4-memorymanage/';
+        this.page.identifier = '/2022/04/04/os-4-memorymanage/';
+        this.page.title = 'OS-4 MemoryManage';
     };
     let disqus_shortname = 'zhanlutuzi.top';
 
@@ -915,84 +833,24 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2022/06/09/macos-vmware-question-solve/">
+                <a href="/2022/04/04/os-3-i-o/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220609232953197.png" class="responsive-img" alt="虚拟机安装MacOS一些问题的解决">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png" class="responsive-img" alt="操作系统学习笔记_03">
                         
-                        <span class="card-title">虚拟机安装MacOS一些问题的解决</span>
+                        <span class="card-title">操作系统学习笔记_03</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            解决 1.虚拟机的代理 2.MacOS显示分辨率异常
+                            从零开始的操作系统学习记录『第三章|输入输出系统』
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-06-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
-                                    教程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/VMware/">
-                        <span class="chip bg-color">VMware</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
-                    </a>
-                    
-                    <a href="/tags/MacOS/">
-                        <span class="chip bg-color">MacOS</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2022/04/04/os-4-memorymanage/">
-                    <div class="card-image">
-                        
-                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png" class="responsive-img" alt="OS-4 MemoryManage">
-                        
-                        <span class="card-title">OS-4 MemoryManage</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            从零开始的操作系统学习记录『第四章|存储管理』
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-04-04
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -1014,6 +872,62 @@
                     
                     <a href="/tags/%E7%AC%94%E8%AE%B0/">
                         <span class="chip bg-color">笔记</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2022/03/28/ncre-3-tutorial/">
+                    <div class="card-image">
+                        
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220328164252948.png" class="responsive-img" alt="计算机三级备考指南">
+                        
+                        <span class="card-title">计算机三级备考指南</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            助力你通过计算机三级网络技术考试！
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-03-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E8%BD%AC%E8%BD%BD/">
+                        <span class="chip bg-color">转载</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%99%E7%A8%8B/">
+                        <span class="chip bg-color">教程</span>
+                    </a>
+                    
+                    <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%89%E7%BA%A7/">
+                        <span class="chip bg-color">计算机三级</span>
                     </a>
                     
                 </div>
