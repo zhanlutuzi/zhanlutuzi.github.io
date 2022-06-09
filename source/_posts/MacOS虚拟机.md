@@ -4,7 +4,7 @@ date: 2022-02-24 12:40:27
 author: zhanlutuzi
 tags: [VMware,虚拟机,MacOS,教程]
 categories: 教程
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/MacOS_Catalina_Desktop.png
 summary: 手把手教你在Windows环境下安装MacOS
 ---
 
@@ -14,7 +14,7 @@ summary: 手把手教你在Windows环境下安装MacOS
 
 ​		为了这篇教程，我花了很大的精力，尝试了常见的`VMware`&`VisualBox`两大主流虚拟机，查询了中英文资料，最终成功安装。（PS. 折戟 VisualBox 十次、VMware 配环境三次...）
 
-![MacOS_Catalina_Desktop](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/MacOS_Catalina_Desktop.png)
+![MacOS_Catalina_Desktop](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/MacOS_Catalina_Desktop.png)
 
 # 你需要准备
 
@@ -50,7 +50,7 @@ summary: 手把手教你在Windows环境下安装MacOS
 
 （2）从下至上，按右键依次停止如图所示与 VM 相关的4个服务。
 
-![停止VM服务](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224150623344.png)
+![停止VM服务](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224150623344.png)
 
 ##   3、用 Unlocker 让 VMware 支持安装 macOS 系统
 
@@ -58,11 +58,11 @@ summary: 手把手教你在Windows环境下安装MacOS
 
 （2）解压出文件夹之后，找到`win-install.cmd`，按右键以管理员身份运行。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132550731.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224132550731.png)
 
 ​		如何确认这一步成功了呢？一种方法是看你的小黑窗里面的一长串英语有没有报错，另一种方法比较简单：看运行完`win-install.cmd`文件后有没有在 `unlocker`的文件夹里多出一个` backup`文件夹（见上一张图），以及你的`VMware Workstation`文件夹里有没有多出 `darwin.iso` 和 `darwinPre15.iso`这两个文件（如下图所示）。
 
-![在Everything中查找](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224132846085.png)
+![在Everything中查找](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224132846085.png)
 
 （这里推荐一款搜索工具`Everything`拥有远超 Windows 默认搜索的速度！[点击我下载](https://github.com/Wox-launcher/Wox/releases/tag/v1.3.524)）
 
@@ -72,29 +72,29 @@ summary: 手把手教你在Windows环境下安装MacOS
 
 然后启动 VMware Workstation Pro 16，创建新的虚拟机。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133336529.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133336529.png)
 
 找到之前下载的苹果系统镜像文件，打开。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133410517.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133410517.png)
 
 选择系统
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133440357.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133440357.png)
 
 找一个大一点的磁盘存虚拟机文件
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133501865.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133501865.png)
 
  继续，最大磁盘100G更宽裕点
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133529741.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133529741.png)
 
 默认的硬件配置差不多够了，后期还可以修改的。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133613717.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133613717.png)
 
-![后期在这里改配置](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224133725154.png)
+![后期在这里改配置](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224133725154.png)
 
 ## 5、AMD CPU再做最后一步设置
 
@@ -121,23 +121,23 @@ featureCompat.enable = "TRUE"
 
 ​		如果你启动虚拟机后看到苹果的 Logo 恭喜你，你离胜利不远了！
 
-![ 选磁盘工具，点“继续”](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134529762.png)
+![ 选磁盘工具，点“继续”](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134529762.png)
 
-​		![抹掉磁盘](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134619582.png)
+​		![抹掉磁盘](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134619582.png)
 
-![自己命名，改格式，点“抹掉”](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134648645.png)
+![自己命名，改格式，点“抹掉”](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134648645.png)
 
-![抹掉后叉掉这个窗口](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134715160.png)
+![抹掉后叉掉这个窗口](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134715160.png)
 
-![点安装macOS、“继续”](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134755581.png)
+![点安装macOS、“继续”](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134755581.png)
 
-![选择之前抹掉的磁盘进行安装](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224134830518.png)
+![选择之前抹掉的磁盘进行安装](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224134830518.png)
 
 到了这一步就没有什么难度了，按照官方的引导一步一步做下去就可以了，但可能需要20分钟安装系统😶请耐心等待.
 
 ### Enjoy your MacOS😉
 
-![MacOS](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220224142433087.png)
+![MacOS](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220224142433087.png)
 
 # 后记
 

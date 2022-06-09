@@ -4,7 +4,7 @@ date: 2022-02-13 22:25:52
 author: zhanlutuzi
 tags: [Typora,Github,图床,教程]
 categories: 教程
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214205811477.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214205811477.png
 summary: 手把手教你使用Github仓库免费创立图床
 ---
 
@@ -28,7 +28,7 @@ summary: 手把手教你使用Github仓库免费创立图床
 
 点击github 主页右上角的 `+` 创建`New repository`
 
-![新建仓库](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214200934506.png)
+![新建仓库](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214200934506.png)
 
 ​	填写仓库信息，仓库得设置为 `Public` 因为后面通过客户端访问算是外部访问，因此无法访问`Private`，这样的话图片传上来之后只能存储不能显示。所以要设置为`Public`，填写好后直接点击 `Create repository` 就行了。
 
@@ -50,25 +50,25 @@ summary: 手把手教你使用Github仓库免费创立图床
 
 如图点击 Settings
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214203401076.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214203401076.png)
 
 找到`Developer settings`，并进入 `Personal access tokens` 然后点击`Generate new token`，创建token；
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212120387.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214212120387.png)
 
 把repo的勾打上即可。然后翻到页面最底部，点击`Generate token`的绿色按钮生成token。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212233490.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214212233490.png)
 
 然后复制生成一串字符token，这个token 只出现一次，所以要保存一下。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214212315516.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214212315516.png)
 
 ## 3.配置 PicGo
 
 在 PicGo 图床设置中找到 Github 图床，按下图进行设置。
 
-![配置PicGo](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204301080.png)
+![配置PicGo](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214204301080.png)
 
 `jsdelivr`的配置格式如下
 
@@ -78,16 +78,16 @@ summary: 手把手教你使用Github仓库免费创立图床
 
 打开偏好设置
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204555951.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214204555951.png)
 
 按下图所示配置相关设定
 
-![配置Typora](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220214204645430.png)
+![配置Typora](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214204645430.png)
 
 注意：PicGo 路径就是你安装 PicGo 的位置，选中 PicGo.exe 即可
 
 配置完毕后点击`验证图片上传选项`
-![配置成功](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/Typora_fKNbT3XizG.png)
+![配置成功](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/Typora_fKNbT3XizG.png)
 
 # 总结
 

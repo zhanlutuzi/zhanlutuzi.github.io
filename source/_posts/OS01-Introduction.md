@@ -4,7 +4,7 @@ date: 2022-03-02 20:01:07
 author: zhanlutuzi
 tags: [操作系统,笔记]
 categories: 笔记
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png
 summary: 从零开始的操作系统学习记录『第一章绪论』
 ---
 
@@ -16,7 +16,7 @@ summary: 从零开始的操作系统学习记录『第一章绪论』
 
 >Tanenbaum 是荷兰的一名计算机科学家，20世纪80年代，他教授操作系统这门课，由于 UNIX 的版权原因，许多大学的操作系统课程不能再使用 UNIX 的源码进行剖析教学，转而教授更偏向理论层面的内容，而这些内容往往触碰不到操作系统这门课的核心之处。出于教学的需要，Tanenbaum 从头开始，开发出了一个小巧、完整、开源、UNIX 兼容的操作系统 **MINIX**，MINIX 的诞生也推动了 Linux 的产生！
 
-![现代计算机的组成](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302202457342.png)
+![现代计算机的组成](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302202457342.png)
 
 - 物理设备
   - 组成计算机的硬件部分
@@ -31,7 +31,7 @@ summary: 从零开始的操作系统学习记录『第一章绪论』
 
 ## Kernel ？
 
-![Kernel_Layout](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/Kernel_Layout.svg)
+![Kernel_Layout](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/Kernel_Layout.svg)
 
 ​		上图很清楚的为我们解释了什么叫做 Kernel ，在操作系统中，Kernel 是硬件与软件的中介，它将应用与硬件分割开来，保证了硬件的统一调用，将底层的复杂性封装起来，同时提供接口供应用层使用。
 
@@ -53,7 +53,7 @@ summary: 从零开始的操作系统学习记录『第一章绪论』
 
 ## 第一代计算机 1950 真空管和插接板
 
-![ENIAC](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302210018053.png)
+![ENIAC](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302210018053.png)
 
 ​		这个时代没有编程语言，只有机器语言，更没有操作系统，用插接板来控制计算机的基本操作以及编程。
 
@@ -61,11 +61,11 @@ summary: 从零开始的操作系统学习记录『第一章绪论』
 
 ## 第二代计算机 1960 晶体管与批处理
 
-![IBM7094](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/IBM7094.jpg)
+![IBM7094](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/IBM7094.jpg)
 
 ​		有了晶体管，故障率明显降低，但计算机（那时多称主机 mainframe），十分昂贵，高达几百万美元一台，这就显得机时的宝贵，也就促成了批处理系统的诞生，这个时代的人们多采用打孔卡片与计算机进行通讯，通过卡片传入数据与程序。
 
-![批处理系统](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302211113810.png)
+![批处理系统](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302211113810.png)
 
 ```shell
 $ JOB,最大运行时间（minutes),收费员姓名
@@ -81,7 +81,7 @@ $RUN
 $END
 ```
 
-![工作流程](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302211522984.png)
+![工作流程](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302211522984.png)
 
 > 主要用于求解偏微分方程
 
@@ -95,7 +95,7 @@ $END
 
 的产生使得不再需要一台专门的机器读取磁带了，在现代，SPOOLING也应用广泛，比如打印机的使用就采用了SPOOLING,在计算机后台往往有一个程序`Spooler`管理打印机
 
-![Windows后台的Spooler进程](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302213710950.png)
+![Windows后台的Spooler进程](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302213710950.png)
 
 >Spooling is a combination of [buffering](https://en.wikipedia.org/wiki/Data_buffer) and [queueing](https://en.wikipedia.org/wiki/Queue_(data_structure)).
 
@@ -155,7 +155,7 @@ Linux 正是基于 MINIX 开发出来的
 
 ​		在 MINIX 中，可移动存储设备往往需要通过挂装的方式与文件系统合并，从而 达成访问的目的。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/ApplicationFrameHost_0da5ZNJa31.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/ApplicationFrameHost_0da5ZNJa31.png)
 
 ## 设备文件 special files
 
@@ -173,7 +173,7 @@ Linux 正是基于 MINIX 开发出来的
   - w: write
   - x: execute(file)   search( folder, directory )
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303085937921.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303085937921.png)
 
 > **一个文件有的权限部分共有三组** **rwx** **rwx** **rwx**
 >  每一位只有两种可能: 一种是有这个位的权限，另一种是没有这个位的权限，所以可以用二进制表示有和没有，但为简化，所以chmod后面需是8进制数，每个数代表属主属组和其它，`r为4，w为2, x为1 -为0,` 将每组中的三个要素的数字加到一起就是这个组的权限代数，每个权限与进制数的关系如下 rwx rwx rwx  
@@ -193,9 +193,9 @@ Linux 正是基于 MINIX 开发出来的
 
 MINIX的系统调用如下图
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303125622421.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303125622421.png)
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303125645196.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303125645196.png)
 
 `Ctrl+C`==`SIGINT`中断信号
 
@@ -215,13 +215,13 @@ MINIX的系统调用如下图
 >
 > ​				先把参数放入指定位置（如栈），然后执行`TRAP`指令，即内核调用`Kernel Call`
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303173128085.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303173128085.png)
 
 ## 分层结构
 
 组织成层次结构，层层封装，向上提供接口
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201333799.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303201333799.png)
 
 ## 虚拟机
 
@@ -231,7 +231,7 @@ MINIX的系统调用如下图
 
 裸机硬件的精确拷贝
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201354792.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303201354792.png)
 
 ## 外核
 
@@ -241,9 +241,9 @@ MINIX的系统调用如下图
 
 适用于分布式系统
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201430393.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303201430393.png)
 
 内核只处理客户与服务器间的通信
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220303201417706.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220303201417706.png)
 

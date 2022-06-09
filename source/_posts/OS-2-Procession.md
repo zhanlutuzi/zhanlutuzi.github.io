@@ -4,7 +4,7 @@ date: 2022-03-12 09:23:51
 author: zhanlutuzi
 tags: [操作系统,笔记]
 categories: 笔记
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png
 summary: 从零开始的操作系统学习记录『第二章进程』
 ---
 
@@ -16,7 +16,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 > 随着计算机技术的不断发展，真正的并行已经可以实现了，现代 CPU 有多个核心，能够同时运行多道进程。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320164311643.png)	❗ 由于 CPU 不停地在不同进程之间进行切换，每个进程的执行速度往往不确定，所以在编程的时候不能对时序做固定的假设。
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320164311643.png)	❗ 由于 CPU 不停地在不同进程之间进行切换，每个进程的执行速度往往不确定，所以在编程的时候不能对时序做固定的假设。
 
 ## 进程与程序之间的关系
 
@@ -97,7 +97,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 他们之间的关系与转换如下图：
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320194220624.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320194220624.png)
 
 - 当某个进程在逻辑上不能继续运行时，它就会被阻塞
   - 等待使用别的输入
@@ -129,7 +129,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 ​	两个多个进程读写某些共享数据，而最后的结果取决于进程运行的精确时序，就称为竞争条件`race condition`
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320200559380.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320200559380.png)
 
 ### 临界区
 
@@ -163,7 +163,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 - 中断响应关闭后，系统就完全失去控制了
 - 多处理的系统中，该方案无效，因为其他CPU也会响应中断的。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png)
 
 #### 锁变量
 
@@ -175,27 +175,27 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 - 有纰漏，如果某进程检查锁，发现是开的，但在它准备进入时且还没上锁时，另一个进程进行检测，发现锁是开的，这样就会造成冲突。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png)
 
 #### 严格轮换法
 
 > 几个进程轮换进入某一临界区，且顺序不能紊乱
 
-![伪代码](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320203026374.png)
+![伪代码](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320203026374.png)
 
 评价：
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320203830167.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320203830167.png)
 
 - 轮流进入临界区在一个进程比另一个进程慢很多的情况下不适用
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322163350263.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322163350263.png)
 
 #### Peterson解决方案
 
 ​	基于`Dekker` 算法（将轮换法和锁变量以及警告变量的思想相结合）Dijkstra 提出了新的解决方案，**它是有效的，可用的，且应用广泛。**😍
 
-![算法伪代码](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320204809033.png)
+![算法伪代码](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320204809033.png)
 
 #### TSL指令
 
@@ -222,9 +222,9 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 - 共享缓冲区共有N个；
 - 任何时刻只能有一个进程可对共享缓冲区进行操作。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321172118498.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321172118498.png)
 
-![实现代码](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321172950133.png)
+![实现代码](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321172950133.png)
 
 ### 信号量
 
@@ -237,14 +237,14 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 - 信号量为正值
   - 表示有一个或多个积累下的唤醒操作
 
-![原语](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321181542834.png)
+![原语](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321181542834.png)
 
 有这样两个`原子操作`：
 
 - `down`相当于 sleep 操作
 - `up`相当于 wakeup 操作
 
-![信号量解决生产者消费者问题](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/ApplicationFrameHost_q5keEGrUr2.png)
+![信号量解决生产者消费者问题](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/ApplicationFrameHost_q5keEGrUr2.png)
 
 ​	信号量`mutex`用于互斥，用于保证任一时刻只有一个进程读写缓冲区和相关变量。
 
@@ -252,7 +252,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 管程是对信号量的一种封装，提供一种实现互斥的简便途径。
 
-<img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321182555079.png"  />
+<img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321182555079.png"  />
 
 来自知乎陈龙的解释👉[链接](https://www.zhihu.com/question/30641734/answer/378435042)
 
@@ -286,9 +286,9 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 
 是一类<font color=green>多进程访问有限资源</font>的问题
 
-![一种错误的解法](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321194612142.png)
+![一种错误的解法](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321194612142.png)
 
-![解决的代码](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220321194255017.png)
+![解决的代码](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220321194255017.png)
 
 ## 读者写者问题
 
@@ -307,7 +307,7 @@ summary: 从零开始的操作系统学习记录『第二章进程』
 - 微观调度
   - 进程或线程
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322130630989.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322130630989.png)
 
 ### 按时间周期
 

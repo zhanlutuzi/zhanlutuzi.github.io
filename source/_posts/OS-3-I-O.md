@@ -1,10 +1,10 @@
 ---
-title: 操作系统学习笔记_02
+title: 操作系统学习笔记_03
 date: 2022-04-04 14:52:13
 author: zhanlutuzi
 tags: [操作系统,笔记]
 categories: 笔记
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220302200521587.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220302200521587.png
 summary: 从零开始的操作系统学习记录『第三章|输入输出系统』
 ---
 
@@ -28,13 +28,13 @@ I/O 设备可以分为：
 
 > ❗ I/O 设备在速度上差异很大，见下图，这为我们管理 I/O 设备提出了挑战，在后文中会提到解决办法。
 
-<img src="https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404160027122.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404160027122.png" style="zoom:50%;" />
 
 ## 设备控制器
 
 ​	**I/O设备组成中的电子部件**被称为设备控制器，操作系统往往和设备的控制器打交道，大多数个人计算机采用`总线模型`进行 CPU 与控制器之间的交流。
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/ApplicationFrameHost_1vQQ1KaZ7j.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/ApplicationFrameHost_1vQQ1KaZ7j.png)
 
 ​	大型机则采用其他模型，此类模型带有`I/O通道`，一种专用于输入输出工作的计算机。
 
@@ -47,7 +47,7 @@ I/O 设备可以分为：
 - 内存映射I/O
   - I/O寄存器是内存空间的一部分
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404193104304.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404193104304.png)
 
 
 
@@ -63,7 +63,7 @@ I/O 设备可以分为：
 
 它使得毋须占用CPU宝贵的时间去交换数据，利用 DMA 控制器调控多个设备的数据传送
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404193751362.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404193751362.png)
 
 # I/O 软件原理
 
@@ -77,7 +77,7 @@ I/O 设备可以分为：
 - 同步/异步传输
 - 缓冲
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404200109964.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404200109964.png)
 
 
 
@@ -85,7 +85,7 @@ I/O 设备可以分为：
 
 用来控制特定设备的一组特定的代码被称作设备驱动程序，驱动程序传统上是系统内核的一部分
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404201218694.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404201218694.png)
 
 # 死锁
 
@@ -120,7 +120,7 @@ I/O 设备可以分为：
 
 ### 死锁模型
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404202545162.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404202545162.png)
 
 ### 处理死锁的四个策略
 
@@ -136,7 +136,7 @@ I/O 设备可以分为：
 - 禁止已拥有资源的进程等待其他资源
 - 给所有资源提供一个全局编号，请求需要按编号顺序提出
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404204123554.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404204123554.png)
 
 ## 避免死锁
 
@@ -148,13 +148,13 @@ I/O 设备可以分为：
 
 ### 资源轨迹
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404205750270.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404205750270.png)
 
 上图中，阴影区域内就是资源发生冲突的区域
 
 ### 多种资源的银行家算法
 
-![](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220404210239120.png)
+![](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220404210239120.png)
 
 - E 总资源
 - P 已分配资源

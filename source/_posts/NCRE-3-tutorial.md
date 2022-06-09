@@ -4,8 +4,8 @@ date: 2022-03-28 16:42:42
 author: zhanlutuzi
 tags: [转载,教程,计算机三级]
 categories: 教程
-summary: 手把手教你搭建Hexo博客
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220328164252948.png
+summary: 助力你通过计算机三级网络技术考试！
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220328164252948.png
 ---
 
 # 声明
@@ -538,11 +538,11 @@ pix525 在缺省情况下
 
 ### 3.2 第二道 配置路由器
 
-![image-20220322200007512](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322200007512.png)
+![image-20220322200007512](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322200007512.png)
 
-![image-20220319105631191](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220319105631191.png)
+![image-20220319105631191](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220319105631191.png)
 
-![image-20220322200035234](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220322200035234.png)
+![image-20220322200035234](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220322200035234.png)
 
 例：
 ![img](https://vipkshttps13.wiz.cn/ks/share/resources/96ea5f9a-14bf-4265-bd6b-d743661380a3/17a07dd6-03ce-4635-88b0-bc49dabfd7f4/index_files/11125734.png)
@@ -552,25 +552,25 @@ pix525 在缺省情况下
 
 【来自张斌的修改建议，由于不方便改图就直接贴在这里了】network ______ area 0和#area 0 range _______，这两个空的讲解可以修改为“R3所在的子网号+子网掩码的反码/子网掩码，如果有两个子网号则先对两个子网进行聚合，然后填写聚合后的子网号+子网掩码的反码/子网掩码”，因为就题库中的题目而言，有两个子网号的情况还是挺多的。除此之外，还可以增加当配置R4时的#ip route _____，空里应该是目的网络子网号（与上题同）+子网掩码（与上题同）+下一跳路由器地址（R3的地址），阴影中有两个子网号时同样先进行聚合。R3由于本身就是阴影区域的一部分，故目的网络和目的子网掩码都是0.0.0.0。同理，如果配置R1或R2，他们都是阴影区域的一部分，目的网络与子网掩码也都是0.0.0.0。
 
-![image-20220323213106214](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323213106214.png)
+![image-20220323213106214](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323213106214.png)
 
-![image-20220323213205941](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323213205941.png)
+![image-20220323213205941](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323213205941.png)
 
-![image-20220323213233250](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323213233250.png)
+![image-20220323213233250](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323213233250.png)
 
-![image-20220323213446271](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323213446271.png)
+![image-20220323213446271](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323213446271.png)
 
 ### 3.3 第三道 DHCP 报文
 
-![image-20220323214409376](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323214409376.png)
+![image-20220323214409376](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323214409376.png)
 
-![image-20220323214512057](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323214512057.png)
+![image-20220323214512057](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323214512057.png)
 
-![image-20220323214611784](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323214611784.png) 
+![image-20220323214611784](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323214611784.png) 
 
-![image-20220323220515411](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323220515411.png)
+![image-20220323220515411](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323220515411.png)
 
-![image-20220323220740127](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323220740127.png)
+![image-20220323220740127](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323220740127.png)
 
 例：
 ![img](https://vipkshttps13.wiz.cn/ks/share/resources/96ea5f9a-14bf-4265-bd6b-d743661380a3/17a07dd6-03ce-4635-88b0-bc49dabfd7f4/index_files/12762453.png)
@@ -578,7 +578,7 @@ pix525 在缺省情况下
 
 ### 3.4 第四道 sniffer 数据包
 
-![image-20220319154813724](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220319154813724.png)
+![image-20220319154813724](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220319154813724.png)
 
 例1：
 ![img](https://vipkshttps13.wiz.cn/ks/share/resources/96ea5f9a-14bf-4265-bd6b-d743661380a3/17a07dd6-03ce-4635-88b0-bc49dabfd7f4/index_files/20802828.png)
@@ -609,7 +609,7 @@ pix525 在缺省情况下
 
 ### 3.5 最后一道
 
-![image-20220323213848363](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323213848363.png)
+![image-20220323213848363](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323213848363.png)
 
 ![img](https://vipkshttps13.wiz.cn/ks/share/resources/96ea5f9a-14bf-4265-bd6b-d743661380a3/17a07dd6-03ce-4635-88b0-bc49dabfd7f4/index_files/755234.png)
 
@@ -655,7 +655,7 @@ pix525 在缺省情况下
 
 #### 3.5.3 计算子网掩码和 IP 段部分（4~6分）
 
-![image-20220323214052213](https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220323214052213.png)
+![image-20220323214052213](https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220323214052213.png)
 
 例：将 192.168.66.128/25 划分为三个子网，子网 1 能容纳 50 台主机，子网 2 和 3 能分别容纳 20 台主机……求他们的子网掩码和可用 IP 地址段
 

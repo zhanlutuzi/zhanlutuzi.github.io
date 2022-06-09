@@ -4,7 +4,7 @@ date: 2022-03-20 01:00:23
 author: zhanlutuzi
 tags: [C++,OpenGL]
 categories: 教程
-img: https://cdn.jsdelivr.net/gh/zhanlutuzi/imageBed/image/image-20220320010437117.png
+img: https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220320010437117.png
 summary: 教你配置 OpenGL 的开发环境，使用 Vcpkg 或者原始手动配置。
 ---
 
