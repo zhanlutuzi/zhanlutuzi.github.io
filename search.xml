@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Best Setup for Visual Studio</title>
+      <link href="/2022/08/10/best-setup-for-visual-studio/"/>
+      <url>/2022/08/10/best-setup-for-visual-studio/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Best-Setup-For-Visual-studio"><a href="#Best-Setup-For-Visual-studio" class="headerlink" title="Best Setup For Visual studio"></a>Best Setup For Visual studio</h1><iframe width="350" height="315" src="https://www.youtube.com/embed/qeH9Xv_90KM"></iframe><ul><li>Filter is not folder  That’s virtual folder!</li><li>We use real folder</li><li>src folder—-&gt;store my src code</li><li>VS button Show All Folder</li></ul><p>Debug folder?</p><ul><li>Change that setting!</li><li>all configuration   all platforms</li><li>Output directory —&gt;<code> $(SolutionDir)bin\$(Platform)\$(Configuration)\</code></li><li>Intermediates Directory —&gt;<code>$(SolutionDir)bin\intermediates\$(Platform)\$(Configuration)\</code></li><li>go to edit you can see any macro refer to!  (The same)</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 技巧 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>计算机组成体系结构复习笔记</title>
       <link href="/2022/06/29/computerassemble/"/>
       <url>/2022/06/29/computerassemble/</url>
