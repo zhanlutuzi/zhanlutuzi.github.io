@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="你真的了解字体吗？| 衬线与非衬线, 湛泸兔子">
-    <meta name="description" content="详解几种字体之间的区别">
+    <meta name="keywords" content="Python Convert CSV to Shapefile, 湛泸兔子">
+    <meta name="description" content="使用Python处理csv文件并转为shapefile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +17,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>你真的了解字体吗？| 衬线与非衬线 | 湛泸兔子</title>
+    <title>Python Convert CSV to Shapefile | 湛泸兔子</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.min.css">
@@ -311,12 +311,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222215434044.png')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1920px-Pandas_logo.svg.png')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">你真的了解字体吗？| 衬线与非衬线</h1>
+                    <h1 class="description center-align post-title">Python Convert CSV to Shapefile</h1>
                 </div>
             </div>
         </div>
@@ -432,20 +432,16 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                <span class="chip bg-color">前端</span>
+                            <a href="/tags/GIS/">
+                                <span class="chip bg-color">GIS</span>
                             </a>
                         
-                            <a href="/tags/%E8%AE%BE%E8%AE%A1/">
-                                <span class="chip bg-color">设计</span>
+                            <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                <span class="chip bg-color">编程</span>
                             </a>
                         
-                            <a href="/tags/%E5%AD%97%E4%BD%93/">
-                                <span class="chip bg-color">字体</span>
-                            </a>
-                        
-                            <a href="/tags/%E7%A7%91%E6%99%AE/">
-                                <span class="chip bg-color">科普</span>
+                            <a href="/tags/Python/">
+                                <span class="chip bg-color">Python</span>
                             </a>
                         
                     </div>
@@ -456,8 +452,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E7%A7%91%E6%99%AE/" class="post-category">
-                                科普
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                教程
                             </a>
                         
                     </div>
@@ -469,28 +465,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-02-22
+                    2022-09-28
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-06-10
+                    2022-09-28
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    916
+                    299
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    1 分
                 </div>
                 
 
@@ -513,39 +509,46 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>​    在修改 Chrome 浏览器的字体时，我发现了有以下几个选项👇</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222220431141.png" alt="Chrome 字体设置"></p>
-<p>​    这其中就有<code>Sans Serif </code> 和<code>Serif</code>这两类字体，还有一个<code>宽度固定</code>，于是我想了解它们之间的具体区别和使用场景，这也就催生了这篇文章的产生，希望你阅读后会有收获😜</p>
-<h1 id="字体划分"><a href="#字体划分" class="headerlink" title="字体划分"></a>字体划分</h1><p>​    在西方国家罗马字母阵营中，字体分为两大种类：<code>Sans Serif</code>和<code>Serif</code>，打字机体虽然也属于 Sans Serif，但由于是等宽字体，所以另外独立出<code>Monospace</code>这一种类，例如在Web中，表示代码时常常要使用等宽字体。 </p>
-<p>​                             <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222221505267.png"><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222221723241.png"></p>
-<p>​    具体的结构归属可以参照上图👆</p>
-<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><blockquote>
-<p>衬线(Serif):在字的笔划开始及结束的地方有额外的装饰，而且笔划的粗细会因直横的不同而有不同</p>
-</blockquote>
-<blockquote>
-<p>非衬线：没有额外的装饰，笔划粗细大致差不多</p>
-</blockquote>
-<p>​    这类区分在汉字字体中也有所体现，下图很清晰地展示出来了衬线与非衬线之间的区别。</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222215434044.png"></p>
-<p>​    可以看出，我们平时所用的<code>Georgia</code>、<code>Times New Roman</code>等就属于<code>Serif</code>字体，而<code>Arial</code>、<code>Tahoma</code>等则属于<code>Sans Serif</code>字体。对中文而言，同样存在这两大种类，很明显，宋体、细明体(繁体中常用)等就属于<code>Serif</code>，而黑体、幼圆等则属于<code>Sans Serif</code>。 </p>
-<h1 id="差异"><a href="#差异" class="headerlink" title="差异"></a>差异</h1><p><strong>Serif 和 Sans Serif 的一般比较：</strong></p>
-<p>　　①Serif 的字体容易辨认，因此易读性较高。反之 Sans Serif 则较醒目，但在行文阅读的情况下，Sans Serif 容易造成字母辨认的困扰，常会有来回重读及上下行错乱的情形。</p>
-<p>　　②<strong>Serif</strong> 强调了字母笔划的开始及结束，因此<strong>较易前后连续性的辨识</strong>。 </p>
-<p>　　③Serif 强调一个 word，而非单一的字母，反之 <strong>Sans Serif 则强调个别字母</strong>。</p>
-<p>　　④在小字体的场合，通常 Sans Serif 比 Serif 更清晰。</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222223959444.png"></p>
-<h1 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h1><p>​            通常文章的<strong>内文、正文使用易读性较佳的 Serif 字体</strong>，这可增加易读性，而且长时间阅读下因为会以 word 为单位来阅读，较不容易疲倦。</p>
-<p>​            <strong>标题、表格内用字则采用较醒目的 Sans Serif 字体</strong>，它需要显着、醒目，但不必长时间盯着这些字来阅读。 </p>
-<p>　　像宣传品、海报类，为求醒目，它的短篇的段落也会采用 Sans Serif 字体。但在书籍、报刊杂志，正文有相当篇幅的情形下，则应采用 Serif 字体来减轻读者阅读上的负担。在Web设计及浏览器设置中也应遵循此原则。</p>
-<h1 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h1><p>​            <strong>其他的通用字体族</strong></p>
-<p>　　印刷学中，除了 <code>serif </code>和 <code>sans-serif </code>之外，通常还有 <code>Monospace</code> 等宽字体、<code>scripts</code>手写体（比如花体）、<code>blackletter </code>铅字体（也叫 <code>gothic</code> 哥特体。严格的说，很多常用的 <code>serif</code> 字体其实是 <code>gothic</code>字体）、<code>ornamental</code> 装饰体和<code>symbol </code>符号字体（比如有名的<code>wedding123</code>）</p>
-<p>　　<strong>Monospace 等宽字体：</strong></p>
-<p>　　所谓的等宽字体，是指每个字符宽度都一致的字体。一个著名的例子就是 <code>Courier New </code>字体。因为字符宽度一致，所以特别容易对齐，能快速精确的定位到某行某列，因此经常用来显示代码。</p>
-<p><img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220222224931325.png" alt="Courier New 字体">　　</p>
-<p>​        Cursive书写体：相当于印刷学中的手写体。中文的华文行草就是这样的一个字体。</p>
-<h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>在显示不同内容的时候，应该根据该内容的阅读效果合理选择字体种类，达到功能性与美观性的统一。</p>
-<p><strong>参考资料：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://kb.cnblogs.com/page/192018/">Serif和Sans-serif字体的区别</a></p>
+                <h2 id="要准备"><a href="#要准备" class="headerlink" title="要准备"></a>要准备</h2><ul>
+<li>pandas</li>
+<li>geopandas</li>
+</ul>
+<h2 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h2><p>思想是这样的</p>
+<ol>
+<li>将要转化的csv文件放到List里</li>
+<li>使用for循环遍历</li>
+<li>在for循环内<ol>
+<li>使用pandas读入csv</li>
+<li>选取需要进行计算的列赋值给csvFileCal</li>
+<li>将NaN设置为0（这是我此处的计算需要）</li>
+<li>再将算出的结果添加到csvFile末尾，这样既保留了NaN的值，又计算出了正确的结果（因为在计算中如果具有NaN，计算结果也会是NaN）</li>
+<li>将DataFrame转换为GeoDataFrame(这里仅有点对象，如果你还包含面对象的话还需要考虑别的方法)</li>
+<li>设定好坐标系为WGS84(espg:4326)</li>
+<li>调用GeoPandas的方法输出为shapefile文件</li>
+</ol>
+</li>
+</ol>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> geopandas <span class="token keyword">as</span> gpd
+
+<span class="token comment"># The code below is used to convert the csv file into a shapefile.</span>
+nameList <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'india&amp;Pakistan91_95'</span><span class="token punctuation">,</span> <span class="token string">'india&amp;Pakistan96_00'</span><span class="token punctuation">,</span> <span class="token string">'india&amp;Pakistan01_05'</span><span class="token punctuation">,</span> <span class="token string">'india&amp;Pakistan06_10'</span><span class="token punctuation">,</span> <span class="token string">'india&amp;Pakistan11_15'</span><span class="token punctuation">,</span> <span class="token string">'india&amp;Pakistan16_20'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">for</span> name <span class="token keyword">in</span> nameList<span class="token punctuation">:</span>
+    csvpath <span class="token operator">=</span> <span class="token string">r"D:\Desktop\StuInnovate\data\GTD\筛选\{}.csv"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span>
+    csvFile <span class="token operator">=</span> pd<span class="token punctuation">.</span>read_csv<span class="token punctuation">(</span>csvpath<span class="token punctuation">)</span>
+    
+    csvFileCal <span class="token operator">=</span> csvFile<span class="token punctuation">[</span><span class="token punctuation">[</span><span class="token string">'latitude'</span><span class="token punctuation">,</span> <span class="token string">'longitude'</span><span class="token punctuation">,</span><span class="token string">'nkill'</span><span class="token punctuation">,</span><span class="token string">'nwound'</span><span class="token punctuation">,</span><span class="token string">'property'</span><span class="token punctuation">,</span><span class="token string">'nhostkid'</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+    csvFileCal<span class="token punctuation">.</span>fillna<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> inplace<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span> <span class="token comment">#将NaN设置为0</span>
+    
+    csvFileCal<span class="token punctuation">[</span><span class="token string">'severeIndex'</span><span class="token punctuation">]</span> <span class="token operator">=</span> csvFileCal<span class="token punctuation">[</span><span class="token string">'nkill'</span><span class="token punctuation">]</span> <span class="token operator">+</span> csvFileCal<span class="token punctuation">[</span><span class="token string">'nwound'</span><span class="token punctuation">]</span> <span class="token operator">+</span> csvFileCal<span class="token punctuation">[</span><span class="token string">'property'</span><span class="token punctuation">]</span> <span class="token operator">+</span> csvFileCal<span class="token punctuation">[</span><span class="token string">'nhostkid'</span><span class="token punctuation">]</span>
+    
+    csvFile<span class="token punctuation">[</span><span class="token string">'severeIndex'</span><span class="token punctuation">]</span> <span class="token operator">=</span> csvFileCal<span class="token punctuation">[</span><span class="token string">'severeIndex'</span><span class="token punctuation">]</span>
+    geoGDF <span class="token operator">=</span> gpd<span class="token punctuation">.</span>GeoDataFrame<span class="token punctuation">(</span>csvFile<span class="token punctuation">,</span> geometry<span class="token operator">=</span>gpd<span class="token punctuation">.</span>points_from_xy<span class="token punctuation">(</span>csvFile<span class="token punctuation">.</span>longitude<span class="token punctuation">,</span> csvFile<span class="token punctuation">.</span>latitude<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    geoGDF<span class="token punctuation">.</span>crs <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">'init'</span><span class="token punctuation">:</span> <span class="token string">'epsg:4326'</span><span class="token punctuation">}</span>
+    geoGDF<span class="token punctuation">.</span>to_file<span class="token punctuation">(</span><span class="token string">r"D:\Desktop\StuInnovate\data\GTD\shp\{}.shp"</span><span class="token punctuation">.</span><span class="token builtin">format</span><span class="token punctuation">(</span>name<span class="token punctuation">)</span><span class="token punctuation">,</span> driver<span class="token operator">=</span><span class="token string">'ESRI Shapefile'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
 
                 
             </div>
@@ -572,7 +575,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://zhanlutuzi.github.io/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/">https://zhanlutuzi.github.io/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/</a>
+                    <a href="https://zhanlutuzi.github.io/2022/09/28/python-convert-csv-to-shapefile/">https://zhanlutuzi.github.io/2022/09/28/python-convert-csv-to-shapefile/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -610,20 +613,16 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E5%89%8D%E7%AB%AF/">
-                                    <span class="chip bg-color">前端</span>
+                                <a href="/tags/GIS/">
+                                    <span class="chip bg-color">GIS</span>
                                 </a>
                             
-                                <a href="/tags/%E8%AE%BE%E8%AE%A1/">
-                                    <span class="chip bg-color">设计</span>
+                                <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                                    <span class="chip bg-color">编程</span>
                                 </a>
                             
-                                <a href="/tags/%E5%AD%97%E4%BD%93/">
-                                    <span class="chip bg-color">字体</span>
-                                </a>
-                            
-                                <a href="/tags/%E7%A7%91%E6%99%AE/">
-                                    <span class="chip bg-color">科普</span>
+                                <a href="/tags/Python/">
+                                    <span class="chip bg-color">Python</span>
                                 </a>
                             
                         </div>
@@ -789,9 +788,9 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'https://zhanlutuzi.github.io/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/';
-        this.page.identifier = '/2022/02/22/chen-xian-yu-fei-chen-xian-zi-ti/';
-        this.page.title = '你真的了解字体吗？| 衬线与非衬线';
+        this.page.url = 'https://zhanlutuzi.github.io/2022/09/28/python-convert-csv-to-shapefile/';
+        this.page.identifier = '/2022/09/28/python-convert-csv-to-shapefile/';
+        this.page.title = 'Python Convert CSV to Shapefile';
     };
     let disqus_shortname = 'zhanlutuzi.top';
 
@@ -823,28 +822,29 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2022/02/24/macos-xu-ni-ji/">
+                <a href="/2022/09/28/python-convert-csv-to-shapefile/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/MacOS_Catalina_Desktop.png" class="responsive-img" alt="你的第一台Mac何必是Mac？">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ed/Pandas_logo.svg/1920px-Pandas_logo.svg.png" class="responsive-img" alt="Python Convert CSV to Shapefile">
                         
-                        <span class="card-title">你的第一台Mac何必是Mac？</span>
+                        <span class="card-title">Python Convert CSV to Shapefile</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手教你在Windows环境下安装MacOS
+                            使用Python处理csv文件并转为shapefile
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2022-02-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -857,23 +857,20 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
+                    <a href="/tags/GIS/">
+                        <span class="chip bg-color">GIS</span>
                     </a>
                     
-                    <a href="/tags/VMware/">
-                        <span class="chip bg-color">VMware</span>
+                    <a href="/tags/%E7%BC%96%E7%A8%8B/">
+                        <span class="chip bg-color">编程</span>
                     </a>
                     
-                    <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/">
-                        <span class="chip bg-color">虚拟机</span>
-                    </a>
-                    
-                    <a href="/tags/MacOS/">
-                        <span class="chip bg-color">MacOS</span>
+                    <a href="/tags/Python/">
+                        <span class="chip bg-color">Python</span>
                     </a>
                     
                 </div>
@@ -887,23 +884,23 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2022/02/13/shi-yong-picgo-github-bu-shu-tu-chuang/">
+                <a href="/2022/09/15/use-ublock-origin/">
                     <div class="card-image">
                         
-                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220214205811477.png" class="responsive-img" alt="使用PicGo+Github部署免费图床">
+                        <img src="https://raw.githubusercontent.com/zhanlutuzi/imageBed/main/image/image-20220915193637417.png" class="responsive-img" alt="网页广告太多？UblockOrigin来帮你！">
                         
-                        <span class="card-title">使用PicGo+Github部署免费图床</span>
+                        <span class="card-title">网页广告太多？UblockOrigin来帮你！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            手把手教你使用Github仓库免费创立图床
+                            教你配置 Ublock Orgin来屏蔽广告
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-02-13
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-09-15
                             </span>
                         <span class="publish-author">
                             
@@ -920,20 +917,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">教程</span>
-                    </a>
-                    
-                    <a href="/tags/Typora/">
-                        <span class="chip bg-color">Typora</span>
-                    </a>
-                    
-                    <a href="/tags/Github/">
-                        <span class="chip bg-color">Github</span>
-                    </a>
-                    
-                    <a href="/tags/%E5%9B%BE%E5%BA%8A/">
-                        <span class="chip bg-color">图床</span>
+                    <a href="/tags/Ublock-Origin/">
+                        <span class="chip bg-color">Ublock Origin</span>
                     </a>
                     
                 </div>
