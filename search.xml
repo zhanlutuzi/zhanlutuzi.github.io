@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title>test</title>
+      <link href="/2022/12/12/test/"/>
+      <url>/2022/12/12/test/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>添加 Ubuntu GIS 的PPA</title>
+      <link href="/2022/11/21/ubuntu-gis/"/>
+      <url>/2022/11/21/ubuntu-gis/</url>
+      
+        <content type="html"><![CDATA[<p>Ubuntu添加 GIS的PPA</p><p>步骤</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-software-properties<span class="token function">sudo</span> add-apt-repository ppa:ubuntugis/ppa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python Convert CSV to Shapefile</title>
       <link href="/2022/09/28/python-convert-csv-to-shapefile/"/>
       <url>/2022/09/28/python-convert-csv-to-shapefile/</url>
