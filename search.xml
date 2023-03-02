@@ -4,30 +4,23 @@
   
     
     <entry>
-      <title>test</title>
-      <link href="/2022/12/12/test/"/>
-      <url>/2022/12/12/test/</url>
+      <title>VSCode Leaflet 自动补全问题的解决</title>
+      <link href="/2023/03/02/vscode-leaflet-auto-complete/"/>
+      <url>/2023/03/02/vscode-leaflet-auto-complete/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>使用npm的命令</p><p><code>npm install --save @types/leaflet</code></p><p>这行代码会自动下载Leaflet的TypeScript定义，并自动添加到<code>packages.json</code>文件中的dependency项。</p><p>安装之后重新启动VScode可以发现自动补全功能又出现了</p>]]></content>
       
       
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>添加 Ubuntu GIS 的PPA</title>
-      <link href="/2022/11/21/ubuntu-gis/"/>
-      <url>/2022/11/21/ubuntu-gis/</url>
-      
-        <content type="html"><![CDATA[<p>Ubuntu添加 GIS的PPA</p><p>步骤</p><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> python-software-properties<span class="token function">sudo</span> add-apt-repository ppa:ubuntugis/ppa<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>]]></content>
-      
+      <categories>
+          
+          <category> 教程 </category>
+          
+      </categories>
       
       
         <tags>
             
-            <tag> Linux </tag>
+            <tag> 技巧 </tag>
             
         </tags>
       
