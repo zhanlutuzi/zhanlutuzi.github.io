@@ -10,7 +10,6 @@ comments: true
 
 - [Email]({{ site.social.email }})
 - [GitHub]({{ site.social.github }})
-- [QQ 1823068466]({{ site.social.qq }})
 
 ## 留言说明
 

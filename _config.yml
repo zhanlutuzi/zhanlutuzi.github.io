@@ -27,10 +27,7 @@ profile:
 social:
   github: https://github.com/zhanlutuzi
   email: mailto:yuchenglong01@foxmail.com
-  qq: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1823068466
-
-disqus:
-  shortname: zhanlutuzi-top
+  shortname: zhanlutuzi
 
 markdown: kramdown
 permalink: /:year/:month/:day/:title/
