@@ -5,8 +5,8 @@ description: >-
 lang: zh-CN
 timezone: Asia/Shanghai
 baseurl: ""
-url: "https://zhanlutuzi.top"
-domain: zhanlutuzi.top
+url: "https://zhanlutuzi.github.io"
+domain: zhanlutuzi.github.io
 github_username: zhanlutuzi
 theme: minima
 header_pages:
