@@ -10,6 +10,8 @@ export type Project = {
   eyebrow: string;
   description: string;
   result: string;
+  preview: string;
+  duration: string;
   tags: string[];
   tone: "lime" | "blue" | "orange" | "ink";
   links: Link[];
@@ -56,25 +58,35 @@ export const experiences = [
   },
 ];
 
+export const education = [
+  {
+    degree: "工学硕士（在读）",
+    period: "2024.09 — 2027.06",
+    school: "中国地质大学（武汉）",
+    field: "地理空间信息工程 · 211 院校",
+    detail:
+      "专业成绩前 5%；东京大学空间情报科学研究中心联合培养；获校级一等奖学金。",
+  },
+  {
+    degree: "工学学士",
+    period: "2020.09 — 2024.06",
+    school: "中国地质大学（武汉）",
+    field: "地理空间信息工程 · 211 院校",
+    detail:
+      "专业排名前 5%，保研；参与国家级大学生创新创业训练计划，获软件著作权与地大英才奖学金。",
+  },
+];
+
 export const projects: Project[] = [
   {
     index: "01",
-    title: "课程生产 Agent",
-    eyebrow: "真实业务 · Agent · Human-in-the-loop",
-    description:
-      "把教师的知识点、组课要求与历史经验组织成可执行的课程生产过程，让 Agent 生成课程草稿，而教师保留确认与修改权。",
-    result: "从对话到业务平台草稿，完整接入真实课程制作链路。",
-    tags: ["Pi Agent SDK", "TypeScript", "Skill", "业务系统集成"],
-    tone: "lime",
-    links: [],
-  },
-  {
-    index: "02",
-    title: "Monkuu",
+    title: "问空 Monkuu",
     eyebrow: "NL2SQL · GeoAI · 第一作者论文",
     description:
       "让不熟悉 SQL 的用户直接询问地理数据库。系统通过动态 Schema Mapping 处理长模式，通过人在环路澄清空间语义。",
     result: "KaggleDBQA 56.2%，较当时最佳水平提升 13.8%。",
+    preview: "/project-monkuu.jpg",
+    duration: "00:59",
     tags: ["Python", "NL2SQL", "Human-in-the-loop", "GeoAI"],
     tone: "blue",
     links: [
@@ -90,12 +102,14 @@ export const projects: Project[] = [
     ],
   },
   {
-    index: "03",
+    index: "02",
     title: "地理空间分析 Agent",
     eyebrow: "ReAct · QGIS-MCP · 复杂空间任务",
     description:
       "让 Agent 根据目标选择空间分析工具、处理执行错误，并把地图、图表与分析结果交还给用户。",
     result: "原型评测通过率 73.3%，为后续数字员工探索提供能力底座。",
+    preview: "/project-gis-agent.jpg",
+    duration: "04:51",
     tags: ["PocketFlow", "ReAct", "QGIS-MCP", "评测"],
     tone: "orange",
     links: [
@@ -107,14 +121,16 @@ export const projects: Project[] = [
     ],
   },
   {
-    index: "04",
+    index: "03",
     title: "GeoClaw 数字员工",
     eyebrow: "Agent · Slack Bot · CLI",
     description:
       "把地理分析能力从命令行带进办公入口，让用户通过对话提交任务，并在同一处获得结果。",
     result: "109 个真实任务上，准确率由 73% 提升至 95%。",
+    preview: "/project-geoclaw.jpg",
+    duration: "02:51",
     tags: ["Python", "Slack Bot", "Tool Use", "CLI"],
-    tone: "ink",
+    tone: "lime",
     links: [
       {
         label: "观看演示",

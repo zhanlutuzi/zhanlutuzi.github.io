@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { formatDate, getPostPath } from "../lib/blog";
 import {
+  education,
   experiences,
   personalWorks,
   projects,
@@ -36,7 +37,7 @@ const posts = (await getCollection("blog"))
       <div class="hero-noise" aria-hidden="true"></div>
       <div class="hero-copy">
         <p class="eyebrow" data-reveal>
-          GEOGRAPHY · AI · THINGS I AM CURIOUS ABOUT
+          GEOGRAPHY · TECHNOLOGY · PEOPLE
         </p>
         <h1 data-reveal>
           沿着好奇心，<br />
@@ -44,7 +45,7 @@ const posts = (await getCollection("blog"))
           也去动手。
         </h1>
         <p class="hero-intro" data-reveal>
-          我热爱地理，也对技术、人和世界如何运作保持兴趣。我把自己叫作“杂学家”——还谈不上博学，只是愿意走进陌生领域，并把一些想法真正做出来。
+          我把自己叫作“杂学家”。地理是观察世界的起点，技术是理解并改变问题的工具，而人始终是我判断一件事是否值得做的尺度。
         </p>
         <div class="hero-actions" data-reveal>
           <a class="button button-dark" href="#projects">看看我做过的东西</a>
@@ -76,28 +77,14 @@ const posts = (await getCollection("blog"))
     <section class="manifesto section-shell" id="about">
       <div class="section-index" data-reveal>00 / ABOUT</div>
       <div class="manifesto-grid">
-        <h2 data-reveal>我的路径<br />不算笔直。</h2>
+        <h2 data-reveal>站在人文与<br />技术之间。</h2>
         <div class="manifesto-copy" data-reveal>
           <p>
-            从 WebGIS 和空间分析，到 NL2SQL、Agent、教育应用和个人工具，我总会沿着一个问题走进另一个领域。
+            我本科和硕士都学习地理空间信息工程。地理让我关注人、城市、空间与关系；编程让我能把判断做成工具、系统和可以验证的原型。
           </p>
           <p>
-            地理训练让我习惯从空间、尺度与关系看问题；研发经历让我习惯把问题拆开，再把它们接回真实系统。共同点不是某个框架，而是我总想知道：<strong>它为什么这样工作，还能不能做得更好？</strong>
+            从 WebGIS、空间分析到 NL2SQL 与 Agent，我既做研究，也写代码、搭服务、做产品。我不想做远离真实人的技术，也不满足于只讨论概念。<strong>好奇心打开问题，人文视角决定方向，技术能力让我把想法真正做出来。</strong>
           </p>
-        </div>
-      </div>
-      <div class="topic-river" aria-label="关注领域">
-        <div>
-          <span>地理空间智能</span><i>·</i><span>Agent</span><i>·</i><span
-            >大模型应用</span
-          ><i>·</i><span>软件与工具</span><i>·</i><span>学习方法</span
-          ><i>·</i><span>城市与人</span><i>·</i>
-        </div>
-        <div aria-hidden="true">
-          <span>地理空间智能</span><i>·</i><span>Agent</span><i>·</i><span
-            >大模型应用</span
-          ><i>·</i><span>软件与工具</span><i>·</i><span>学习方法</span
-          ><i>·</i><span>城市与人</span><i>·</i>
         </div>
       </div>
     </section>
@@ -113,11 +100,8 @@ const posts = (await getCollection("blog"))
 
       <div class="timeline">
         {
-          experiences.map((item, index) => (
+          experiences.map((item) => (
             <article class="timeline-item" data-reveal>
-              <div class="timeline-marker">
-                <span>{String(index + 1).padStart(2, "0")}</span>
-              </div>
               <div class="timeline-meta">
                 <time>{item.period}</time>
                 <span>{item.place}</span>
@@ -135,15 +119,26 @@ const posts = (await getCollection("blog"))
         }
       </div>
 
-      <div class="education-strip" data-reveal>
-        <span>EDUCATION</span>
-        <div>
-          <strong>中国地质大学（武汉） × 东京大学</strong>
-          <p>
-            地理空间信息工程硕士在读 · 专业前 5% · 东京大学空间情报科学研究中心联合培养
-          </p>
-        </div>
-        <time>2024 — 2027</time>
+      <div class="education-heading" data-reveal>
+        <span class="section-index">EDUCATION</span>
+        <h3>教育经历</h3>
+      </div>
+      <div class="education-list">
+        {
+          education.map((item) => (
+            <article class="education-item" data-reveal>
+              <div class="education-meta">
+                <strong>{item.degree}</strong>
+                <time>{item.period}</time>
+              </div>
+              <div>
+                <h4>{item.school}</h4>
+                <p class="education-field">{item.field}</p>
+                <p class="education-detail">{item.detail}</p>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </section>
 
@@ -168,33 +163,45 @@ const posts = (await getCollection("blog"))
                 <span>{project.index}</span>
                 <span>{project.eyebrow}</span>
               </div>
-              <div class="project-visual" aria-hidden="true">
-                <span>{project.title.slice(0, 2)}</span>
-                <i></i><i></i><i></i>
-              </div>
+              {
+                project.links.find((link) => link.kind === "video") && (
+                  <button
+                    class="project-preview"
+                    type="button"
+                    data-video={
+                      project.links.find((link) => link.kind === "video")?.href
+                    }
+                    data-video-title={project.title}
+                    aria-label={`观看 ${project.title} 项目演示`}
+                  >
+                    <img
+                      src={project.preview}
+                      alt={`${project.title} 演示画面`}
+                      loading="lazy"
+                    />
+                    <span class="preview-action">
+                      <b>▶</b>
+                      <span>观看演示</span>
+                      <small>{project.duration}</small>
+                    </span>
+                  </button>
+                )
+              }
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <strong class="project-result">{project.result}</strong>
               <ul class="tag-list">
                 {project.tags.map((tag) => <li>{tag}</li>)}
               </ul>
-              {project.links.length > 0 && (
+              {project.links.some((link) => link.kind !== "video") && (
                 <div class="project-links">
-                  {project.links.map((link) =>
-                    link.kind === "video" ? (
-                      <button
-                        type="button"
-                        data-video={link.href}
-                        data-video-title={project.title}
-                      >
-                        {link.label} <span>▶</span>
-                      </button>
-                    ) : (
+                  {project.links
+                    .filter((link) => link.kind !== "video")
+                    .map((link) => (
                       <a href={link.href} target="_blank" rel="noreferrer">
                         {link.label} ↗
                       </a>
-                    ),
-                  )}
+                    ))}
                 </div>
               )}
             </article>
