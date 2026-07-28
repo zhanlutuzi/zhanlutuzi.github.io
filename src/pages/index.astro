@@ -28,7 +28,16 @@ const posts = (await getCollection("blog"))
       <a href="#research">研究</a>
       <a href="#notes">写作</a>
     </nav>
-    <a class="header-link" href="mailto:yuchenglong01@foxmail.com">联系我 ↗</a>
+    <div class="header-actions">
+      <a
+        href="https://www.linkedin.com/in/chenglong-yu-432306243"
+        target="_blank"
+        rel="noreferrer">LinkedIn ↗</a
+      >
+      <a class="header-link" href="mailto:yuchenglong01@foxmail.com"
+        >联系我 ↗</a
+      >
+    </div>
   </header>
 
   <main id="top">
@@ -48,26 +57,22 @@ const posts = (await getCollection("blog"))
           我把自己叫作“杂学家”。地理是观察世界的起点，技术是理解并改变问题的工具，而人始终是我判断一件事是否值得做的尺度。
         </p>
         <div class="hero-actions" data-reveal>
-          <a class="button button-dark" href="#projects">看看我做过的东西</a>
-          <a class="button button-ghost" href="/blog/">读一些思考</a>
+          <a class="button button-dark" href="#projects">看我做过什么</a>
+          <a class="button button-ghost" href="#experience">看我的经历</a>
         </div>
       </div>
 
-      <div class="hero-orbit" aria-hidden="true">
-        <div class="orbit-ring orbit-ring-one"></div>
-        <div class="orbit-ring orbit-ring-two"></div>
-        <span class="orbit-label label-a">地理</span>
-        <span class="orbit-label label-b">Agent</span>
-        <span class="orbit-label label-c">系统</span>
-        <span class="orbit-label label-d">写作</span>
-        <span class="orbit-core">?</span>
+      <div class="hero-globe">
+        <canvas
+          class="journey-globe"
+          aria-label="武汉、东京、杭州与北京组成的个人经历路径"
+        ></canvas>
+        <div class="globe-caption" aria-hidden="true">
+          <span>PERSONAL JOURNEY</span>
+          <strong>武汉 · 东京 · 杭州 · 北京</strong>
+        </div>
       </div>
 
-      <div class="hero-coordinates">
-        <span>30.59° N</span>
-        <span>114.30° E</span>
-        <span>WUHAN · TOKYO · BEIJING</span>
-      </div>
       <a class="scroll-cue" href="#about">
         <span>向下认识我</span>
         <i></i>
@@ -95,7 +100,7 @@ const posts = (await getCollection("blog"))
           <span class="section-index">01 / EXPERIENCE</span>
           <h2>走过的路</h2>
         </div>
-        <p>不是岗位列表，而是问题如何一步步发生变化。</p>
+        <p>这三段经历里，我做研究、写代码，也和真实用户一起把产品往前推。</p>
       </div>
 
       <div class="timeline">
@@ -104,10 +109,32 @@ const posts = (await getCollection("blog"))
             <article class="timeline-item" data-reveal>
               <div class="timeline-meta">
                 <time>{item.period}</time>
-                <span>{item.place}</span>
+                <strong class="timeline-place">{item.place}</strong>
+                {
+                  item.academic && (
+                    <div class="timeline-academic">
+                      <span>{item.academic.label}</span>
+                      <a
+                        href={item.academic.institutionHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.academic.institution} ↗
+                      </a>
+                      <a
+                        href={item.academic.advisorHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.academic.advisor} ↗
+                      </a>
+                    </div>
+                  )
+                }
               </div>
               <div class="timeline-main">
                 <h3>{item.organization}</h3>
+                <p class="department">{item.department}</p>
                 <p class="role">{item.role}</p>
                 <p class="timeline-summary">{item.summary}</p>
                 <ul>
@@ -148,7 +175,7 @@ const posts = (await getCollection("blog"))
           <span class="section-index">02 / SELECTED WORK</span>
           <h2>做过的东西</h2>
         </div>
-        <p>项目不是技术名词的集合，而是一个问题如何被理解、验证并真正做出来。</p>
+        <p>三个项目都从地理问题出发：先理解数据，再调用工具，最后走进真实的工作入口。</p>
       </div>
 
       <div class="project-grid">
@@ -313,9 +340,16 @@ const posts = (await getCollection("blog"))
       </p>
       <div data-reveal>
         <span>如果你也在思考 AI、地理、工具，或者某个还没有名字的问题——</span>
-        <a href="mailto:yuchenglong01@foxmail.com"
-          >yuchenglong01@foxmail.com ↗</a
-        >
+        <div class="contact-links">
+          <a href="mailto:yuchenglong01@foxmail.com"
+            >yuchenglong01@foxmail.com ↗</a
+          >
+          <a
+            href="https://www.linkedin.com/in/chenglong-yu-432306243"
+            target="_blank"
+            rel="noreferrer">LinkedIn ↗</a
+          >
+        </div>
       </div>
     </section>
   </main>
@@ -334,6 +368,11 @@ const posts = (await getCollection("blog"))
         href="https://www.researchgate.net/profile/Chenglong-Yu-10"
         target="_blank"
         rel="noreferrer">ResearchGate ↗</a
+      >
+      <a
+        href="https://www.linkedin.com/in/chenglong-yu-432306243"
+        target="_blank"
+        rel="noreferrer">LinkedIn ↗</a
       >
       <a href="/blog/">Blog ↗</a>
     </div>
@@ -410,6 +449,252 @@ const posts = (await getCollection("blog"))
     );
     resizeCanvas();
     drawContours();
+
+    const globeCanvas =
+      document.querySelector<HTMLCanvasElement>(".journey-globe");
+    const globeContext = globeCanvas?.getContext("2d");
+    const journeyCities = [
+      {
+        name: "武汉",
+        lat: 30.59,
+        lon: 114.3,
+        color: "#3755ff",
+        dx: -45,
+        dy: 23,
+      },
+      {
+        name: "东京",
+        lat: 35.68,
+        lon: 139.76,
+        color: "#ff7b32",
+        dx: 13,
+        dy: -13,
+      },
+      {
+        name: "杭州",
+        lat: 30.27,
+        lon: 120.15,
+        color: "#142019",
+        dx: 10,
+        dy: 30,
+      },
+      {
+        name: "北京",
+        lat: 39.9,
+        lon: 116.41,
+        color: "#142019",
+        dx: -44,
+        dy: -14,
+      },
+    ];
+
+    function resizeGlobe() {
+      if (!globeCanvas) return;
+      const ratio = Math.min(devicePixelRatio, 2);
+      globeCanvas.width = globeCanvas.clientWidth * ratio;
+      globeCanvas.height = globeCanvas.clientHeight * ratio;
+    }
+
+    function projectGlobePoint(
+      lat: number,
+      lon: number,
+      centerLon: number,
+      tilt: number,
+      centerX: number,
+      centerY: number,
+      radius: number,
+    ) {
+      const phi = (lat * Math.PI) / 180;
+      const lambda = (lon * Math.PI) / 180 - centerLon;
+      const x = Math.cos(phi) * Math.sin(lambda);
+      const originalY = -Math.sin(phi);
+      const originalZ = Math.cos(phi) * Math.cos(lambda);
+      const y =
+        originalY * Math.cos(tilt) - originalZ * Math.sin(tilt);
+      const z =
+        originalY * Math.sin(tilt) + originalZ * Math.cos(tilt);
+      return {
+        x: centerX + x * radius,
+        y: centerY + y * radius,
+        visible: z > -0.01,
+      };
+    }
+
+    function drawProjectedLine(
+      coordinates: { lat: number; lon: number }[],
+      centerLon: number,
+      tilt: number,
+      centerX: number,
+      centerY: number,
+      radius: number,
+    ) {
+      if (!globeContext) return;
+      let drawing = false;
+      globeContext.beginPath();
+      coordinates.forEach((coordinate) => {
+        const point = projectGlobePoint(
+          coordinate.lat,
+          coordinate.lon,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+        if (!point.visible) {
+          drawing = false;
+          return;
+        }
+        if (!drawing) {
+          globeContext.moveTo(point.x, point.y);
+          drawing = true;
+        } else {
+          globeContext.lineTo(point.x, point.y);
+        }
+      });
+      globeContext.stroke();
+    }
+
+    function drawGlobe() {
+      if (!globeCanvas || !globeContext) return;
+      const ratio = Math.min(devicePixelRatio, 2);
+      const width = globeCanvas.width / ratio;
+      const height = globeCanvas.height / ratio;
+      const centerX = width / 2;
+      const centerY = height / 2 - 8;
+      const radius = Math.min(width, height) * 0.39;
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const centerLon =
+        (124 * Math.PI) / 180 +
+        (pointerX - 0.5) * 0.16 +
+        (reduced ? 0 : Math.sin(frame * 0.003) * 0.025);
+      const tilt = -0.12 + (pointerY - 0.5) * 0.1;
+
+      globeContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+      globeContext.clearRect(0, 0, width, height);
+
+      const fill = globeContext.createRadialGradient(
+        centerX - radius * 0.28,
+        centerY - radius * 0.35,
+        radius * 0.08,
+        centerX,
+        centerY,
+        radius,
+      );
+      fill.addColorStop(0, "rgba(255, 254, 248, 0.78)");
+      fill.addColorStop(0.72, "rgba(204, 255, 77, 0.16)");
+      fill.addColorStop(1, "rgba(55, 85, 255, 0.08)");
+      globeContext.beginPath();
+      globeContext.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      globeContext.fillStyle = fill;
+      globeContext.fill();
+      globeContext.strokeStyle = "rgba(20, 32, 25, 0.62)";
+      globeContext.lineWidth = 1.4;
+      globeContext.stroke();
+
+      globeContext.save();
+      globeContext.beginPath();
+      globeContext.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      globeContext.clip();
+      globeContext.strokeStyle = "rgba(20, 32, 25, 0.18)";
+      globeContext.lineWidth = 0.8;
+
+      for (let lat = -60; lat <= 60; lat += 20) {
+        const coordinates = [];
+        for (let lon = -180; lon <= 180; lon += 3) {
+          coordinates.push({ lat, lon });
+        }
+        drawProjectedLine(
+          coordinates,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+      }
+
+      for (let lon = -180; lon < 180; lon += 20) {
+        const coordinates = [];
+        for (let lat = -90; lat <= 90; lat += 3) {
+          coordinates.push({ lat, lon });
+        }
+        drawProjectedLine(
+          coordinates,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+      }
+
+      globeContext.strokeStyle = "rgba(55, 85, 255, 0.72)";
+      globeContext.lineWidth = 1.8;
+      globeContext.setLineDash([4, 5]);
+      for (let index = 0; index < journeyCities.length - 1; index += 1) {
+        const start = journeyCities[index];
+        const end = journeyCities[index + 1];
+        const coordinates = [];
+        for (let step = 0; step <= 28; step += 1) {
+          const progress = step / 28;
+          coordinates.push({
+            lat:
+              start.lat +
+              (end.lat - start.lat) * progress +
+              Math.sin(progress * Math.PI) * 2.5,
+            lon: start.lon + (end.lon - start.lon) * progress,
+          });
+        }
+        drawProjectedLine(
+          coordinates,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+      }
+      globeContext.setLineDash([]);
+      globeContext.restore();
+
+      journeyCities.forEach((city, index) => {
+        const point = projectGlobePoint(
+          city.lat,
+          city.lon,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+        if (!point.visible) return;
+        const pulse =
+          reduced ? 0 : Math.sin(frame * 0.045 + index * 1.4) * 1.5;
+        globeContext.beginPath();
+        globeContext.arc(point.x, point.y, 8 + pulse, 0, Math.PI * 2);
+        globeContext.fillStyle = `${city.color}22`;
+        globeContext.fill();
+        globeContext.beginPath();
+        globeContext.arc(point.x, point.y, 4.2, 0, Math.PI * 2);
+        globeContext.fillStyle = city.color;
+        globeContext.fill();
+        globeContext.font =
+          '600 13px "PingFang SC", "Microsoft YaHei", sans-serif';
+        globeContext.fillStyle = "#142019";
+        globeContext.fillText(
+          city.name,
+          point.x + city.dx,
+          point.y + city.dy,
+        );
+      });
+
+      requestAnimationFrame(drawGlobe);
+    }
+
+    addEventListener("resize", resizeGlobe);
+    resizeGlobe();
+    drawGlobe();
 
     document.querySelectorAll<HTMLElement>("[data-tilt]").forEach((card) => {
       card.addEventListener("pointermove", (event) => {

@@ -138,12 +138,14 @@ video {
 }
 
 .site-header nav a,
+.header-actions a,
 .header-link,
 .subpage-header > a:last-child {
   position: relative;
 }
 
 .site-header nav a::after,
+.header-actions a::after,
 .header-link::after,
 .subpage-header > a:last-child::after {
   position: absolute;
@@ -159,15 +161,26 @@ video {
 }
 
 .site-header nav a:hover::after,
+.header-actions a:hover::after,
 .header-link:hover::after,
 .subpage-header > a:last-child:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 
-.header-link,
+.header-actions,
 .subpage-header > a:last-child {
   justify-self: end;
+}
+
+.header-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.header-actions > a:first-child {
+  color: var(--muted);
 }
 
 .hero {
@@ -210,7 +223,7 @@ video {
   position: relative;
   z-index: 3;
   align-self: center;
-  width: min(840px, 65vw);
+  width: min(720px, 52vw);
   margin-left: clamp(40px, 8vw, 132px);
   padding: 140px 0 100px;
 }
@@ -304,110 +317,45 @@ video {
   background: var(--white);
 }
 
-.hero-orbit {
+.hero-globe {
   position: absolute;
-  right: clamp(30px, 8vw, 130px);
-  bottom: 16vh;
-  width: clamp(240px, 28vw, 460px);
+  z-index: 2;
+  top: 50%;
+  right: clamp(28px, 5vw, 90px);
+  width: clamp(330px, 32vw, 520px);
   aspect-ratio: 1;
+  transform: translateY(-47%);
 }
 
-.orbit-ring {
+.journey-globe {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 22px 45px rgba(20, 32, 25, 0.14));
+}
+
+.globe-caption {
   position: absolute;
-  border: 1px solid rgba(20, 32, 25, 0.28);
-  border-radius: 50%;
-}
-
-.orbit-ring-one {
-  inset: 0;
-  animation: orbit-spin 24s linear infinite;
-}
-
-.orbit-ring-two {
-  inset: 18%;
-  border-style: dashed;
-  animation: orbit-spin 18s linear infinite reverse;
-}
-
-.orbit-ring::before,
-.orbit-ring::after {
-  position: absolute;
-  width: 9px;
-  height: 9px;
-  content: "";
-  border-radius: 50%;
-  background: var(--blue);
-}
-
-.orbit-ring::before {
-  top: 12%;
-  left: 18%;
-}
-
-.orbit-ring::after {
-  right: 4%;
-  bottom: 27%;
-  background: var(--orange);
-}
-
-.orbit-core {
-  position: absolute;
-  inset: 39%;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  color: var(--ink);
-  background: var(--lime);
-  font-family: var(--serif);
-  font-size: clamp(32px, 5vw, 70px);
-}
-
-.orbit-label {
-  position: absolute;
-  padding: 5px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: rgba(243, 240, 232, 0.85);
-  font-size: 11px;
-  backdrop-filter: blur(8px);
-}
-
-.label-a {
-  top: 1%;
-  left: 42%;
-}
-
-.label-b {
-  top: 45%;
-  right: -4%;
-}
-
-.label-c {
-  bottom: 7%;
-  left: 26%;
-}
-
-.label-d {
-  top: 35%;
-  left: -5%;
-}
-
-@keyframes orbit-spin {
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.hero-coordinates {
-  position: absolute;
-  right: 40px;
-  bottom: 28px;
+  right: 10%;
+  bottom: 3%;
+  left: 10%;
   display: flex;
-  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 12px;
+  border-top: 1px solid rgba(20, 32, 25, 0.28);
+}
+
+.globe-caption span {
   color: var(--muted);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 10px;
   letter-spacing: 0.1em;
+}
+
+.globe-caption strong {
+  font-family: var(--serif);
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .scroll-cue {
@@ -520,7 +468,7 @@ video {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 270px 1fr;
   gap: 48px;
   padding: 52px 0 62px;
   border-bottom: 1px solid var(--line);
@@ -536,18 +484,47 @@ video {
 .timeline-meta time {
   color: var(--ink);
   font-family: var(--mono);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 650;
   letter-spacing: 0.02em;
 }
 
-.timeline-meta span {
+.timeline-place {
   width: fit-content;
-  padding: 5px 10px;
-  border: 1px solid var(--line);
+  padding: 7px 13px;
+  border: 1px solid var(--ink);
   border-radius: 999px;
+  color: var(--ink);
+  background: var(--lime);
+  font-size: 15px;
+  font-weight: 650;
+}
+
+.timeline-academic {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-academic span {
   color: var(--muted);
-  font-size: 13px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+.timeline-academic a {
+  width: fit-content;
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.timeline-academic a:hover {
+  color: var(--blue);
 }
 
 .timeline-main {
@@ -558,22 +535,33 @@ video {
 
 .timeline-main h3 {
   grid-column: 1;
+  grid-row: 1;
   margin: 0;
   font-family: var(--serif);
   font-size: clamp(25px, 2.2vw, 36px);
   line-height: 1.25;
 }
 
+.department {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 15px;
+}
+
 .role {
   grid-column: 1;
-  margin: 10px 0 0;
+  grid-row: 3;
+  margin: 8px 0 0;
   color: var(--blue);
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: 650;
 }
 
 .timeline-summary {
   grid-column: 2;
-  grid-row: 1 / span 2;
+  grid-row: 1 / span 3;
   margin: 0;
   font-family: var(--serif);
   font-size: 18px;
@@ -1142,6 +1130,12 @@ video {
   font-size: 12px;
 }
 
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 24px;
+}
+
 .site-footer,
 .subpage-footer {
   display: grid;
@@ -1500,14 +1494,13 @@ video {
     font-size: clamp(56px, 13vw, 92px);
   }
 
-  .hero-orbit {
-    right: -80px;
-    bottom: 10vh;
-    opacity: 0.55;
-  }
-
-  .hero-coordinates {
-    display: none;
+  .hero-globe {
+    top: auto;
+    right: -100px;
+    bottom: 4vh;
+    width: 390px;
+    opacity: 0.26;
+    transform: none;
   }
 
   .scroll-cue {
@@ -1534,6 +1527,7 @@ video {
   }
 
   .timeline-main h3,
+  .department,
   .role,
   .timeline-summary,
   .timeline-main ul {
@@ -1619,11 +1613,19 @@ video {
     padding: 0 17px;
   }
 
-  .hero-orbit {
-    right: -120px;
-    bottom: 40px;
-    width: 280px;
-    opacity: 0.3;
+  .header-actions > a:first-child {
+    display: none;
+  }
+
+  .hero-globe {
+    right: -92px;
+    bottom: 28px;
+    width: 290px;
+    opacity: 0.2;
+  }
+
+  .globe-caption {
+    display: none;
   }
 
   .manifesto,
@@ -1661,9 +1663,15 @@ video {
 
   .timeline-meta {
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 12px;
+  }
+
+  .timeline-academic {
+    width: 100%;
+    margin-top: 8px;
   }
 
   .timeline-main h3 {

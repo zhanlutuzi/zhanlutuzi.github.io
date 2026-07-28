@@ -21,8 +21,10 @@ export const experiences = [
   {
     period: "2026.05 — 至今",
     place: "北京",
-    organization: "新东方教育科技集团 · 互联网中心",
+    organization: "新东方教育科技集团",
+    department: "互联网中心",
     role: "AI 研发实习生",
+    academic: null,
     summary:
       "围绕课程内容生产，先处理基本单元“卡片”的反馈迭代，再在此基础上开发组课 Agent，并接入真实课程制作平台。",
     points: [
@@ -34,8 +36,10 @@ export const experiences = [
   {
     period: "2026.02 — 2026.04",
     place: "杭州",
-    organization: "浙江精准学科技有限公司 · 产品部",
+    organization: "浙江精准学科技有限公司",
+    department: "产品部",
     role: "AI 产品经理实习生",
+    academic: null,
     summary:
       "参与 AI 教育机讲题模块的质量评测，把专家判断拆成可执行、可回归的自动化评测流程。",
     points: [
@@ -46,8 +50,17 @@ export const experiences = [
   {
     period: "2023.09 — 2025.12",
     place: "东京",
-    organization: "LocationMind Inc · R&D Division",
+    organization: "LocationMind Inc.",
+    department: "R&D Division",
     role: "AI 产品与研发实习生",
+    academic: {
+      label: "同期联合培养",
+      institution: "东京大学空间信息科学研究中心（CSIS）",
+      institutionHref: "https://www.csis.u-tokyo.ac.jp/",
+      advisor: "导师：柴崎亮介",
+      advisorHref:
+        "https://www.u-tokyo.ac.jp/focus/ja/people/people001890.html",
+    },
     summary:
       "从自然语言访问地理数据库出发，继续探索地理空间分析 Agent，最终将能力接入办公入口，形成数字员工原型。",
     points: [
@@ -65,7 +78,7 @@ export const education = [
     school: "中国地质大学（武汉）",
     field: "地理空间信息工程 · 211 院校",
     detail:
-      "专业成绩前 5%；东京大学空间情报科学研究中心联合培养；获校级一等奖学金。",
+      "专业成绩前 5%；东京大学空间信息科学研究中心联合培养；获校级一等奖学金。",
   },
   {
     degree: "工学学士",
