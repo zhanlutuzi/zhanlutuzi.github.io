@@ -267,21 +267,27 @@ video {
 }
 
 .hero h1 em {
-  position: relative;
   color: var(--blue);
   font-style: normal;
 }
 
-.hero h1 em::after {
+.hero-mark {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+}
+
+.hero-mark::after {
   position: absolute;
-  right: -0.06em;
-  bottom: 0.02em;
-  width: 0.44em;
-  height: 0.09em;
+  right: -0.02em;
+  bottom: 0.06em;
+  left: 0.03em;
+  height: 0.075em;
   content: "";
-  transform: rotate(-4deg);
-  background: var(--lime);
   z-index: -1;
+  transform: rotate(-2deg);
+  transform-origin: left center;
+  background: var(--lime);
 }
 
 .hero-intro {

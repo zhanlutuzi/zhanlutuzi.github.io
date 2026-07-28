@@ -225,7 +225,19 @@ const copy = isEnglish
         </p>
         <h1 data-reveal>
           {copy.hero[0]}<br />
-          <em>{copy.hero[1]}</em><br />
+          <em>
+            {
+              isEnglish ? (
+                <>
+                  Understand the <span class="hero-mark">world</span>.
+                </>
+              ) : (
+                <>
+                  去<span class="hero-mark">理解</span>，
+                </>
+              )
+            }
+          </em><br />
           {copy.hero[2]}
         </h1>
         <p class="hero-intro" data-reveal>{copy.heroIntro}</p>
