@@ -65,10 +65,16 @@ const posts = (await getCollection("blog"))
       <div class="hero-globe">
         <canvas
           class="journey-globe"
+          role="img"
           aria-label="武汉、东京、杭州与北京组成的个人经历路径"
         ></canvas>
-        <div class="globe-caption" aria-hidden="true">
-          <span>PERSONAL JOURNEY</span>
+        <div class="globe-tooltip" aria-live="polite" hidden>
+          <span data-globe-city></span>
+          <strong data-globe-title></strong>
+          <p data-globe-detail></p>
+        </div>
+        <div class="globe-caption">
+          <span>移动鼠标探索地点</span>
           <strong>武汉 · 东京 · 杭州 · 北京</strong>
         </div>
       </div>
@@ -110,27 +116,6 @@ const posts = (await getCollection("blog"))
               <div class="timeline-meta">
                 <time>{item.period}</time>
                 <strong class="timeline-place">{item.place}</strong>
-                {
-                  item.academic && (
-                    <div class="timeline-academic">
-                      <span>{item.academic.label}</span>
-                      <a
-                        href={item.academic.institutionHref}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {item.academic.institution} ↗
-                      </a>
-                      <a
-                        href={item.academic.advisorHref}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {item.academic.advisor} ↗
-                      </a>
-                    </div>
-                  )
-                }
               </div>
               <div class="timeline-main">
                 <h3>{item.organization}</h3>
@@ -162,6 +147,26 @@ const posts = (await getCollection("blog"))
                 <h4>{item.school}</h4>
                 <p class="education-field">{item.field}</p>
                 <p class="education-detail">{item.detail}</p>
+                {
+                  item.jointProgram && (
+                    <div class="education-joint">
+                      <a
+                        href={item.jointProgram.institutionHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.jointProgram.institution} ↗
+                      </a>
+                      <a
+                        href={item.jointProgram.advisorHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {item.jointProgram.advisor} ↗
+                      </a>
+                    </div>
+                  )
+                }
               </div>
             </article>
           ))
@@ -429,7 +434,7 @@ const posts = (await getCollection("blog"))
           else context.lineTo(x, y);
         }
         context.strokeStyle =
-          line % 4 === 0 ? "rgba(19, 32, 24, .35)" : "rgba(19, 32, 24, .14)";
+          line % 4 === 0 ? "rgba(19, 32, 24, .32)" : "rgba(19, 32, 24, .12)";
         context.lineWidth = line % 4 === 0 ? 1.2 : 0.8;
         context.stroke();
       }
@@ -452,13 +457,23 @@ const posts = (await getCollection("blog"))
 
     const globeCanvas =
       document.querySelector<HTMLCanvasElement>(".journey-globe");
+    const globeCard = document.querySelector<HTMLElement>(".hero-globe");
     const globeContext = globeCanvas?.getContext("2d");
+    const globeTooltip =
+      document.querySelector<HTMLElement>(".globe-tooltip");
+    const tooltipCity =
+      globeTooltip?.querySelector<HTMLElement>("[data-globe-city]");
+    const tooltipTitle =
+      globeTooltip?.querySelector<HTMLElement>("[data-globe-title]");
+    const tooltipDetail =
+      globeTooltip?.querySelector<HTMLElement>("[data-globe-detail]");
     const journeyCities = [
       {
         name: "武汉",
         lat: 30.59,
         lon: 114.3,
-        color: "#3755ff",
+        title: "学习与长期建设",
+        detail: "中国地质大学（武汉） · UrbanComp",
         dx: -45,
         dy: 23,
       },
@@ -466,7 +481,8 @@ const posts = (await getCollection("blog"))
         name: "东京",
         lat: 35.68,
         lon: 139.76,
-        color: "#ff7b32",
+        title: "研究与产品实践",
+        detail: "LocationMind · 东京大学 CSIS",
         dx: 13,
         dy: -13,
       },
@@ -474,7 +490,8 @@ const posts = (await getCollection("blog"))
         name: "杭州",
         lat: 30.27,
         lon: 120.15,
-        color: "#142019",
+        title: "AI 教育产品",
+        detail: "浙江精准学科技有限公司",
         dx: 10,
         dy: 30,
       },
@@ -482,11 +499,25 @@ const posts = (await getCollection("blog"))
         name: "北京",
         lat: 39.9,
         lon: 116.41,
-        color: "#142019",
+        title: "AI 应用研发",
+        detail: "新东方教育科技集团 · 互联网中心",
         dx: -44,
         dy: -14,
       },
     ];
+    let globeFrame = 0;
+    let globeTargetX = 0.5;
+    let globeTargetY = 0.5;
+    let globeViewX = 0.5;
+    let globeViewY = 0.5;
+    let hoveredCity = "";
+    let projectedCities: {
+      name: string;
+      x: number;
+      y: number;
+      visible: boolean;
+    }[] = [];
+    let landRings: { lat: number; lon: number }[][] = [];
 
     function resizeGlobe() {
       if (!globeCanvas) return;
@@ -516,7 +547,7 @@ const posts = (await getCollection("blog"))
       return {
         x: centerX + x * radius,
         y: centerY + y * radius,
-        visible: z > -0.01,
+        visible: z > 0.015,
       };
     }
 
@@ -555,6 +586,81 @@ const posts = (await getCollection("blog"))
       globeContext.stroke();
     }
 
+    function decodeLand(topology: {
+      transform: {
+        scale: [number, number];
+        translate: [number, number];
+      };
+      arcs: [number, number][][];
+      objects: {
+        land: {
+          geometries: {
+            type: string;
+            arcs: number[][][];
+          }[];
+        };
+      };
+    }) {
+      const decodedArcs = topology.arcs.map((arc) => {
+        let x = 0;
+        let y = 0;
+        return arc.map(([deltaX, deltaY]) => {
+          x += deltaX;
+          y += deltaY;
+          return {
+            lon:
+              x * topology.transform.scale[0] +
+              topology.transform.translate[0],
+            lat:
+              y * topology.transform.scale[1] +
+              topology.transform.translate[1],
+          };
+        });
+      });
+
+      const rings: { lat: number; lon: number }[][] = [];
+      topology.objects.land.geometries.forEach((geometry) => {
+        if (geometry.type !== "MultiPolygon") return;
+        geometry.arcs.forEach((polygon) => {
+          polygon.forEach((ring) => {
+            const coordinates: { lat: number; lon: number }[] = [];
+            ring.forEach((arcIndex, index) => {
+              const reversed = arcIndex < 0;
+              const source = decodedArcs[reversed ? ~arcIndex : arcIndex];
+              const arc = reversed ? [...source].reverse() : source;
+              coordinates.push(...(index === 0 ? arc : arc.slice(1)));
+            });
+            rings.push(coordinates);
+          });
+        });
+      });
+      return rings;
+    }
+
+    function updateGlobeTooltip() {
+      if (!globeCanvas || !globeCard || !globeTooltip || !hoveredCity) return;
+      const city = journeyCities.find((item) => item.name === hoveredCity);
+      const point = projectedCities.find((item) => item.name === hoveredCity);
+      if (!city || !point || !point.visible) {
+        globeTooltip.hidden = true;
+        return;
+      }
+      if (tooltipCity) tooltipCity.textContent = city.name;
+      if (tooltipTitle) tooltipTitle.textContent = city.title;
+      if (tooltipDetail) tooltipDetail.textContent = city.detail;
+      globeTooltip.hidden = false;
+      const left = Math.min(
+        globeCard.clientWidth - globeTooltip.offsetWidth - 16,
+        Math.max(16, globeCanvas.offsetLeft + point.x + 18),
+      );
+      const top = Math.min(
+        globeCard.clientHeight - globeTooltip.offsetHeight - 52,
+        Math.max(54, globeCanvas.offsetTop + point.y - 24),
+      );
+      globeTooltip.style.left = `${left}px`;
+      globeTooltip.style.top = `${top}px`;
+    }
+
     function drawGlobe() {
       if (!globeCanvas || !globeContext) return;
       const ratio = Math.min(devicePixelRatio, 2);
@@ -562,13 +668,15 @@ const posts = (await getCollection("blog"))
       const height = globeCanvas.height / ratio;
       const centerX = width / 2;
       const centerY = height / 2 - 8;
-      const radius = Math.min(width, height) * 0.39;
+      const radius = Math.min(width, height) * 0.405;
       const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      globeViewX += (globeTargetX - globeViewX) * 0.055;
+      globeViewY += (globeTargetY - globeViewY) * 0.055;
       const centerLon =
         (124 * Math.PI) / 180 +
-        (pointerX - 0.5) * 0.16 +
-        (reduced ? 0 : Math.sin(frame * 0.003) * 0.025);
-      const tilt = -0.12 + (pointerY - 0.5) * 0.1;
+        (globeViewX - 0.5) * 0.32 +
+        (reduced ? 0 : Math.sin(globeFrame * 0.0025) * 0.018);
+      const tilt = -0.11 + (globeViewY - 0.5) * 0.18;
 
       globeContext.setTransform(ratio, 0, 0, ratio, 0, 0);
       globeContext.clearRect(0, 0, width, height);
@@ -581,9 +689,9 @@ const posts = (await getCollection("blog"))
         centerY,
         radius,
       );
-      fill.addColorStop(0, "rgba(255, 254, 248, 0.78)");
+      fill.addColorStop(0, "rgba(251, 252, 253, 0.94)");
       fill.addColorStop(0.72, "rgba(204, 255, 77, 0.16)");
-      fill.addColorStop(1, "rgba(55, 85, 255, 0.08)");
+      fill.addColorStop(1, "rgba(55, 85, 255, 0.1)");
       globeContext.beginPath();
       globeContext.arc(centerX, centerY, radius, 0, Math.PI * 2);
       globeContext.fillStyle = fill;
@@ -596,7 +704,7 @@ const posts = (await getCollection("blog"))
       globeContext.beginPath();
       globeContext.arc(centerX, centerY, radius, 0, Math.PI * 2);
       globeContext.clip();
-      globeContext.strokeStyle = "rgba(20, 32, 25, 0.18)";
+      globeContext.strokeStyle = "rgba(20, 32, 25, 0.16)";
       globeContext.lineWidth = 0.8;
 
       for (let lat = -60; lat <= 60; lat += 20) {
@@ -629,8 +737,21 @@ const posts = (await getCollection("blog"))
         );
       }
 
-      globeContext.strokeStyle = "rgba(55, 85, 255, 0.72)";
-      globeContext.lineWidth = 1.8;
+      globeContext.strokeStyle = "rgba(20, 32, 25, 0.7)";
+      globeContext.lineWidth = 1.05;
+      landRings.forEach((ring) => {
+        drawProjectedLine(
+          ring,
+          centerLon,
+          tilt,
+          centerX,
+          centerY,
+          radius,
+        );
+      });
+
+      globeContext.strokeStyle = "#3755ff";
+      globeContext.lineWidth = 2.1;
       globeContext.setLineDash([4, 5]);
       for (let index = 0; index < journeyCities.length - 1; index += 1) {
         const start = journeyCities[index];
@@ -658,6 +779,7 @@ const posts = (await getCollection("blog"))
       globeContext.setLineDash([]);
       globeContext.restore();
 
+      projectedCities = [];
       journeyCities.forEach((city, index) => {
         const point = projectGlobePoint(
           city.lat,
@@ -669,18 +791,34 @@ const posts = (await getCollection("blog"))
           radius,
         );
         if (!point.visible) return;
+        projectedCities.push({ name: city.name, ...point });
+        const isHovered = hoveredCity === city.name;
         const pulse =
-          reduced ? 0 : Math.sin(frame * 0.045 + index * 1.4) * 1.5;
+          reduced ? 0 : Math.sin(globeFrame * 0.045 + index * 1.4) * 1.2;
         globeContext.beginPath();
-        globeContext.arc(point.x, point.y, 8 + pulse, 0, Math.PI * 2);
-        globeContext.fillStyle = `${city.color}22`;
+        globeContext.arc(
+          point.x,
+          point.y,
+          (isHovered ? 12 : 8) + pulse,
+          0,
+          Math.PI * 2,
+        );
+        globeContext.fillStyle = isHovered
+          ? "rgba(55, 85, 255, 0.22)"
+          : "rgba(55, 85, 255, 0.12)";
         globeContext.fill();
         globeContext.beginPath();
-        globeContext.arc(point.x, point.y, 4.2, 0, Math.PI * 2);
-        globeContext.fillStyle = city.color;
+        globeContext.arc(
+          point.x,
+          point.y,
+          isHovered ? 5.2 : 4.2,
+          0,
+          Math.PI * 2,
+        );
+        globeContext.fillStyle = "#3755ff";
         globeContext.fill();
         globeContext.font =
-          '600 13px "PingFang SC", "Microsoft YaHei", sans-serif';
+          '600 13px "Songti SC", "STSong", "PingFang SC", serif';
         globeContext.fillStyle = "#142019";
         globeContext.fillText(
           city.name,
@@ -689,10 +827,54 @@ const posts = (await getCollection("blog"))
         );
       });
 
+      updateGlobeTooltip();
+      globeFrame += 1;
       requestAnimationFrame(drawGlobe);
     }
 
     addEventListener("resize", resizeGlobe);
+    globeCanvas?.addEventListener(
+      "pointermove",
+      (event) => {
+        const rect = globeCanvas.getBoundingClientRect();
+        globeTargetX = Math.min(
+          1,
+          Math.max(0, (event.clientX - rect.left) / rect.width),
+        );
+        globeTargetY = Math.min(
+          1,
+          Math.max(0, (event.clientY - rect.top) / rect.height),
+        );
+        const pointerX = event.clientX - rect.left;
+        const pointerY = event.clientY - rect.top;
+        const nearest = projectedCities
+          .filter((city) => city.visible)
+          .map((city) => ({
+            ...city,
+            distance: Math.hypot(city.x - pointerX, city.y - pointerY),
+          }))
+          .sort((a, b) => a.distance - b.distance)[0];
+        hoveredCity = nearest && nearest.distance < 24 ? nearest.name : "";
+        globeCanvas.style.cursor = hoveredCity ? "pointer" : "grab";
+        if (!hoveredCity && globeTooltip) globeTooltip.hidden = true;
+      },
+      { passive: true },
+    );
+    globeCanvas?.addEventListener("pointerleave", () => {
+      globeTargetX = 0.5;
+      globeTargetY = 0.5;
+      hoveredCity = "";
+      if (globeTooltip) globeTooltip.hidden = true;
+      if (globeCanvas) globeCanvas.style.cursor = "grab";
+    });
+    fetch("/land-110m.json")
+      .then((response) => response.json())
+      .then((topology) => {
+        landRings = decodeLand(topology);
+      })
+      .catch(() => {
+        landRings = [];
+      });
     resizeGlobe();
     drawGlobe();
 

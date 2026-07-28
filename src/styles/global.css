@@ -1,13 +1,13 @@
 :root {
-  --paper: #f3f0e8;
-  --paper-deep: #e7e1d4;
+  --paper: #f1f4f7;
+  --paper-deep: #e2e7eb;
   --ink: #142019;
   --muted: #68716b;
   --line: rgba(20, 32, 25, 0.2);
   --lime: #ccff4d;
   --blue: #3755ff;
   --orange: #ff7b32;
-  --white: #fffef8;
+  --white: #fbfcfd;
   --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Times New Roman",
     serif;
   --sans: "Inter", "SF Pro Display", "PingFang SC", "Microsoft YaHei",
@@ -28,7 +28,7 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 20% 10%, rgba(204, 255, 77, 0.09), transparent 25%),
+    radial-gradient(circle at 20% 10%, rgba(55, 85, 255, 0.055), transparent 25%),
     var(--paper);
   font-family: var(--sans);
   -webkit-font-smoothing: antialiased;
@@ -498,33 +498,6 @@ video {
   background: var(--lime);
   font-size: 15px;
   font-weight: 650;
-}
-
-.timeline-academic {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 14px;
-  padding-top: 18px;
-  border-top: 1px solid var(--line);
-}
-
-.timeline-academic span {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: 0.08em;
-}
-
-.timeline-academic a {
-  width: fit-content;
-  font-family: var(--serif);
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.timeline-academic a:hover {
-  color: var(--blue);
 }
 
 .timeline-main {
@@ -1669,11 +1642,6 @@ video {
     margin-bottom: 12px;
   }
 
-  .timeline-academic {
-    width: 100%;
-    margin-top: 8px;
-  }
-
   .timeline-main h3 {
     font-size: 25px;
   }
@@ -1801,4 +1769,67 @@ video {
     opacity: 1;
     transform: none;
   }
+}
+
+.journey-globe {
+  cursor: grab;
+}
+
+.globe-tooltip {
+  position: absolute;
+  z-index: 5;
+  width: 220px;
+  padding: 15px 16px;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  background: rgba(251, 252, 253, 0.96);
+  box-shadow: 8px 8px 0 rgba(55, 85, 255, 0.13);
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+}
+
+.globe-tooltip[hidden] {
+  display: none;
+}
+
+.globe-tooltip span {
+  color: var(--blue);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+.globe-tooltip strong {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--serif);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.globe-tooltip p {
+  margin: 5px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.education-joint {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-top: 17px;
+  padding-top: 15px;
+  border-top: 1px solid var(--line);
+}
+
+.education-joint a {
+  width: fit-content;
+  font-family: var(--serif);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.education-joint a:hover {
+  color: var(--blue);
 }

@@ -24,7 +24,6 @@ export const experiences = [
     organization: "新东方教育科技集团",
     department: "互联网中心",
     role: "AI 研发实习生",
-    academic: null,
     summary:
       "围绕课程内容生产，先处理基本单元“卡片”的反馈迭代，再在此基础上开发组课 Agent，并接入真实课程制作平台。",
     points: [
@@ -39,7 +38,6 @@ export const experiences = [
     organization: "浙江精准学科技有限公司",
     department: "产品部",
     role: "AI 产品经理实习生",
-    academic: null,
     summary:
       "参与 AI 教育机讲题模块的质量评测，把专家判断拆成可执行、可回归的自动化评测流程。",
     points: [
@@ -53,14 +51,6 @@ export const experiences = [
     organization: "LocationMind Inc.",
     department: "R&D Division",
     role: "AI 产品与研发实习生",
-    academic: {
-      label: "同期联合培养",
-      institution: "东京大学空间信息科学研究中心（CSIS）",
-      institutionHref: "https://www.csis.u-tokyo.ac.jp/",
-      advisor: "导师：柴崎亮介",
-      advisorHref:
-        "https://www.u-tokyo.ac.jp/focus/ja/people/people001890.html",
-    },
     summary:
       "从自然语言访问地理数据库出发，继续探索地理空间分析 Agent，最终将能力接入办公入口，形成数字员工原型。",
     points: [
@@ -77,8 +67,14 @@ export const education = [
     period: "2024.09 — 2027.06",
     school: "中国地质大学（武汉）",
     field: "地理空间信息工程 · 211 院校",
-    detail:
-      "专业成绩前 5%；东京大学空间信息科学研究中心联合培养；获校级一等奖学金。",
+    detail: "专业成绩前 5%；获校级一等奖学金。",
+    jointProgram: {
+      institution: "东京大学空间信息科学研究中心（CSIS）联合培养",
+      institutionHref: "https://www.csis.u-tokyo.ac.jp/",
+      advisor: "联培导师：柴崎亮介",
+      advisorHref:
+        "https://www.u-tokyo.ac.jp/focus/ja/people/people001890.html",
+    },
   },
   {
     degree: "工学学士",
@@ -87,6 +83,7 @@ export const education = [
     field: "地理空间信息工程 · 211 院校",
     detail:
       "专业排名前 5%，保研；参与国家级大学生创新创业训练计划，获软件著作权与地大英才奖学金。",
+    jointProgram: null,
   },
 ];
 
