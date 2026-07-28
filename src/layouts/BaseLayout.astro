@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+}
+
+const {
+  title = "喻承龙｜沿着好奇心，去理解，也去动手",
+  description = "热爱地理，也对技术、人和世界如何运作保持兴趣。记录项目、研究、工具与持续生长的想法。",
+  image = "/og.png",
+  article = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const imageUrl = new URL(image, Astro.site);
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f3f0e8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={imageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="page-progress" aria-hidden="true"><span></span></div>
+    <slot />
+    <script is:inline>
+      const progress = document.querySelector(".page-progress span");
+      const updateProgress = () => {
+        const max = document.documentElement.scrollHeight - innerHeight;
+        if (progress) progress.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+      };
+      addEventListener("scroll", updateProgress, { passive: true });
+      updateProgress();
+
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+      document
+        .querySelectorAll("[data-reveal]")
+        .forEach((node) => revealObserver.observe(node));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,62 @@
+---
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import BaseLayout from "../../../../../layouts/BaseLayout.astro";
+import { formatDate, getPostPath } from "../../../../../lib/blog";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+
+  return posts.flatMap((post) => {
+    const path = getPostPath(post);
+    const match = path.match(/^\/(\d{4})\/(\d{2})\/(\d{2})\/([^/]+)\/$/);
+    if (!match) return [];
+    const [, year, month, day, slug] = match;
+    return [{ params: { year, month, day, slug }, props: { post } }];
+  });
+}
+
+interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<BaseLayout
+  title={`${post.data.title}｜喻承龙`}
+  description={post.data.summary}
+  image={post.data.image}
+  article
+>
+  <header class="subpage-header article-nav">
+    <a class="wordmark" href="/">
+      <span>喻承龙</span>
+      <small>CHENGLONG YU</small>
+    </a>
+    <a href="/blog/">全部文章 ↗</a>
+  </header>
+
+  <main class="article-page">
+    <header class="article-header">
+      <div>
+        <time>{formatDate(post.data.date)}</time>
+        <span>{post.data.categories.join(" · ")}</span>
+      </div>
+      <h1>{post.data.title}</h1>
+      {post.data.summary && <p>{post.data.summary}</p>}
+      <ul>
+        {post.data.tags.map((tag) => <li>{tag}</li>)}
+      </ul>
+    </header>
+
+    <article class="prose">
+      <Content />
+    </article>
+  </main>
+
+  <footer class="subpage-footer article-footer">
+    <a href="/blog/">← 返回全部文章</a>
+    <a href="/">个人主页 ↗</a>
+  </footer>
+</BaseLayout>

@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { formatDate, getPostPath } from "../../lib/blog";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<BaseLayout
+  title="写作与笔记｜喻承龙"
+  description="关于 AI、地理、软件、工具和学习过程的记录。"
+>
+  <header class="subpage-header">
+    <a class="wordmark" href="/">
+      <span>喻承龙</span>
+      <small>CHENGLONG YU</small>
+    </a>
+    <a href="/">返回主页 ↗</a>
+  </header>
+
+  <main class="blog-page section-shell">
+    <div class="blog-hero">
+      <span class="section-index">NOTES / ARCHIVE</span>
+      <h1>写作与笔记</h1>
+      <p>记录理解发生的过程，而不只保存最后的答案。</p>
+    </div>
+
+    <div class="blog-list">
+      {
+        posts.map((post, index) => (
+          <a href={getPostPath(post)} class="blog-list-item">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <div>
+              <time>{formatDate(post.data.date)}</time>
+              <h2>{post.data.title}</h2>
+              <p>{post.data.summary}</p>
+              <ul>
+                {post.data.tags.slice(0, 4).map((tag) => <li>{tag}</li>)}
+              </ul>
+            </div>
+            <i>↗</i>
+          </a>
+        ))
+      }
+    </div>
+  </main>
+
+  <footer class="subpage-footer">
+    <span>© {new Date().getFullYear()} Chenglong Yu</span>
+    <a href="mailto:yuchenglong01@foxmail.com">联系我 ↗</a>
+  </footer>
+</BaseLayout>
