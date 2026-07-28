@@ -13,8 +13,8 @@ export function getPostPath(post: CollectionEntry<"blog">) {
   return `/${year}/${month}/${day}/${slug}/`;
 }
 
-export function formatDate(date: Date) {
-  return new Intl.DateTimeFormat("zh-CN", {
+export function formatDate(date: Date, locale = "zh-CN") {
+  return new Intl.DateTimeFormat(locale, {
     year: "numeric",
     month: "2-digit",
     day: "2-digit",
