@@ -6,13 +6,13 @@ export const experiences = [
     place: "Beijing",
     organization: "New Oriental Education & Technology Group",
     department: "Internet Center",
-    role: "AI R&D Intern",
+    role: "AI Product Intern",
     summary:
-      "Built AI systems for course production: first a feedback loop for reusable content cards, then a course-building Agent connected to the live authoring platform.",
+      "Scaled the production of interactive card-based courses by turning teachers’ methods into reusable Skills, generating editable drafts with an Agent, and iterating through card-level evaluation.",
     points: [
-      "Designed a feedback and iteration system for roughly 150 types of course cards, supporting guided retries, feedback aggregation, optimization proposals, and human review.",
-      "Built a course-building Agent with Pi Agent SDK and TypeScript, turning teachers’ expertise into reusable Skills and generating course plans through multi-turn conversations.",
-      "Wrote Agent-generated content into editable drafts under teachers’ accounts, shifting the main workload from manual assembly to review and editing and cutting production time by about 50%.",
+      "Built a course-building Agent with Pi Agent SDK, covering requirement clarification, course planning, card generation, and draft creation on the live authoring platform.",
+      "Analyzed interviews, historical course-building records, and teachers’ prompts to turn card rules, selection logic, and content requirements into subject-specific Skills.",
+      "Designed a card-level LLM-as-Judge evaluation process and captured teacher edits as failure cases; shifted work from manual assembly to review and editing, cutting production time by about 50%.",
     ],
   },
   {
@@ -22,10 +22,11 @@ export const experiences = [
     department: "Product Department",
     role: "AI Product Manager Intern",
     summary:
-      "Worked on quality evaluation for an AI tutoring device, translating expert judgment into an automated process that could be repeated and compared.",
+      "Built an iteration process for an AI tutoring device, spanning evaluation criteria, bad-case diagnosis, prompt improvement, and automated testing.",
     points: [
-      "Analyzed more than 50 expert review records and tutoring guidelines to build structured labeling, test-set evaluation, and bad-case diagnosis workflows.",
-      "Built teacher–student dialogue simulation and automated evaluation tools in Python, reducing one evaluation cycle from roughly two hours to ten minutes and raising the pass rate to 92%.",
+      "Analyzed more than 50 expert review records and tutoring guidelines, breaking quality into guidance, feedback, pacing, summaries, and emotional support with structured labels.",
+      "Used simulated students at different ability levels and real questions to diagnose conflicting rules and examples, helping raise the pass rate for primary-school math to 92%.",
+      "Integrated with the prompt platform API and built dialogue-simulation and automated-evaluation tools, reducing one evaluation cycle from roughly two hours to ten minutes.",
     ],
   },
   {
@@ -37,8 +38,8 @@ export const experiences = [
     summary:
       "Started with natural-language access to geospatial databases, expanded into geospatial analysis Agents, and eventually brought those capabilities into a workplace-facing digital employee prototype.",
     points: [
-      "Proposed dynamic schema mapping and human-in-the-loop clarification; Monkuu achieved 56.2% accuracy on KaggleDBQA.",
-      "Built a geospatial analysis Agent with PocketFlow and ReAct, exposing professional analysis tools through QGIS-MCP.",
+      "Proposed dynamic schema mapping and human-in-the-loop clarification; Monkuu achieved 56.2% accuracy on KaggleDBQA, 13.8 points above the previous best, and was published in IJGIS as a first-author paper.",
+      "Built a geospatial analysis Agent with PocketFlow and ReAct, exposing professional tools through QGIS-MCP and reaching a 73.3% prototype evaluation pass rate.",
       "Developed the GeoClaw digital employee prototype and improved accuracy from 73% to 95% across 109 real-world tasks.",
     ],
   },
