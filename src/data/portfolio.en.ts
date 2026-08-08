@@ -6,7 +6,7 @@ export const experiences = [
     place: "Beijing",
     organization: "New Oriental Education & Technology Group",
     department: "Internet Center",
-    role: "AI Product Intern",
+    role: "AI Product R&D Intern",
     summary:
       "Scaled the production of interactive card-based courses by turning teachers’ methods into reusable Skills, generating editable drafts with an Agent, and iterating through card-level evaluation.",
     points: [

@@ -23,7 +23,7 @@ export const experiences = [
     place: "北京",
     organization: "新东方教育科技集团",
     department: "互联网中心",
-    role: "AI 产品实习生",
+    role: "AI 产品研发实习生",
     summary:
       "面向互动卡片式课程的规模化生产，将教师组课方法沉淀为可复用 Skill，再由 Agent 生成可编辑课程草稿，并通过卡片级评测持续迭代。",
     points: [
