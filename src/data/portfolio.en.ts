@@ -132,7 +132,7 @@ export const projects: Project[] = [
     links: [
       {
         label: "Watch demo",
-        href: "https://zhanlutuzi.oss-cn-shanghai.aliyuncs.com/GeoClaw.mp4",
+        href: "https://zhanlutuzi.oss-cn-shanghai.aliyuncs.com/GeoClaw0810.mp4",
         kind: "video",
       },
     ],
