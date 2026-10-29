@@ -141,6 +141,14 @@ export const projects: Project[] = [
 
 export const personalWorks = [
   {
+    title: "Second Brain",
+    meta: "Open-source tool · 2026",
+    description:
+      "Drop links and thoughts into a Feishu chat; Claude Code compiles them daily into a personal Obsidian wiki where every point cites its source and opinions stay in your own words.",
+    href: "https://zhanlutuzi.github.io/second-brain/",
+    label: "View project",
+  },
+  {
     title: "cc-daily-report",
     meta: "Open-source tool · 2026",
     description:

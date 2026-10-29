@@ -154,6 +154,14 @@ export const projects: Project[] = [
 
 export const personalWorks = [
   {
+    title: "第二大脑",
+    meta: "开源工具 · 2026",
+    description:
+      "随手把链接和想法发进飞书群，Claude Code 每天把它们编译成 Obsidian 里的个人 wiki，每条要点标明出处，观点只记原话。",
+    href: "https://zhanlutuzi.github.io/second-brain/",
+    label: "查看项目",
+  },
+  {
     title: "cc-daily-report",
     meta: "开源工具 · 2026",
     description:
