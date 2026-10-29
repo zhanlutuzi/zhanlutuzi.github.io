@@ -150,6 +150,33 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    index: "04",
+    title: "第二大脑",
+    eyebrow: "开源 · LLM Wiki · Claude Code",
+    description:
+      "随手把链接和想法发进飞书群，说一句「处理收件箱」，Claude Code 就把它们编译进 Obsidian 里的个人 wiki。",
+    result: "每条要点都标明出处，观点只记原话；宣传片由代码逐帧绘制。",
+    preview: "/project-second-brain.jpg",
+    duration: "01:05",
+    tags: ["Claude Code", "Obsidian", "飞书 API", "Node.js"],
+    tone: "ink",
+    links: [
+      {
+        label: "观看演示",
+        href: "https://zhanlutuzi.github.io/second-brain/second-brain.mp4",
+        kind: "video",
+      },
+      {
+        label: "项目主页",
+        href: "https://zhanlutuzi.github.io/second-brain/",
+      },
+      {
+        label: "阅读博客",
+        href: "/2026/10/29/second-brain/",
+      },
+    ],
+  },
 ];
 
 export const personalWorks = [
