@@ -137,6 +137,34 @@ export const projects: Project[] = [
       },
     ],
   },
+  {
+    index: "04",
+    title: "Second Brain",
+    eyebrow: "Open source · LLM Wiki · Claude Code",
+    description:
+      "Drop links and thoughts into a Feishu chat, say \"process the inbox\", and Claude Code compiles them into a personal wiki in Obsidian.",
+    result:
+      "Every point cites its source and opinions stay in your own words; the promo video is drawn frame by frame in code.",
+    preview: "/project-second-brain.jpg",
+    duration: "01:05",
+    tags: ["Claude Code", "Obsidian", "Feishu API", "Node.js"],
+    tone: "ink",
+    links: [
+      {
+        label: "Watch demo",
+        href: "https://zhanlutuzi.github.io/second-brain/second-brain.mp4",
+        kind: "video",
+      },
+      {
+        label: "Project page",
+        href: "https://zhanlutuzi.github.io/second-brain/",
+      },
+      {
+        label: "Read the post (Chinese)",
+        href: "/2026/10/29/second-brain/",
+      },
+    ],
+  },
 ];
 
 export const personalWorks = [
